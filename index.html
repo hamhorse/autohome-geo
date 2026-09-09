@@ -129,7 +129,6 @@ header.top.scrolled{box-shadow:0 6px 24px rgba(11,21,37,.08)}
 .slides{display:flex;height:100%;transition:transform .8s cubic-bezier(.7,.1,.2,1);position:relative;z-index:1}
 .slide{position:relative;min-width:100%;height:100%;display:flex;align-items:center}
 .hero-content{position:relative;width:100%;max-width:1240px;margin:0 auto;padding:78px 24px 44px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;color:#0b1525}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#0a66cc;background:#e8f2ff;padding:6px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:.5px}
 .hero h1{font-size:48px;line-height:1.14;font-weight:900;letter-spacing:-.5px;margin-bottom:16px;color:#0b1525}
 .hero h1 .grad{background:linear-gradient(120deg,#1890FF,#40A9FF,#1890FF);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lead{font-size:18px;color:#3f4d66;max-width:520px;margin-bottom:28px}
@@ -499,9 +498,9 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 /* 产品中心：企业级 强首屏 + 分类导航 + 产品矩阵（对标国内云厂商产品中心） */
 .prodsec{position:relative;padding:0 0 92px;background:linear-gradient(168deg,#d7e9ff 0%,#e2efff 24%,#ecf2fc 52%,#f5f7fb 100%)}
 .prodsec .phero{max-width:1240px;margin:0 auto;min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 56px}
-.prodsec .phero h1{font-size:54px;font-weight:800;color:var(--ink);letter-spacing:1px;line-height:1.25}
+.prodsec .phero h1{font-size:40px;font-weight:900;color:var(--ink);letter-spacing:-.5px;line-height:1.3}
 .prodsec .phero p{margin:20px auto 0;max-width:780px;font-size:17px;color:#3d4d63;line-height:1.8}
-.prodsec .phero .ph-cta{display:inline-flex;align-items:center;gap:8px;margin-top:36px;background:var(--blue);color:#fff;font-size:15.5px;font-weight:700;padding:14px 38px;transition:.22s}
+.prodsec .phero .ph-cta{display:inline-flex;align-items:center;gap:8px;margin-top:36px;background:var(--blue);color:#fff;font-size:15.5px;font-weight:700;padding:14px 38px;border-radius:28px;transition:.22s}
 .prodsec .phero .ph-cta:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 10px 26px rgba(24,144,255,.32)}
 .prodsec .phero .ph-cta svg{transition:.2s}
 .prodsec .phero .ph-cta:hover svg{transform:translate(2px,-2px)}
@@ -512,17 +511,17 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 .pm-cats button:hover{color:var(--blue)}
 .pm-cats button.active{background:rgba(255,255,255,.88);color:var(--blue);box-shadow:0 4px 16px rgba(24,86,144,.08)}
 .pm-cats button.active::before{transform:translateY(-50%) scaleY(1)}
-.pm-box{background:#fff;box-shadow:0 24px 70px rgba(24,86,144,.10);padding:30px;min-height:520px}
+.pm-box{background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(24,86,144,.10);padding:30px;min-height:520px}
 .pm-panel{display:none;animation:fadeIn .35s}
 .pm-panel.active{display:block}
 .pm-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.pm-card{display:flex;flex-direction:column;background:#fff;border:none;padding:26px 26px 24px;box-shadow:0 2px 16px rgba(24,86,144,.09);transition:.25s;text-decoration:none;color:inherit}
+.pm-card{display:flex;flex-direction:column;background:#fff;border-radius:12px;border:none;padding:26px 26px 24px;box-shadow:0 2px 16px rgba(24,86,144,.09);transition:.25s;text-decoration:none;color:inherit}
 .pm-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(24,86,144,.15)}
 .pm-card .pm-tag{display:block;font-size:12px;font-weight:700;letter-spacing:2px;color:#6b7a90;margin-bottom:12px}
 .pm-card h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:8px}
 .pm-card p{font-size:13.5px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:20px}
 .pm-actions{display:flex;align-items:center;gap:18px;margin-top:auto}
-.pm-btn{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-size:13.5px;font-weight:700;padding:9px 20px;transition:.2s;text-decoration:none}
+.pm-btn{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-size:13.5px;font-weight:700;padding:9px 20px;border-radius:20px;transition:.2s;text-decoration:none}
 .pm-btn:hover{background:var(--blue-d)}
 .pm-link{font-size:13.5px;font-weight:600;color:#5a6b85;transition:.2s}
 .pm-card:hover .pm-link{color:var(--blue)}
@@ -533,7 +532,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 .pm-item:hover h5{color:var(--blue)}
 @media(max-width:960px){
   .prodsec .phero{min-height:0;padding:110px 20px 44px}
-  .prodsec .phero h1{font-size:32px;letter-spacing:0}
+  .prodsec .phero h1{font-size:30px;letter-spacing:0}
   .prodsec .phero p{font-size:15px}
   .pm-wrap{grid-template-columns:1fr;gap:20px}
   .pm-cats{flex-direction:row;position:static;overflow-x:auto;gap:8px;padding-bottom:4px}
@@ -863,7 +862,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <div class="slide s1">
       <div class="hero-content">
         <div>
-          <span class="hero-eyebrow">2026 全新发布</span>
+
           <h1>灵机平台上线</h1>
           <p class="lead">Agent 级数字化平台，15+ 类 AI 数字员工开箱即用。</p>
           <a href="#" class="btn btn-primary" onclick="openChat();return false;">立即咨询</a>
@@ -897,7 +896,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <div class="slide s2">
       <div class="hero-content">
         <div>
-          <span class="hero-eyebrow">一站式 SaaS</span>
+
           <h1>汽车之家 SaaS 平台</h1>
           <p class="lead">覆盖线索分发、CRM、邀约、网销、数据看板，全链路云端即用。</p>
           <a href="#" class="btn btn-primary" onclick="openChat();return false;">立即咨询</a>
@@ -941,7 +940,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <div class="slide s3">
       <div class="hero-content">
         <div>
-          <span class="hero-eyebrow">汽车之家购车平台</span>
+
           <h1>看车 · 买车 · 用车 · 换车</h1>
           <p class="lead">省时省心省钱，超级补贴、真实返现、0 首付，一站搞定。</p>
           <a href="#" class="btn btn-primary" onclick="openChat();return false;">去看看</a>
@@ -997,7 +996,6 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
   <div class="wrap">
     <div class="op reveal">
       <h2>灵机数字员工<br><em>让每家门店都有 AI 生产力</em></h2>
-      <p>开箱即用的汽车营销智能体，覆盖线索获取到售后保客全流程</p>
     </div>
 
     <div class="lj-demo reveal">
@@ -1039,7 +1037,6 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 <section id="products" class="prodsec">
   <div class="phero">
     <h1>汽车之家企业产品体系</h1>
-    <p>面向汽车产业客户，提供覆盖智能服务、业务协同与经营增长的数字化产品能力。</p>
     <a class="ph-cta" href="#">查看全部产品 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
   </div>
   <div class="pm-wrap">
@@ -1153,7 +1150,6 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
   <div class="wrap">
     <div class="op reveal">
       <h2>行业解决方案</h2>
-      <p>基于汽车之家产品矩阵，按能力域与行业场景两条线组织</p>
     </div>
   </div>
 
