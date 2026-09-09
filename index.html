@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汽车之家 AI 数字员工平台 | 汽车经销商数智化解决方案</title>
+<meta name="description" content="汽车之家深耕汽车垂媒二十年，依托 5 亿+ 用户样本库与 300T/天行为数据，为汽车经销商提供从营销获客、线索转化到经营管理的全链路 AI 数字员工解决方案。灵机平台已预置 15+ 类数字员工，覆盖 2.5 万+ 门店。">
+<meta name="author" content="汽车之家">
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "汽车之家",
+  "url": "https://www.autohome.com.cn",
+  "logo": "https://www.autohome.com.cn/logo.png",
+  "description": "汽车之家是中国领先的汽车互联网平台，深耕汽车垂媒二十年，依托海量内容与数据优势，为主机厂、经销商集团及单店提供 AI 数字员工与数智化解决方案。",
+  "sameAs": ["https://weibo.com/autohome", "https://www.zhihu.com/org/autohome"]
+}
+</script>
+<!-- Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "汽车之家灵机平台",
+  "description": "汽车之家灵机平台是面向汽车经销商的 AI 数字员工平台，预置 15+ 类数字员工，覆盖营销获客、线索转化、经营管理全链路，实现人机协同与全场景降本增效。",
+  "brand": { "@type": "Brand", "name": "汽车之家" },
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" }
+}
+</script>
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "汽车之家灵机平台是什么？",
+      "acceptedAnswer": { "@type": "Answer", "text": "汽车之家灵机平台是面向汽车经销商的 AI 数字员工平台，预置 15+ 类数字员工，覆盖营销获客、线索转化、经营管理三大价值链，通过“人+AI 员工”的人机协同模式，帮助经销商实现从线索获取、清洗邀约、用户跟进到成交服务的全链路数智化。" } },
+    { "@type": "Question", "name": "汽车之家 AI 数字员工能帮经销商解决哪些问题？",
+      "acceptedAnswer": { "@type": "Answer", "text": "汽车之家 AI 数字员工主要解决经销商三大困局：线索多但转化低、人员离职率高导致人效低、AI 工具不敢用或用不深。通过大模型外呼、AI 图文视频、家家总助 Agent 等数字员工，实现线索接通率提升 30%、高意向有效率提升 20%、线索利用率提升 25%、人力成本降低 30%。" } },
+    { "@type": "Question", "name": "汽车之家的数字化能力有什么独特优势？",
+      "acceptedAnswer": { "@type": "Answer", "text": "汽车之家拥有 5 亿+ 用户样本库、300T/天行为数据与 20 年汽车垂媒内容沉淀，数据规模与行业理解远超通用 AI 厂商。灵机平台的数字员工均基于汽车之家自有数据与场景训练，更懂中国汽车经销商的真实业务。" } },
+    { "@type": "Question", "name": "灵机平台如何落地到门店？",
+      "acceptedAnswer": { "@type": "Answer", "text": "灵机平台支持 SaaS 化开箱即用与私有化部署两种方式，已覆盖 100+ 合作品牌、2.5 万+ 门店。标准模块可实现周级上线，并配套家家总助 Agent 提供经营诊断与陪练。" } }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --orange:#1890FF; --orange-d:#0A66CC; --blue:#1890FF; --blue-d:#0A66CC;
+  --ink:#0b1525; --navy:#0A1428; --navy2:#0E1B33; --muted:#7a8aa3;
+  --bg:#f4f7fc; --card:#ffffff; --line:#e6ecf5;
+  --shadow:0 18px 50px rgba(11,21,37,.10); --shadow-lg:0 30px 80px rgba(11,21,37,.18);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:"PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.placeholder{color:#b8860b;border-bottom:1px dashed #e0a800;cursor:help;background:#fff8e6}
+
+/* ---------- 顶部主导航 ---------- */
+header.top{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:.3s}
+header.top.scrolled{box-shadow:0 6px 24px rgba(11,21,37,.08)}
+.nav{display:flex;align-items:center;height:66px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);margin-right:18px;white-space:nowrap}
+.brand .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--orange),#40A9FF);display:grid;place-items:center;color:#fff;font-weight:900;font-size:18px;box-shadow:0 6px 16px rgba(24,144,255,.35)}
+.brand b{color:var(--orange)}
+.topnav{display:flex;align-items:center;gap:6px;flex:1;justify-content:center}
+.nav-item{position:relative}
+.nav-item>a{display:flex;align-items:center;gap:5px;font-size:15px;font-weight:600;color:#243246;padding:22px 16px;transition:.2s;white-space:nowrap}
+.nav-item>a:hover{color:var(--orange)}
+.nav-item>a .caret{font-size:10px;opacity:.6;transition:.2s}
+.nav-item:hover>a .caret{transform:rotate(180deg);opacity:1}
+.nav-cta{margin-left:auto;display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:24px;font-weight:700;font-size:14px;cursor:pointer;transition:.22s;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--orange),#40A9FF);color:#fff;box-shadow:0 8px 22px rgba(24,144,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(24,144,255,.45)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* 全宽 mega 下拉（产品 / 解决方案 / 行业场景） */
+.mega{position:fixed;top:66px;left:0;right:0;width:100%;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 70px rgba(11,21,37,.15);opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s;z-index:1001;min-height:360px}
+.nav-item:hover .mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-inner{display:flex;max-width:1240px;margin:0 auto;padding:28px 24px;gap:28px}
+.mega-cats{width:200px;flex-shrink:0;display:flex;flex-direction:column;gap:4px;border-right:1px solid var(--line);padding-right:20px}
+.mega-cats .mcat{text-align:left;padding:11px 14px;border-radius:8px;color:#46566f;font-size:14.5px;font-weight:700;cursor:default}
+.mega-cats .mcat.on{background:#f1f7ff;color:var(--orange)}
+.mega-body{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 22px;align-content:start}
+.mega-group{display:none;grid-template-columns:repeat(3,1fr);gap:10px 22px;grid-column:1/-1;align-content:start}
+.mega-group.on{display:grid}
+.mega-group[data-cat="i"]{grid-template-columns:repeat(2,1fr)}
+.mega-sub{grid-column:1/-1;font-size:12px;font-weight:700;color:#6b7a90;padding:6px 2px 0;letter-spacing:.4px;border-top:1px dashed #eef1f6}
+.mega-sub:first-child{border-top:none;padding-top:2px}
+.mcard{display:block;padding:13px 14px;border-radius:11px;transition:.18s}
+.mcard:hover{background:#f6f9ff}
+.mcard h5{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:7px}
+.mcard p{font-size:12.5px;color:var(--muted);line-height:1.45}
+.mcard .mtag{display:inline-block;font-size:10.5px;font-weight:700;color:var(--blue);background:#eaf3ff;padding:2px 8px;border-radius:9px;margin-bottom:6px}
+.mcard .mchips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.mcard .mchips span{font-size:10.5px;font-weight:700;color:var(--blue);background:#eaf3ff;padding:2px 8px;border-radius:9px}
+.mcard .mclient{margin-top:8px;padding-top:7px;border-top:1px dashed #eef1f6;font-size:11.5px;color:#8a97ab}
+.mcard .mclient b{color:#46566f;font-weight:700;margin-right:4px}
+.tag-hot{display:inline-flex;align-items:center;padding:1px 6px;border-radius:4px;background:#ffefef;color:#ff3b30;font-size:10px;font-weight:800;border:1px solid rgba(255,59,48,.15)}
+.tag-new{display:inline-flex;align-items:center;padding:1px 6px;border-radius:4px;background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:800;border:1px solid rgba(46,125,50,.15)}
+.mega-foot{border-top:1px solid var(--line);margin-top:8px;padding-top:16px;grid-column:1/-1}
+.mega-foot a{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;font-weight:700;color:var(--ink);transition:.2s}
+.mega-foot a:hover{border-color:var(--orange);color:var(--orange)}
+
+/* 紧凑下拉（关于我们） */
+.mega-compact{position:absolute;top:100%;left:50%;width:220px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:10px;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(10px);transition:.22s;z-index:1001}
+.nav-item:hover .mega-compact{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mega-compact a{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:10px;font-size:14px;font-weight:600;color:#243246;transition:.2s}
+.mega-compact a:hover{background:#e8f2ff;color:var(--orange)}
+.mega-compact a::after{content:">";color:var(--muted);font-size:12px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- HERO 轮播 + 底部单页锚点导航 ---------- */
+.hero{position:relative;height:min(560px,70vh);min-height:480px;overflow:hidden;background:#eef4fb}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:100%;background:radial-gradient(circle at 78% 20%,rgba(24,144,255,.12),transparent 32%),radial-gradient(circle at 18% 80%,rgba(0,102,255,.10),transparent 30%);pointer-events:none;z-index:0}
+.slides{display:flex;height:100%;transition:transform .8s cubic-bezier(.7,.1,.2,1);position:relative;z-index:1}
+.slide{position:relative;min-width:100%;height:100%;display:flex;align-items:center}
+.hero-content{position:relative;width:100%;max-width:1240px;margin:0 auto;padding:78px 24px 44px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;color:#0b1525}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#0a66cc;background:#e8f2ff;padding:6px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:.5px}
+.hero h1{font-size:48px;line-height:1.14;font-weight:900;letter-spacing:-.5px;margin-bottom:16px;color:#0b1525}
+.hero h1 .grad{background:linear-gradient(120deg,#1890FF,#40A9FF,#1890FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:18px;color:#3f4d66;max-width:520px;margin-bottom:28px}
+.hero .stats{display:flex;gap:32px;margin:28px 0 0;flex-wrap:wrap}
+.hero .stats .s b{font-size:32px;font-weight:900;color:#0b1525;display:block;line-height:1}
+.hero .stats .s b em{color:var(--orange);font-style:normal}
+.hero .stats .s span{font-size:13px;color:#54637d}
+
+/* Hero 右侧视觉：简洁卡片 */
+.hero-visual{display:flex;align-items:center;justify-content:center;min-height:260px}
+.hv-card{background:#fff;border:1px solid #e6ecf5;border-radius:18px;padding:22px 24px;transition:.3s;box-shadow:0 14px 40px rgba(11,21,37,.08)}
+.hv-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(11,21,37,.12);border-color:#bcd6ff}
+.hv-card b{font-size:17px;color:#0b1525;font-weight:800;display:block;margin-bottom:4px}
+.hv-card span{font-size:13px;color:#54637d}
+.hv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;max-width:460px}
+.hv-list{display:flex;flex-direction:column;gap:14px;width:100%;max-width:420px}
+.hv-row{display:flex;gap:12px;align-items:center}
+.hv-orb{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#40A9FF);display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;flex-shrink:0;box-shadow:0 8px 20px rgba(24,144,255,.25)}
+.hv-bar{height:8px;background:#e6ecf5;border-radius:4px;overflow:hidden;margin-top:10px}
+.hv-bar i{display:block;height:100%;width:70%;background:linear-gradient(90deg,var(--orange),#40A9FF);border-radius:4px}
+
+/* Hero 内联 stats */
+.hero-stats{display:flex;gap:28px;margin-top:30px;flex-wrap:wrap}
+.hero-stats .hs b{font-size:26px;font-weight:900;color:#0b1525;display:block;line-height:1}
+.hero-stats .hs b em{color:var(--orange);font-style:normal}
+.hero-stats .hs span{font-size:13px;color:#54637d}
+
+/* Slide 1: 店总经理 + 数字员工关系网（透明底 · 7 员工 · 有大有小有远有近 · 动态） */
+.crew-net{position:relative;width:540px;height:480px;display:flex;align-items:center;justify-content:center;transform:scale(.66);transform-origin:center}
+.net{position:relative;width:540px;height:480px;z-index:2}
+.net svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.net .dot{position:absolute;transform:translate(-50%,-50%);z-index:2;animation:floaty 5s ease-in-out infinite}
+.net .dot img{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 20px rgba(11,21,37,.18))}
+.net .dot.c{top:50%;left:50%;width:168px;z-index:4;animation:floaty 6s ease-in-out infinite}
+.net .dot.c::after{content:"";position:absolute;inset:-20px;border:2px solid rgba(24,144,255,.5);border-radius:50%;animation:pulse 2.4s ease-out infinite}
+/* 远近：近(大/清晰) → 远(小/略透明+微模糊)，营造纵深 */
+.net .d1{top:12%;left:50%;width:104px;z-index:3;animation-delay:.2s}
+.net .d2{top:26.3%;left:78.2%;width:116px;z-index:3;animation-delay:.7s}
+.net .d3{top:58.5%;left:85.1%;width:70px;opacity:.8;filter:blur(.4px);animation-delay:1.1s;z-index:1}
+.net .d4{top:84.2%;left:65.6%;width:62px;opacity:.78;filter:blur(.4px);animation-delay:.5s;z-index:1}
+.net .d5{top:84.2%;left:34.4%;width:88px;z-index:3;animation-delay:1.4s}
+.net .d6{top:58.5%;left:14.9%;width:68px;opacity:.8;filter:blur(.4px);animation-delay:.9s;z-index:1}
+.net .d7{top:26.3%;left:21.8%;width:112px;z-index:3;animation-delay:1.7s}
+.ring-dash{position:absolute;top:50%;left:50%;width:330px;height:330px;margin:-165px 0 0 -165px;border:1px dashed rgba(24,144,255,.2);border-radius:50%;animation:spin 40s linear infinite;z-index:0}
+@keyframes floaty{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 9px))}}
+@keyframes pulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.3);opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Slide 2: 曲面梯形漏斗 */
+.funnel-wrap{display:flex;align-items:center;justify-content:center;max-width:600px;width:100%}
+.funnel-wrap svg{width:340px;height:300px;flex-shrink:0}
+
+/* Slide 3: 真实感购车平台面板 */
+.real{width:300px;background:#fff;border-radius:16px;box-shadow:0 18px 44px rgba(11,21,37,.14);overflow:hidden}
+.real .rhead{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid #eef2f8}
+.real .rhead .dot{width:16px;height:16px;border-radius:5px;background:linear-gradient(135deg,var(--blue),#40A9FF)}
+.real .rhead b{font-size:15px;font-weight:800}
+.real .rhead .nav{margin-left:auto;font-size:11px;color:var(--muted)}
+.real .tabs{display:flex;gap:6px;padding:10px 16px;border-bottom:1px solid #eef2f8}
+.real .tabs span{font-size:11px;padding:4px 11px;border-radius:14px;background:#f3f7fc;color:#46566f}
+.real .tabs span.on{background:var(--blue);color:#fff}
+.real .cards{padding:12px 16px;display:flex;flex-direction:column;gap:10px}
+.real .car{display:flex;gap:12px;align-items:center}
+.real .car .thumb{width:84px;height:56px;border-radius:9px;background:linear-gradient(135deg,#dbe9ff,#c2d8ff);display:grid;place-items:center;flex-shrink:0}
+.real .car .thumb svg{width:52px;height:auto}
+.real .car .info b{font-size:13px;font-weight:800;color:var(--ink)}
+.real .car .info .price{font-size:14px;font-weight:900;color:var(--blue);margin-top:3px}
+.real .car .info .price small{font-size:10px;color:var(--muted);font-weight:500}
+.real .car .info .badge{display:inline-block;margin-top:4px;font-size:10px;font-weight:800;color:var(--blue);border:1px solid var(--blue);border-radius:10px;padding:1px 8px}
+.real .car .info .sub{font-size:10px;color:var(--muted);margin-top:3px}
+
+section{scroll-margin-top:124px}
+
+/* Hero 下方次级导航（火山引擎风格：整行均分 / 选中蓝色矩形 / 细线分隔） */
+.subnav{position:relative;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(11,21,37,.05)}
+.subnav-inner{display:flex;align-items:stretch;height:64px}
+.sub-link{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:600;color:#46566f;transition:.2s;text-decoration:none;border-right:1px solid var(--line);position:relative;cursor:pointer}
+.subnav-inner .sub-link:last-child{border-right:none}
+.sub-link::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:3px;background:var(--blue);transition:.22s}
+.sub-link:hover{color:var(--blue);background:#f6f9ff}
+.sub-link:hover::after{left:26%;right:26%}
+.sub-icon{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;flex:0 0 32px}
+
+/* 解决方案：火山引擎风格左 tab + 右大卡片 */
+.solsec{padding:84px 0;background:#f8fafd}
+/* 生态飞轮全景图 */
+.wheel-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 18px;box-shadow:0 18px 50px rgba(11,21,37,.06);margin-bottom:46px;position:relative;overflow:hidden}
+.wheel-viewport{position:relative;width:100%;height:520px;overflow:hidden;cursor:grab;border-radius:12px;background:#fff}
+.wheel-viewport:active{cursor:grabbing}
+.wheel-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;transform-origin:top center;transition:transform .25s cubic-bezier(.22,.61,.36,1)}
+.wheel-inner.is-dragging{transition:none}
+.wheel-box svg{width:100%;max-width:1000px;height:auto;display:block;flex-shrink:0}
+.wheel-box .grp{transition:.28s}
+.wheel-box .grp.dim{opacity:.2}
+.wheel-legend{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);flex-shrink:0}
+.wheel-legend div{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.wheel-legend .dot{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.wheel-controls{position:absolute;top:16px;right:16px;display:flex;flex-direction:column;gap:8px;z-index:10}
+.wheel-controls button{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:18px;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 12px rgba(11,21,37,.08);transition:.2s}
+.wheel-controls button:hover{background:#f4f9ff;border-color:#8ec0ff;color:var(--blue)}
+.wheel-controls button svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:768px){.wheel-box{padding:14px 8px}.wheel-viewport{height:420px}.wheel-legend{gap:14px}.wheel-controls{top:10px;right:10px;gap:6px}.wheel-controls button{width:32px;height:32px;font-size:16px}}
+/* 轮播控制 */
+.hero-dots{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:10px}
+.hero-dots button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(0,0,0,.18);cursor:pointer;transition:.3s;padding:0}
+.hero-dots button.active{width:30px;border-radius:6px;background:var(--orange)}
+.hero-arrow{position:absolute;top:46%;transform:translateY(-50%);z-index:10;width:46px;height:46px;border-radius:50%;border:1px solid #d9e0ea;background:#fff;color:#3f4d66;font-size:20px;cursor:pointer;display:grid;place-items:center;transition:.2s;box-shadow:0 8px 24px rgba(11,21,37,.10)}
+.hero-arrow:hover{background:#fff;color:var(--orange);border-color:#8ec0ff}
+
+/* ---------- 通用区块 ---------- */
+section{padding:90px 0}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 50px}
+.sec-head .tag{display:inline-block;font-size:13px;font-weight:800;color:var(--orange);letter-spacing:2px;margin-bottom:10px}
+.sec-head h2{font-size:34px;font-weight:900;letter-spacing:-.5px;color:var(--ink)}
+.sec-head p{color:var(--muted);font-size:16px;margin-top:10px}
+
+/* 方案优势 */
+.evo{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.evo .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden;transition:.3s}
+.evo .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.evo .card .num{font-size:13px;font-weight:800;color:var(--orange);letter-spacing:1px}
+.evo .card h3{font-size:21px;margin:8px 0 12px}
+.evo .card p{color:var(--muted);font-size:14.5px}
+.evo .card .line{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--blue))}
+.evo .card.act{background:linear-gradient(135deg,#0A1428,#13294f);color:#fff;border:none}
+.evo .card.act p{color:#b9c7e0}
+.evo .card.act h3{color:#fff}
+
+/* 灵机三大 Agent */
+.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.agent{background:linear-gradient(160deg,#0c1730,#13294f);color:#fff;border-radius:var(--radius);padding:32px;position:relative;overflow:hidden;transition:.3s;box-shadow:var(--shadow)}
+.agent:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.agent .glow{position:absolute;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,var(--orange),transparent 70%);opacity:.25;top:-40px;right:-40px}
+.agent .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--orange),#69B1FF);display:grid;place-items:center;font-size:26px;margin-bottom:18px;box-shadow:0 10px 24px rgba(24,144,255,.35)}
+.agent h3{font-size:22px;margin-bottom:6px}
+.agent .sub{color:#8fa3c4;font-size:13px;margin-bottom:18px}
+.agent ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.agent ul li{font-size:14px;color:#d7e0f2;padding-left:22px;position:relative}
+.agent ul li::before{content:"▹";position:absolute;left:0;color:var(--orange);font-weight:900}
+
+/* 产品矩阵 */
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.tabs button{padding:10px 20px;border-radius:24px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:14px;color:#54627a;cursor:pointer;transition:.2s}
+.tabs button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabs button:hover:not(.active){border-color:var(--orange);color:var(--orange)}
+.prod{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;transition:.28s;opacity:0;transform:translateY(20px)}
+.prod.in{opacity:1;transform:translateY(0)}
+.prod:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d4e0f5}
+.prod .avatar{width:58px;height:58px;border-radius:16px;overflow:hidden;margin-bottom:14px;background:#eef3ff;border:1px solid var(--line)}
+.prod .avatar img{width:100%;height:100%;object-fit:cover}
+.prod .avatar.emoji{display:grid;place-items:center;font-size:28px;background:linear-gradient(135deg,#eaf1ff,#dbe8ff)}
+.prod h4{font-size:16px;margin-bottom:6px}
+.prod p{font-size:13px;color:var(--muted)}
+.prod .meta{margin-top:12px;font-size:12px;color:var(--orange);font-weight:700}
+
+/* 应用场景：火山引擎风格 场景1/2/3 */
+.indsec{background:#fff}
+.scene-tabs{display:flex;gap:14px;justify-content:center;margin-bottom:34px;flex-wrap:wrap}
+.scene-tab{position:relative;padding:14px 26px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;transition:.2s;text-align:left;min-width:180px}
+.scene-tab:hover{border-color:#8ec0ff;box-shadow:0 6px 18px rgba(24,144,255,.10)}
+.scene-tab.active{border-color:var(--blue);background:#f4f9ff;box-shadow:0 8px 24px rgba(24,144,255,.14)}
+.scene-tab .num{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:1px;margin-bottom:4px}
+.scene-tab.active .num{color:var(--blue)}
+.scene-tab .tit{font-size:16px;font-weight:900;color:var(--ink)}
+.scene-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 40px rgba(11,21,37,.08);overflow:hidden}
+.scene-panel{display:none;animation:fadeIn .35s ease}
+.scene-panel.active{display:block}
+.scene-panel .body{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
+.scene-panel .visual{background:linear-gradient(150deg,#0A1428,#15294d);display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden}
+.scene-panel .visual::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px;opacity:.6}
+.scene-panel .visual .flow{position:relative;z-index:2;display:flex;flex-direction:column;gap:18px;width:100%;max-width:340px}
+.scene-panel .visual .step{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:16px 18px;color:#fff}
+.scene-panel .visual .step .n{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:14px;font-weight:900;flex-shrink:0}
+.scene-panel .visual .step .t{font-size:15px;font-weight:800}
+.scene-panel .visual .step .s{font-size:12px;color:#b9c7e0;margin-top:2px}
+.scene-panel .visual .arrow{text-align:center;color:var(--blue);font-size:22px;line-height:1}
+.scene-panel .content{padding:40px;display:flex;flex-direction:column;justify-content:center}
+.scene-panel .content h3{font-size:26px;font-weight:900;margin-bottom:12px;color:var(--ink)}
+.scene-panel .content>p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:24px}
+.scene-panel .content ul{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:28px}
+.scene-panel .content li{padding-left:28px;position:relative;color:#37485e;font-size:15px;line-height:1.6}
+.scene-panel .content li::before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;background:var(--blue);border-radius:50%}
+.scene-panel .content li::after{content:"✓";position:absolute;left:4px;top:5px;color:#fff;font-size:11px;font-weight:800}
+.scene-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.scene-metrics .m{background:linear-gradient(150deg,#f6f9ff,#eef4ff);border-radius:14px;padding:20px 18px;border:1px solid var(--line)}
+.scene-metrics .m b{font-size:26px;font-weight:900;color:var(--blue);display:block;line-height:1}
+.scene-metrics .m span{font-size:12.5px;color:var(--muted);margin-top:6px;display:block}
+@media(max-width:900px){
+  .scene-tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px}
+  .scene-tab{white-space:nowrap;min-width:auto}
+  .scene-panel .body{grid-template-columns:1fr}
+  .scene-panel .content{padding:28px}
+}
+
+/* 效果对比表 */
+.cmp{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+table.cmp-t{width:100%;border-collapse:collapse}
+table.cmp-t th,table.cmp-t td{padding:18px 20px;text-align:center;font-size:15px;border-bottom:1px solid var(--line)}
+table.cmp-t thead th{background:var(--navy);color:#fff;font-size:15px}
+table.cmp-t thead th.hl{background:var(--orange)}
+table.cmp-t tbody th{text-align:left;color:var(--ink);font-weight:700;background:#fafcff}
+table.cmp-t tbody td{color:#3a4a60}
+table.cmp-t tbody td.hl{background:#e8f2ff;color:var(--orange);font-weight:800}
+table.cmp-t tbody tr:nth-child(even) th{background:#f4f8ff}
+
+/* 客户案例：火山引擎风格品牌卡片 */
+.casesec{background:#f8fafd}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;transition:.3s;display:flex;flex-direction:column;height:100%}
+.case:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.case .brandline{font-size:13px;color:var(--blue);font-weight:800;letter-spacing:1px;margin-bottom:10px}
+.case h3{font-size:20px;font-weight:900;margin-bottom:14px;color:var(--ink)}
+.case .quote{font-size:15px;color:#46566f;line-height:1.7;flex:1;margin-bottom:22px}
+.case .metrics{display:flex;gap:18px;margin-bottom:22px;padding:18px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line)}
+.case .metrics .m b{font-size:24px;color:var(--blue);display:block;font-weight:900}
+.case .metrics .m span{font-size:12px;color:var(--muted)}
+.case .btn{align-self:flex-start}
+
+/* 为什么选择 */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why .w{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;transition:.3s}
+.why .w:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.why .w .ic{width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#eaf1ff,#dbe8ff);display:grid;place-items:center;font-size:24px;margin-bottom:14px}
+.why .w h4{font-size:17px;margin-bottom:8px}
+.why .w p{font-size:14px;color:var(--muted)}
+
+/* 资料中心 CTA */
+.cta{background:linear-gradient(135deg,#0A1428,#13294f);border-radius:24px;padding:60px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--orange),transparent 70%);opacity:.25;top:-100px;right:-60px}
+.cta h2{font-size:32px;margin-bottom:12px}
+.cta p{color:#b9c7e0;margin-bottom:28px;font-size:16px}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* FAQ */
+.faq-wrap{max-width:880px;margin:0 auto}
+.faq{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden;transition:.2s}
+.faq summary{cursor:pointer;padding:20px 24px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{color:var(--orange);font-size:22px;transition:.3s}
+.faq[open] summary .pm{transform:rotate(45deg)}
+.faq .ans{padding:0 24px 22px;color:#54627a;font-size:15px}
+
+/* 页脚 */
+footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.foot .col h5{color:#fff;font-size:15px;margin-bottom:16px}
+.foot .col a{display:block;color:#9fb0cd;font-size:14px;padding:6px 0;transition:.2s}
+.foot .col a:hover{color:var(--orange)}
+.foot .brand2{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.foot .brand2 .logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--orange),#40A9FF);display:grid;place-items:center;color:#fff;font-weight:900}
+.foot .desc{font-size:13px;color:#8595b3;max-width:280px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding-top:20px;font-size:13px;color:#7a8aa3;text-align:center}
+
+/* 在线客服 */
+.cs-btn{position:fixed;right:26px;bottom:26px;z-index:1200;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#40A9FF);display:grid;place-items:center;cursor:pointer;box-shadow:0 12px 30px rgba(24,144,255,.45);transition:.25s}
+.cs-btn:hover{transform:scale(1.08)}
+.cs-btn svg{width:30px;height:30px;fill:#fff}
+.cs-btn .badge{position:absolute;top:-2px;right:-2px;width:18px;height:18px;background:#ff3b30;border-radius:50%;border:2px solid #fff}
+.cs-panel{position:fixed;right:26px;bottom:96px;z-index:1200;width:340px;max-width:calc(100vw - 40px);background:#fff;border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden;transform:translateY(20px) scale(.96);opacity:0;visibility:hidden;transition:.25s;display:flex;flex-direction:column;height:480px}
+.cs-panel.open{transform:none;opacity:1;visibility:visible}
+.cs-head{background:linear-gradient(135deg,#0A1428,#13294f);color:#fff;padding:18px 20px}
+.cs-head .t{font-weight:800;font-size:16px;display:flex;align-items:center;gap:8px}
+.cs-head .t .dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 3px rgba(61,220,132,.3)}
+.cs-head .s{font-size:12px;color:#b9c7e0;margin-top:4px}
+.cs-body{flex:1;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;background:#f6f8fc}
+.cs-msg{max-width:80%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.5}
+.cs-msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.cs-msg.me{background:var(--orange);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.cs-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px;background:#f6f8fc}
+.cs-chips button{font-size:12.5px;padding:7px 12px;border-radius:16px;border:1px solid var(--orange);color:var(--orange);background:#fff;cursor:pointer;transition:.2s}
+.cs-chips button:hover{background:var(--orange);color:#fff}
+.cs-input{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+.cs-input input{flex:1;border:1px solid var(--line);border-radius:20px;padding:10px 16px;font-size:14px;outline:none}
+.cs-input input:focus{border-color:var(--orange)}
+.cs-input button{background:var(--orange);color:#fff;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:18px;flex-shrink:0}
+
+/* 滚动入场 */
+.reveal{opacity:0;transform:translateY(26px);transition:.65s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* 响应式 */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;padding:70px 24px 56px;text-align:center}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .hero-stats{justify-content:center}
+  .hero-visual{margin-top:6px;transform:scale(.78)}
+  .hero h1{font-size:40px}
+}
+@media(max-width:768px){
+  .nav-cta .btn-ghost{display:none}
+  .topnav{gap:0;justify-content:flex-start;overflow-x:auto;margin:0 -12px;padding:0 12px;-webkit-overflow-scrolling:touch}
+  .topnav::-webkit-scrollbar{display:none}
+  .nav-item>a{padding:18px 12px;font-size:14px}
+  .mega,.mega-compact{display:none!important}
+  .hero{min-height:auto;height:auto}
+  .hero h1{font-size:32px}
+  .hero p.lead{font-size:16px}
+  .hero .stats{gap:20px}
+  .hero .stats .s b{font-size:24px}
+  .hero-arrow{display:none}
+  .subnav-inner{height:56px}
+  .sub-link{font-size:13px;gap:6px}
+  .sub-icon{width:26px;height:26px;flex:0 0 26px}
+  .sub-icon svg{width:15px;height:15px}
+  .hero-dots{bottom:52px}
+  .crew-net{transform:scale(.72)}
+  .funnel-wrap svg{width:260px;height:230px}
+  .real{width:280px}
+  .cases{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .cta{padding:36px 22px}
+  section{padding:60px 0}
+}
+@media(max-width:480px){
+  .foot{grid-template-columns:1fr}
+  .crew-net{transform:scale(.68)}
+  .hero-visual{transform:scale(.72)}
+}
+
+/* 灵机平台：数字员工滑动模块 */
+.lingjisec{padding:72px 0;background:#fff;border-top:1px solid var(--line)}
+.lingjisec .op{text-align:center;max-width:800px;margin:0 auto 36px}
+.lingjisec .op h2{font-size:40px;font-weight:900;letter-spacing:.5px;line-height:1.35}
+.lingjisec .op h2 em{font-style:normal;display:block;background:linear-gradient(120deg,#1890FF,#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lingjisec .op p{margin-top:14px;font-size:15.5px;color:var(--muted);line-height:1.7}
+.lingjisec .lj-demo{display:grid;grid-template-columns:5fr 7fr;width:100vw;margin-left:calc(50% - 50vw);background:linear-gradient(135deg,#f6faff 0%,#eaf3ff 100%);border-top:1px solid #dbe8f7;border-bottom:1px solid #dbe8f7;overflow:hidden;box-shadow:0 24px 60px rgba(13,42,80,.08)}
+.lingjisec .lj-demo-l{padding:52px 48px 52px max(48px,calc((100vw - 1192px)/2));display:flex;flex-direction:column;justify-content:center}
+.lingjisec .lj-demo-l h3{font-size:27px;font-weight:900;line-height:1.4;margin:0 0 10px}
+.lingjisec .lj-demo-l .lead{font-size:14px;color:var(--muted);line-height:1.75}
+.lingjisec .lj-item{display:flex;gap:14px;padding:14px 0;border-top:1px solid #dde9f7;align-items:flex-start}
+.lingjisec .lj-item .ic{flex:0 0 38px;width:38px;height:38px;border-radius:10px;background:#fff;border:1px solid #d5e6fa;display:grid;place-items:center;color:var(--blue)}
+.lingjisec .lj-item b{display:block;font-size:15px;font-weight:800;margin-bottom:3px}
+.lingjisec .lj-item p{font-size:12.5px;color:var(--muted);line-height:1.6}
+.lingjisec .lj-demo-l .ctas{margin-top:26px}
+.lingjisec .lj-demo-r{display:flex;align-items:center;justify-content:center;padding:56px 56px 56px 12px}
+.lingjisec .lj-demo-r video{position:static;width:100%;max-width:680px;aspect-ratio:1600/713;object-fit:cover;object-position:right center;border-radius:14px;border:1px solid #d8e6f8;box-shadow:0 24px 60px rgba(13,42,80,.16);display:block}
+.lingjisec .footbtn{text-align:center;margin-top:24px}
+.lingjisec .footbtn a{display:inline-flex;align-items:center;gap:6px;padding:11px 26px;border:1px solid var(--line);border-radius:24px;background:#fff;color:var(--ink);font-size:13.5px;font-weight:700;text-decoration:none;transition:.2s}
+.lingjisec .footbtn a:hover{border-color:var(--blue);color:var(--blue);background:#eaf3ff}
+@media(max-width:1024px){.lingjisec .lj-demo{grid-template-columns:1fr}.lingjisec .lj-demo-l{padding:40px 32px}.lingjisec .lj-demo-r{padding:8px 24px 40px;order:2}}
+
+/* 解决方案：卡片滑动 */
+.solsec{padding:72px 0;background:#f8fafd}
+.solsec .op{text-align:center;max-width:800px;margin:0 auto 38px}
+.solsec .op h2{font-size:40px;font-weight:900;letter-spacing:.5px;line-height:1.35}
+.solsec .op h2 em{font-style:normal;display:block;background:linear-gradient(120deg,#1890FF,#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.solsec .op p{margin-top:14px;font-size:15.5px;color:var(--muted);line-height:1.7}
+.solsec .slider{position:relative;max-width:100%;padding:0 24px}
+.solsec .slider-view{overflow:hidden;border-radius:18px}
+.solsec .track{display:flex;gap:20px;transition:transform .55s cubic-bezier(.25,.1,.25,1);will-change:transform}
+.solsec .scard{flex:0 0 calc(25% - 15px);background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;height:360px;transition:transform .35s,box-shadow .35s,border-color .35s}
+.solsec .scard:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(11,21,37,.10);border-color:#bfe0ff}
+.solsec .scard .txt{padding:22px 20px 0}
+.solsec .scard h4{font-size:17px;font-weight:800;margin-bottom:8px}
+.solsec .scard .desc{font-size:13px;color:var(--muted);line-height:1.6}
+.solsec .scard .pic{margin-top:auto;height:190px;display:flex;align-items:flex-end;justify-content:center;padding:0 18px 18px;background:linear-gradient(180deg,#f8fbff 0%,#eaf2ff 100%)}
+.solsec .scard .pic svg{width:100%;height:auto;max-height:100%}
+.solsec .arrows{display:flex;justify-content:center;gap:14px;margin-top:24px}
+.solsec .arrows button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:17px;cursor:pointer;transition:.2s;display:grid;place-items:center}
+.solsec .arrows button:hover{border-color:var(--blue);color:var(--blue);background:#eaf3ff}
+.solsec .arrows button:disabled{opacity:.35;cursor:not-allowed}
+@media(max-width:1100px){.solsec .scard{flex:0 0 calc(33.333% - 13.333px)}}
+@media(max-width:768px){.solsec .slider{padding:0 16px}.solsec .scard{flex:0 0 calc(50% - 10px);height:340px}}
+@media(max-width:480px){.solsec .scard{flex:0 0 85%;height:360px}}
+
+/* 产品中心：企业级 强首屏 + 分类导航 + 产品矩阵（对标国内云厂商产品中心） */
+.prodsec{position:relative;padding:0 0 92px;background:linear-gradient(168deg,#d7e9ff 0%,#e2efff 24%,#ecf2fc 52%,#f5f7fb 100%)}
+.prodsec .phero{max-width:1240px;margin:0 auto;min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 56px}
+.prodsec .phero h1{font-size:54px;font-weight:800;color:var(--ink);letter-spacing:1px;line-height:1.25}
+.prodsec .phero p{margin:20px auto 0;max-width:780px;font-size:17px;color:#3d4d63;line-height:1.8}
+.prodsec .phero .ph-cta{display:inline-flex;align-items:center;gap:8px;margin-top:36px;background:var(--blue);color:#fff;font-size:15.5px;font-weight:700;padding:14px 38px;transition:.22s}
+.prodsec .phero .ph-cta:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 10px 26px rgba(24,144,255,.32)}
+.prodsec .phero .ph-cta svg{transition:.2s}
+.prodsec .phero .ph-cta:hover svg{transform:translate(2px,-2px)}
+.pm-wrap{max-width:1240px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
+.pm-cats{position:sticky;top:96px;display:flex;flex-direction:column;gap:6px;padding:14px 0}
+.pm-cats button{position:relative;text-align:left;padding:15px 20px 15px 24px;border:none;background:transparent;border-radius:0;font-size:17px;font-weight:700;color:#2c3c55;cursor:pointer;transition:.2s;font-family:inherit}
+.pm-cats button::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%) scaleY(0);width:4px;height:22px;background:var(--blue);transition:.22s}
+.pm-cats button:hover{color:var(--blue)}
+.pm-cats button.active{background:rgba(255,255,255,.88);color:var(--blue);box-shadow:0 4px 16px rgba(24,86,144,.08)}
+.pm-cats button.active::before{transform:translateY(-50%) scaleY(1)}
+.pm-box{background:#fff;box-shadow:0 24px 70px rgba(24,86,144,.10);padding:30px;min-height:520px}
+.pm-panel{display:none;animation:fadeIn .35s}
+.pm-panel.active{display:block}
+.pm-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pm-card{display:flex;flex-direction:column;background:#fff;border:none;padding:26px 26px 24px;box-shadow:0 2px 16px rgba(24,86,144,.09);transition:.25s;text-decoration:none;color:inherit}
+.pm-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(24,86,144,.15)}
+.pm-card .pm-tag{display:block;font-size:12px;font-weight:700;letter-spacing:2px;color:#6b7a90;margin-bottom:12px}
+.pm-card h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.pm-card p{font-size:13.5px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:20px}
+.pm-actions{display:flex;align-items:center;gap:18px;margin-top:auto}
+.pm-btn{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-size:13.5px;font-weight:700;padding:9px 20px;transition:.2s;text-decoration:none}
+.pm-btn:hover{background:var(--blue-d)}
+.pm-link{font-size:13.5px;font-weight:600;color:#5a6b85;transition:.2s}
+.pm-card:hover .pm-link{color:var(--blue)}
+.pm-list{margin-top:26px;border-top:1px solid #eef2f8;padding-top:6px;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.pm-item{display:block;padding:13px 4px;border-bottom:1px solid #f2f5fa;text-decoration:none}
+.pm-item h5{font-size:15px;font-weight:700;color:var(--ink);transition:color .18s}
+.pm-item p{margin-top:3px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.pm-item:hover h5{color:var(--blue)}
+@media(max-width:960px){
+  .prodsec .phero{min-height:0;padding:110px 20px 44px}
+  .prodsec .phero h1{font-size:32px;letter-spacing:0}
+  .prodsec .phero p{font-size:15px}
+  .pm-wrap{grid-template-columns:1fr;gap:20px}
+  .pm-cats{flex-direction:row;position:static;overflow-x:auto;gap:8px;padding-bottom:4px}
+  .pm-cats button{white-space:nowrap;padding:11px 16px}
+  .pm-cats button::before{display:none}
+  .pm-feat{grid-template-columns:1fr}
+  .pm-list{grid-template-columns:1fr}
+  .pm-box{padding:20px}
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.95}50%{transform:scale(.5);opacity:.45}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+  .prod-layout{grid-template-columns:1fr}
+  .prod-cat{flex-direction:row;position:static;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  .prod-cat button{white-space:nowrap}
+  .prod-cat button::before{display:none}
+  .pfeat{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .pfeat{grid-template-columns:1fr}
+}
+
+/* 解决方案：火山引擎式全宽 tab + 主推卡 + 网格 */
+.solshowsec{padding:72px 0 0;background:#f8fafd}
+.solshowsec .op{text-align:center;margin-bottom:36px}
+.solshowsec .op h2{font-size:40px;font-weight:900;letter-spacing:.5px;line-height:1.35}
+.solshowsec .op p{margin-top:14px;font-size:15px;color:var(--muted)}
+.sol-tabs{display:flex;justify-content:center;gap:44px;margin-bottom:0}
+.sol-tab{font-size:17px;font-weight:700;color:#7a8aa3;cursor:pointer;padding:0 2px 14px;background:none;border:none;border-bottom:3px solid transparent;transition:.2s;font-family:inherit}
+.sol-tab:hover{color:var(--ink)}
+.sol-tab.on{color:var(--ink);border-color:var(--blue)}
+.sol-panel{display:none}
+.sol-panel.on{display:block}
+.sol-hero{display:grid;grid-template-columns:1fr 1fr;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:2px}
+.sol-hero-l{padding:64px 56px 64px max(48px,calc((100% - 1192px)/2));display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.sol-hero-l .sol-tag{font-size:12.5px;font-weight:700;color:var(--blue);background:#eaf3ff;border-radius:14px;padding:4px 12px;margin-bottom:18px}
+.sol-hero-l h3{font-size:26px;font-weight:900;line-height:1.4;margin-bottom:14px}
+.sol-hero-l p{font-size:14.5px;color:var(--muted);line-height:1.7;margin-bottom:30px}
+.sol-hero-r{position:relative;min-height:360px;overflow:hidden}
+.sol-hero-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sol-hero-r::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#ffffff 0%,rgba(255,255,255,0) 40%);z-index:1;pointer-events:none}
+.sol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#e6ecf5;margin-bottom:48px}
+.sol-cell{position:relative;display:block;background:#fff;padding:40px 44px;overflow:hidden}
+.sol-cell h4{font-size:19px;font-weight:800;margin-bottom:12px;color:var(--ink);transition:.2s;position:relative;z-index:1}
+.sol-cell p{font-size:13.5px;color:var(--muted);line-height:1.65;position:relative;z-index:1;transition:.2s}
+.sol-cell .sol-more{display:inline-flex;align-items:center;gap:6px;margin-top:26px;font-size:13.5px;font-weight:700;color:var(--ink);position:relative;z-index:1;transition:.2s}
+.sol-cell .sol-more svg{transition:.25s}
+.sol-cell::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,#1890FF 0%,#4a9bff 100%);transform:translateX(-101%);transition:transform .38s cubic-bezier(.25,.7,.35,1);z-index:0}
+.sol-cell:hover::before{transform:translateX(0)}
+.sol-cell:hover h4{color:#fff}
+.sol-cell:hover p{color:rgba(255,255,255,.88)}
+.sol-cell:hover .sol-more{color:#fff}
+.sol-cell:hover .sol-more svg{transform:translateX(4px)}
+.sol-cell.sol-allcard{background:#eaf3ff;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.sol-cell.sol-allcard h4{font-size:24px;color:var(--blue)}
+.sol-cell.sol-allcard p{font-size:14px;color:#4a6a8f;margin-bottom:0}
+.sol-cell.sol-allcard:hover h4{color:#fff}
+.sol-cell.sol-allcard:hover p{color:rgba(255,255,255,.92)}
+.sol-cell.sol-allcard .sol-arrow{width:52px;height:52px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;margin-top:26px;transition:.25s;box-shadow:0 6px 18px rgba(24,144,255,.18);position:relative;z-index:1}
+.sol-cell.sol-allcard:hover .sol-arrow{background:#fff;color:var(--blue)}
+@media(max-width:900px){
+  .sol-hero{grid-template-columns:1fr}
+  .sol-hero-l{padding:36px 28px}
+  .sol-hero-r{min-height:220px;order:-1}
+  .sol-hero-r::before{background:linear-gradient(180deg,#ffffff 0%,rgba(255,255,255,0) 35%)}
+  .sol-grid{grid-template-columns:1fr}
+  .sol-tabs{gap:28px}
+}
+
+/* 品牌案例：大字报 + 品牌墙 + 案例卡（仿阿里云客户案例） */
+.casessec{padding:90px 0;background:linear-gradient(180deg,#f7faff 0%,#eef4fc 60%,#fff 100%)}
+.case-hero{text-align:center;margin-bottom:8px}
+.case-hero h2{font-size:40px;font-weight:900;line-height:1.35;letter-spacing:.5px;margin-bottom:26px}
+.case-hero h2 em{font-style:normal;display:block;background:linear-gradient(120deg,#1890FF,#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.case-all{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:26px;background:linear-gradient(135deg,#1890FF,#5b8ff9);color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 10px 26px rgba(24,144,255,.35);transition:.25s}
+.case-all:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(24,144,255,.45)}
+.case-all span{font-size:13px;transition:.25s}
+.case-all:hover span{transform:translate(3px,-3px)}
+/* 品牌字标墙：双向滚动，灰→亮 */
+.brand-wall{overflow:hidden;padding:40px 0 10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.bw-row{overflow:hidden;margin:14px 0}
+.bw-track{display:flex;align-items:center;gap:72px;width:max-content;padding-right:72px;animation:bwl 40s linear infinite}
+.bw-track.rev{animation-direction:reverse;animation-duration:50s}
+.bw-row:hover .bw-track{animation-play-state:paused}
+@keyframes bwl{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.bw-item{font-size:21px;font-weight:800;letter-spacing:4px;color:#b6c2d4;white-space:nowrap;cursor:pointer;transition:.28s;text-decoration:none}
+.bw-item:hover{color:var(--blue);text-shadow:0 4px 26px rgba(24,144,255,.4);transform:scale(1.07)}
+.bw-note{text-align:center;font-size:13px;color:var(--muted);margin:18px 0 46px;letter-spacing:1px}
+/* 案例卡网格 */
+.case-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.case-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.28s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.case-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:#bfe0ff}
+.case-card .tag{display:inline-block;width:-moz-fit-content;width:fit-content;font-size:11px;font-weight:700;color:var(--blue);background:#eaf3ff;padding:4px 10px;border-radius:10px;margin-bottom:14px}
+.case-card h3{font-size:21px;font-weight:900;line-height:1.5;margin-bottom:12px}
+.case-card h4{font-size:19px;font-weight:900;margin-bottom:8px}
+.case-card p{color:var(--muted);line-height:1.7;font-size:14px}
+.case-card .metrics{display:flex;gap:24px;margin-top:18px}
+.case-card .metrics b{font-size:22px;font-weight:900;color:var(--blue);display:block;line-height:1}
+.case-card .metrics span{font-size:11.5px;color:var(--muted);margin-top:4px;display:block}
+.case-card.statement{grid-column:span 3;padding:40px 38px;justify-content:center;background:linear-gradient(165deg,#ffffff,#f2f7ff)}
+.case-card.statement h3{font-size:24px}
+.cc-more{margin-top:22px;font-size:13.5px;font-weight:700;color:var(--blue)}
+.case-card.feat{grid-column:span 3;flex-direction:row}
+.case-card.feat .cc-body{flex:1;padding:32px;display:flex;flex-direction:column;justify-content:center}
+.case-card.feat .cc-img{width:42%;flex:none}
+.case-card.vcard{grid-column:span 2}
+.case-card.vcard .cc-img{aspect-ratio:16/10}
+.cc-img{position:relative;overflow:hidden}
+.cc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s}
+.case-card:hover .cc-img img{transform:scale(1.07)}
+.cases-foot{text-align:center;display:flex;gap:14px;justify-content:center;margin-top:44px}
+/* 导航搜索栏 */
+.nav-search{display:flex;align-items:center;gap:8px;background:#f4f6fa;border:1px solid var(--line);border-radius:22px;padding:9px 16px;width:235px;transition:.2s}
+.nav-search:focus-within{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(24,144,255,.12)}
+.nav-search svg{flex:none;color:#98a6bb}
+.nav-search input{border:none;outline:none;background:transparent;font-size:13.5px;width:100%;color:var(--ink)}
+.nav-search input::placeholder{color:#a5b1c2}
+/* 资源中心文字导航入口（搜索框与登录之间） */
+.nav-res{position:relative;font-size:15px;font-weight:600;color:#243246;padding:22px 6px;transition:.2s;white-space:nowrap}
+.nav-res::after{content:'';position:absolute;left:50%;bottom:14px;transform:translateX(-50%) scaleX(0);width:20px;height:2.5px;border-radius:2px;background:var(--blue);transition:.25s}
+.nav-res:hover{color:var(--blue)}
+.nav-res:hover::after{transform:translateX(-50%) scaleX(1)}
+@media(max-width:960px){
+  .nav-search{display:none}
+  .case-hero h2{font-size:30px;white-space:normal}
+  .op h2{font-size:30px !important;letter-spacing:0;white-space:normal}
+  .case-grid{grid-template-columns:1fr}
+  .case-card.statement,.case-card.feat,.case-card.vcard{grid-column:auto}
+  .case-card.feat{flex-direction:column}
+  .case-card.feat .cc-img{width:100%;aspect-ratio:16/10}
+}
+
+/* 家家总助悬浮 agent */
+.agent-fab{position:fixed;right:24px;bottom:24px;z-index:9999;display:flex;align-items:center;gap:10px;cursor:pointer}
+.agent-fab .tip{background:#fff;color:var(--ink);padding:8px 14px;border-radius:18px;box-shadow:0 8px 24px rgba(11,21,37,.12);font-size:13px;font-weight:600;border:1px solid var(--line);opacity:0;transform:translateX(8px);transition:.25s;pointer-events:none;white-space:nowrap}
+.agent-fab:hover .tip{opacity:1;transform:translateX(0)}
+.agent-fab .avatar{position:relative;width:64px;height:64px;border-radius:50%;background:#fff;box-shadow:0 10px 30px rgba(24,144,255,.30);padding:2px;border:2px solid #fff;transition:.25s}
+.agent-fab .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.agent-fab .avatar:hover{transform:scale(1.06)}
+.agent-fab .badge{position:absolute;right:-4px;top:-4px;background:linear-gradient(135deg,#fa8c16,#ff6a00);color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;border:2px solid #fff;letter-spacing:1px}
+.agent-fab .pulse{position:absolute;left:50%;top:50%;width:100%;height:100%;border-radius:50%;background:rgba(24,144,255,.25);transform:translate(-50%,-50%);animation:pulse 2s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{opacity:.6;transform:translate(-50%,-50%) scale(.9)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
+
+/* Agent 浮窗 */
+.agent-dialog{position:fixed;right:24px;bottom:104px;z-index:10000;width:380px;max-height:560px;background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(11,21,37,.20);border:1px solid var(--line);display:none;flex-direction:column;overflow:hidden;animation:slideUp .3s ease-out}
+.agent-dialog.open{display:flex}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.agent-head{background:linear-gradient(135deg,#1890FF,#0A66CC);color:#fff;padding:18px 20px;display:flex;align-items:center;gap:12px;position:relative}
+.agent-head .ava{width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.4);background:#fff;padding:2px}
+.agent-head .ava img{width:100%;height:100%;border-radius:50%;display:block;object-fit:cover}
+.agent-head .info h4{font-size:15px;font-weight:800;margin-bottom:2px}
+.agent-head .info p{font-size:12px;opacity:.85;display:flex;align-items:center;gap:5px}
+.agent-head .info p::before{content:"";width:7px;height:7px;border-radius:50%;background:#52c41a;box-shadow:0 0 0 3px rgba(82,196,26,.3)}
+.agent-head .close{position:absolute;right:14px;top:14px;background:rgba(255,255,255,.18);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;display:grid;place-items:center;line-height:1}
+.agent-head .close:hover{background:rgba(255,255,255,.32)}
+.agent-body{flex:1;padding:18px 20px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;background:#f8fafd}
+.agent-msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.6;animation:fadeIn .25s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.agent-msg.bot{background:#fff;color:var(--ink);border:1px solid var(--line);border-top-left-radius:4px;align-self:flex-start}
+.agent-msg.user{background:linear-gradient(135deg,#1890FF,#0A66CC);color:#fff;border-top-right-radius:4px;align-self:flex-end}
+.agent-quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.agent-quick button{padding:7px 12px;background:#fff;border:1px solid #bfe0ff;color:var(--blue);border-radius:14px;font-size:12.5px;cursor:pointer;transition:.2s}
+.agent-quick button:hover{background:var(--blue);color:#fff}
+.agent-input{padding:14px 20px;border-top:1px solid var(--line);background:#fff;display:flex;gap:8px}
+.agent-input input{flex:1;border:1px solid var(--line);border-radius:20px;padding:9px 14px;font-size:13px;outline:none;transition:.2s}
+.agent-input input:focus{border-color:var(--blue)}
+.agent-input button{padding:8px 16px;background:var(--blue);color:#fff;border:none;border-radius:18px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
+.agent-input button:hover{background:var(--blue-d)}
+.agent-input button:disabled{background:#cbd5e1;cursor:not-allowed}
+.agent-step{display:none}
+.agent-step.active{display:block}
+</style>
+</head>
+<body>
+
+<!-- 顶部主导航（假导航，与企业站一致，不绑定本页锚点） -->
+<header class="top" id="topbar">
+  <div class="wrap nav">
+    <a href="#home" class="brand"><span class="logo">家</span>汽车<b>之家</b></a>
+    <nav class="topnav nav-menu" id="topnavLinks">
+      <div class="nav-item">
+        <a href="#">活动 <span class="caret">▾</span></a>
+        <div class="mega-compact">
+          <a href="#">818 全球超级车展</a>
+          <a href="#">双 11 购车节</a>
+          <a href="#">新车上市直播</a>
+          <a href="#">线下车展预约</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">产品 <span class="caret">▾</span></a>
+        <div class="mega">
+          <div class="mega-inner">
+            <div class="mega-cats" id="prodMegaCats">
+              <div class="mcat on" data-cat="agent">智能体</div>
+              <div class="mcat" data-cat="saas">SaaS 产品</div>
+              <div class="mcat" data-cat="digital">数字化产品</div>
+            </div>
+            <div class="mega-body" id="prodMegaBody">
+              <div class="mega-group on" data-cat="agent">
+                <a class="mcard" href="lingji.html"><h5>灵机门店版 <span class="tag-new">NEW</span></h5><p>全链路数字员工平台（获客·转化·经营·售后）</p></a>
+                <a class="mcard" href="#"><h5>灵机厂商版</h5><p>反漏斗模式，赋能主机厂联动经销商</p></a>
+              </div>
+              <div class="mega-group" data-cat="saas">
+                <div class="mega-sub">沟通触达</div>
+                <a class="mcard" href="#"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入</p></a>
+                <a class="mcard" href="#"><h5>智慧外呼</h5><p>大模型自动外呼清洗线索</p></a>
+                <a class="mcard" href="#"><h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导，准确率 92%+</p></a>
+                <a class="mcard" href="#"><h5>企信通</h5><p>企业微信一体化客服与销售协作</p></a>
+                <div class="mega-sub">网销转化</div>
+                <a class="mcard" href="#"><h5>智慧网销</h5><p>全流程网销管理，邀约到店与漏斗分析</p></a>
+                <a class="mcard" href="#"><h5>云智选</h5><p>人机协同用户培育，提升线索质量</p></a>
+                <div class="mega-sub">内容与助手</div>
+                <a class="mcard" href="#"><h5>智慧助手</h5><p>网销/销售一站式智能助手</p></a>
+                <a class="mcard" href="#"><h5>AIGC 内容生产</h5><p>视频剪辑、图文生成等创作能力</p></a>
+                <div class="mega-sub">数据联通</div>
+                <a class="mcard" href="#"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合</p></a>
+              </div>
+              <div class="mega-group" data-cat="digital">
+                <a class="mcard" href="#"><h5>车智云</h5><p>主机厂智能数据决策平台，服务 80+ 主机厂</p></a>
+                <a class="mcard" href="#"><h5>AI 直播</h5><p>智能直播带货与内容营销</p></a>
+                <a class="mcard" href="#"><h5>AI 私信</h5><p>智能私信触达与潜客激活</p></a>
+                <a class="mcard" href="#"><h5>智效店铺</h5><p>门店运营数字化与人效提升</p></a>
+              </div>
+              <div class="mega-foot">
+                <a href="#">查看全部产品 ›</a>
+                <a href="#">预约产品演示 ›</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">解决方案 <span class="caret">▾</span></a>
+        <div class="mega">
+          <div class="mega-inner">
+            <div class="mega-cats" id="solMegaCats">
+              <div class="mcat on" data-cat="g">通用解决方案</div>
+              <div class="mcat" data-cat="i">行业解决方案</div>
+            </div>
+            <div class="mega-body" id="solMegaBody">
+              <div class="mega-group on" data-cat="g">
+                <a class="mcard" href="#lingji"><h5>AI Agent 数字员工 - 流程自动化</h5><p>为门店自动承接线索清洗、邀约、跟进等固定流程</p><div class="mchips"><span>灵机</span><span>仓颉大模型</span></div></a>
+                <a class="mcard" href="#products"><h5>行业大模型 - 汽车垂域认知</h5><p>为主机厂与经销商提供 AI 选车、图片诊断等垂域理解</p><div class="mchips"><span>仓颉大模型</span><span>家家小秘</span></div></a>
+                <a class="mcard" href="#products"><h5>智能营销 - 全域获客</h5><p>为经销商打通内容种草到线索承接的获客链路</p><div class="mchips"><span>智慧网销</span><span>AI 直播</span><span>AI 私信</span></div></a>
+                <a class="mcard" href="#products"><h5>智能触达 - AI 外呼与线索清洗</h5><p>为经销商 DCC 团队完成大模型外呼清洗与自动邀约</p><div class="mchips"><span>智慧外呼</span><span>智慧质检</span></div></a>
+                <a class="mcard" href="#products"><h5>数据智能 - 洞察决策</h5><p>为主机厂提供销量预测、竞争格局、营销漏斗决策</p><div class="mchips"><span>车智云</span><span>UVN-B 分群</span></div></a>
+                <a class="mcard" href="#products"><h5>线索管理 - 全链路协同</h5><p>为经销商集团打通跨系统线索流转与人机协同培育</p><div class="mchips"><span>智慧数联</span><span>企信通</span><span>云智选</span></div></a>
+              </div>
+              <div class="mega-group" data-cat="i">
+                <a class="mcard" href="#products"><h5>主机厂 - 数据决策与智能营销</h5><p>从销量预测、竞争分析到 AIGC 内容规模化生产</p><div class="mchips"><span>车智云</span><span>仓颉大模型</span><span>AIGC 内容生产</span></div><div class="mclient"><b>使用客户</b>80+ 主机厂品牌</div></a>
+                <a class="mcard" href="#lingji"><h5>经销商 4S - 全链路数智化门店</h5><p>获客、转化、经营全链路数智化一站式覆盖</p><div class="mchips"><span>灵机</span><span>智慧外呼</span><span>智慧网销</span><span>智效店铺</span></div><div class="mclient"><b>使用客户</b>2.5w+ 合作门店</div></a>
+                <a class="mcard" href="#products"><h5>二手车 - 线索承接与客户培育</h5><p>智能助手配合企微协同的线索承接与培育</p><div class="mchips"><span>智慧助手</span><span>企信通</span><span>云智选</span></div><div class="mclient"><b>使用客户</b>二手车经销商及经销商集团</div></a>
+                <a class="mcard" href="#lingji"><h5>新能源 - 直营门店获客与运营</h5><p>数字员工配合 AI 直播的门店获客与用户运营</p><div class="mchips"><span>灵机</span><span>AI 直播</span><span>智慧数联</span></div><div class="mclient"><b>使用客户</b>新能源品牌直营/代理门店体系</div></a>
+              </div>
+              <div class="mega-foot">
+                <a href="#">查看全部方案 ›</a>
+                <a href="#">获取方案资料 ›</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#cases">品牌案例 <span class="caret">▾</span></a>
+        <div class="mega">
+          <div class="mega-inner">
+            <div class="mega-cats" id="caseMegaCats">
+              <div class="mcat on" data-cat="all">全部案例</div>
+              <div class="mcat" data-cat="oem">主机厂品牌</div>
+              <div class="mcat" data-cat="ne">新能源品牌</div>
+              <div class="mcat" data-cat="dealer">经销商集团</div>
+            </div>
+            <div class="mega-body" id="caseMegaBody">
+              <div class="mega-group on" data-cat="all">
+                <a class="mcard" href="#case-byd"><span class="mtag">头部品牌</span><h5>比亚迪</h5><p>主机厂反漏斗联动经销商，800+ 门店同步执行，邀约效率提升 30%</p></a>
+                <a class="mcard" href="#case-audi"><span class="mtag">合资品牌</span><h5>一汽奥迪</h5><p>大模型外呼清洗线索池，话术质检优化外呼策略，接通率提升 30%</p></a>
+                <a class="mcard" href="#case-changan"><span class="mtag">自主品牌</span><h5>长安汽车</h5><p>店总经理 Agent 每日拆解目标、识别经营风险并推送改善建议</p></a>
+                <a class="mcard" href="#case-lixiang"><span class="mtag">新势力</span><h5>理想汽车</h5><p>直营门店智能线索培育，7×24 小时跟进留资用户，试驾到店转化提升</p></a>
+                <a class="mcard" href="#case-nio"><span class="mtag">新能源</span><h5>蔚来</h5><p>AI 助手嵌入销售顾问工作流，试驾邀约到售后关怀覆盖全生命周期</p></a>
+                <a class="mcard" href="#case-pangda"><span class="mtag">经销商集团</span><h5>庞大集团</h5><p>多门店数据聚合与统一经营看板，人效与线索转化双提升</p></a>
+              </div>
+              <div class="mega-group" data-cat="oem">
+                <a class="mcard" href="#case-byd"><span class="mtag">头部品牌</span><h5>比亚迪</h5><p>主机厂反漏斗联动经销商，800+ 门店同步执行，邀约效率提升 30%</p></a>
+                <a class="mcard" href="#case-audi"><span class="mtag">合资品牌</span><h5>一汽奥迪</h5><p>大模型外呼清洗线索池，话术质检优化外呼策略，接通率提升 30%</p></a>
+                <a class="mcard" href="#case-changan"><span class="mtag">自主品牌</span><h5>长安汽车</h5><p>店总经理 Agent 每日拆解目标、识别经营风险并推送改善建议</p></a>
+              </div>
+              <div class="mega-group" data-cat="ne">
+                <a class="mcard" href="#case-lixiang"><span class="mtag">新势力</span><h5>理想汽车</h5><p>直营门店智能线索培育，7×24 小时跟进留资用户，试驾到店转化提升</p></a>
+                <a class="mcard" href="#case-nio"><span class="mtag">新能源</span><h5>蔚来</h5><p>AI 助手嵌入销售顾问工作流，试驾邀约到售后关怀覆盖全生命周期</p></a>
+              </div>
+              <div class="mega-group" data-cat="dealer">
+                <a class="mcard" href="#case-pangda"><span class="mtag">经销商集团</span><h5>庞大集团</h5><p>多门店数据聚合与统一经营看板，人效与线索转化双提升</p></a>
+              </div>
+              <div class="mega-foot">
+                <a href="#cases">查看全部案例 ›</a>
+                <a href="#" onclick="openChat();return false;">预约案例分享 ›</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">关于我们 <span class="caret">▾</span></a>
+        <div class="mega-compact">
+          <a href="#">公司介绍</a>
+          <a href="#">投资者关系</a>
+          <a href="#">社会责任</a>
+          <a href="#">加入我们</a>
+          <a href="#">联系方式</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-cta">
+      <label class="nav-search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" placeholder="搜索产品 / 方案 / 案例" aria-label="站内搜索"></label>
+      <a href="resources.html" class="nav-res">资源中心</a>
+      <a href="#" class="btn btn-ghost" onclick="openChat();return false;">登录</a>
+      <a href="#" class="btn btn-primary" onclick="openChat();return false;">注册</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO 轮播 -->
+<section class="hero" id="home" style="padding:0">
+  <div class="slides" id="slides">
+    <div class="slide s1">
+      <div class="hero-content">
+        <div>
+          <span class="hero-eyebrow">2026 全新发布</span>
+          <h1>灵机平台上线</h1>
+          <p class="lead">Agent 级数字化平台，15+ 类 AI 数字员工开箱即用。</p>
+          <a href="#" class="btn btn-primary" onclick="openChat();return false;">立即咨询</a>
+        </div>
+        <div class="hero-visual" aria-label="店总经理与数字员工">
+          <div class="crew-net">
+            <div class="ring-dash"></div>
+            <div class="net">
+              <svg viewBox="0 0 540 480">
+                <line x1="270" y1="240" x2="270" y2="58" stroke="#9aa6b8" stroke-width="1.4" opacity=".75"/>
+                <line x1="270" y1="240" x2="422" y2="126" stroke="#9aa6b8" stroke-width="1.4" opacity=".75"/>
+                <line x1="270" y1="240" x2="460" y2="281" stroke="#9aa6b8" stroke-width="1.4" opacity=".6"/>
+                <line x1="270" y1="240" x2="354" y2="404" stroke="#9aa6b8" stroke-width="1.4" opacity=".6"/>
+                <line x1="270" y1="240" x2="186" y2="404" stroke="#9aa6b8" stroke-width="1.4" opacity=".75"/>
+                <line x1="270" y1="240" x2="80" y2="281" stroke="#9aa6b8" stroke-width="1.4" opacity=".6"/>
+                <line x1="270" y1="240" x2="118" y2="126" stroke="#9aa6b8" stroke-width="1.4" opacity=".75"/>
+              </svg>
+              <div class="dot c"><img src="./灵机素材/形象-店总经理@2x (1).png" alt="店总经理"></div>
+              <div class="dot d1"><img src="./灵机素材/形象-外呼清洗专员@2x (2).png" alt="外呼清洗专员"></div>
+              <div class="dot d2"><img src="./灵机素材/形象-外呼激活专员@2x (2).png" alt="外呼激活专员"></div>
+              <div class="dot d3"><img src="./灵机素材/形象-线索管理大师@2x (1).png" alt="线索管理大师"></div>
+              <div class="dot d4"><img src="./灵机素材/形象-置换邀约专员@2x (3).png" alt="置换邀约专员"></div>
+              <div class="dot d5"><img src="./灵机素材/形象-通话检核大师@2x (1).png" alt="通话检核大师"></div>
+              <div class="dot d6"><img src="./灵机素材/形象-客户分析专员@2x.png" alt="客户分析专员"></div>
+              <div class="dot d7"><img src="./灵机素材/形象-内容发布专员@2x.png" alt="内容发布专员"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide s2">
+      <div class="hero-content">
+        <div>
+          <span class="hero-eyebrow">一站式 SaaS</span>
+          <h1>汽车之家 SaaS 平台</h1>
+          <p class="lead">覆盖线索分发、CRM、邀约、网销、数据看板，全链路云端即用。</p>
+          <a href="#" class="btn btn-primary" onclick="openChat();return false;">立即咨询</a>
+        </div>
+        <div class="hero-visual" aria-label="线索转化漏斗">
+          <div class="funnel-wrap">
+            <svg viewBox="0 0 360 290">
+              <defs>
+                <linearGradient id="fgsurf" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#69b1ff"/>
+                  <stop offset="45%" stop-color="#1890FF"/>
+                  <stop offset="100%" stop-color="#0A66CC"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="130" cy="16" rx="100" ry="11" fill="#8ec5ff"/>
+              <path d="M30 16 C40 95 72 185 115 274 L145 274 C188 185 220 95 230 16 Z" fill="url(#fgsurf)"/>
+              <path d="M40 66 C90 60 170 60 214 66" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
+              <path d="M60 118 C100 112 170 112 205 118" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <path d="M87 170 C110 165 165 165 194 170" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <path d="M107 222 C118 219 145 219 157 222" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <text x="130" y="44" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">450,343</text>
+              <text x="130" y="96" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">446,982</text>
+              <text x="130" y="148" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">239,861</text>
+              <text x="130" y="200" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">66,933</text>
+              <text x="130" y="252" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">4,106</text>
+              <text x="248" y="22" fill="#46566f" font-size="12" font-weight="800">新增线索</text>
+              <text x="312" y="22" fill="#1890FF" font-size="11" font-weight="800">100%</text>
+              <text x="248" y="72" fill="#46566f" font-size="12" font-weight="800">线索跟进</text>
+              <text x="312" y="72" fill="#1890FF" font-size="11" font-weight="800">99.3%</text>
+              <text x="248" y="124" fill="#46566f" font-size="12" font-weight="800">线索接通</text>
+              <text x="312" y="124" fill="#1890FF" font-size="11" font-weight="800">67.7%</text>
+              <text x="248" y="176" fill="#46566f" font-size="12" font-weight="800">有效通话</text>
+              <text x="312" y="176" fill="#1890FF" font-size="11" font-weight="800">28%</text>
+              <text x="248" y="228" fill="#46566f" font-size="12" font-weight="800">邀约到店</text>
+              <text x="312" y="228" fill="#54637d" font-size="11" font-weight="800">—</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide s3">
+      <div class="hero-content">
+        <div>
+          <span class="hero-eyebrow">汽车之家购车平台</span>
+          <h1>看车 · 买车 · 用车 · 换车</h1>
+          <p class="lead">省时省心省钱，超级补贴、真实返现、0 首付，一站搞定。</p>
+          <a href="#" class="btn btn-primary" onclick="openChat();return false;">去看看</a>
+        </div>
+        <div class="hero-visual" aria-label="汽车之家购车平台">
+          <div class="real">
+            <div class="rhead"><span class="dot"></span><b>汽车之家</b><span class="nav">购车平台</span></div>
+            <div class="tabs"><span class="on">新能源</span><span>轿车</span><span>SUV</span><span>MPV</span><span>二手车</span></div>
+            <div class="cards">
+              <div class="car">
+                <div class="thumb"><svg viewBox="0 0 64 28"><path d="M6 20 L14 20 L18 12 L40 12 L46 20 L58 20 L58 23 L6 23 Z" fill="#fff" opacity=".95"/><circle cx="18" cy="23" r="3.2" fill="#1890FF"/><circle cx="46" cy="23" r="3.2" fill="#1890FF"/></svg></div>
+                <div class="info"><b>传祺 M8</b><div class="price">¥17.98 万起<small> 指导价</small></div><span class="badge">500 元现金补贴</span><div class="sub">0 首付 · 真实返现</div></div>
+              </div>
+              <div class="car">
+                <div class="thumb"><svg viewBox="0 0 64 28"><path d="M6 20 L14 20 L18 12 L40 12 L46 20 L58 20 L58 23 L6 23 Z" fill="#fff" opacity=".95"/><circle cx="18" cy="23" r="3.2" fill="#1890FF"/><circle cx="46" cy="23" r="3.2" fill="#1890FF"/></svg></div>
+                <div class="info"><b>岚图知音</b><div class="price">¥19.69 万起<small> 指导价</small></div><span class="badge">0 首付起</span><div class="sub">全网补贴攻略</div></div>
+              </div>
+              <div class="car">
+                <div class="thumb"><svg viewBox="0 0 64 28"><path d="M6 20 L14 20 L18 12 L40 12 L46 20 L58 20 L58 23 L6 23 Z" fill="#fff" opacity=".95"/><circle cx="18" cy="23" r="3.2" fill="#1890FF"/><circle cx="46" cy="23" r="3.2" fill="#1890FF"/></svg></div>
+                <div class="info"><b>驱逐舰 05</b><div class="price">¥7.98 万起<small> 指导价</small></div><span class="badge">至高补 2 万</span><div class="sub">限时优惠</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="hero-arrow prev" id="prevSlide" aria-label="上一张">‹</button>
+  <button class="hero-arrow next" id="nextSlide" aria-label="下一张">›</button>
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- Hero 下方板块分类导航（常驻横铺条，仅作板块指示，单页靠滚动下翻） -->
+<nav class="subnav" id="subnav">
+  <div class="wrap subnav-inner">
+    <a class="sub-link">
+      <span class="sub-icon" style="background:#e8f2ff;color:#0a66cc"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2a2 2 0 0 1 2 2h-4a2 2 0 0 1 2-2zm5 4H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-5 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></span>
+      <span>Autoclaw · 灵机平台</span>
+    </a>
+    <a class="sub-link">
+      <span class="sub-icon" style="background:#f0e8ff;color:#722ed1"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C8 2 5 5.5 5 9.5c0 2.5 1.2 4.7 3 6v2.5c0 .8.7 1.5 1.5 1.5h5c.8 0 1.5-.7 1.5-1.5V15.5c1.8-1.3 3-3.5 3-6C19 5.5 16 2 12 2zm-1 14.5v-1.8l-2.2-1.6c-.4-.3-.6-.8-.4-1.3.2-.5.7-.8 1.2-.7l2.4.6 2.4-.6c.5-.1 1 .2 1.2.7.2.5 0 1-.4 1.3L13 14.7v1.8h-2z"/></svg></span>
+      <span>仓颉大模型</span>
+    </a>
+    <a class="sub-link">
+      <span class="sub-icon" style="background:#eaf3ff;color:#0a66cc"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm10 16h6v-8h-6v8zm2-6h2v4h-2v-4zM3 21h8v-6H3v6zm2-4h4v2H5v-2zm10-10h6V3h-6v4zm2-2h2v2h-2V5z"/></svg></span>
+      <span>车智云</span>
+    </a>
+  </div>
+</nav>
+
+<!-- 板块导航结束，进正文 -->
+<section id="lingji" class="lingjisec">
+  <div class="wrap">
+    <div class="op reveal">
+      <h2>灵机数字员工<br><em>让每家门店都有 AI 生产力</em></h2>
+      <p>开箱即用的汽车营销智能体，覆盖线索获取到售后保客全流程</p>
+    </div>
+
+    <div class="lj-demo reveal">
+      <div class="lj-demo-l">
+        <h3>一家门店<br>一整支数字员工团队</h3>
+        <p class="lead">从经营管理到线索转化，<br>灵机把汽车营销全流程交给 AI 数字员工。</p>
+        <div class="lj-list">
+          <div class="lj-item">
+            <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg></span>
+            <div><b>门店经营管理</b><p>家家总助拆解经营目标，调度多 Agent 协同执行</p></div>
+          </div>
+          <div class="lj-item">
+            <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><b>线索激活与触达</b><p>外呼激活、线索清洗、置换邀约，全流程自动跟进</p></div>
+          </div>
+          <div class="lj-item">
+            <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <div><b>15+ 数字员工</b><p>覆盖获客、转化、经营、售后，开箱即用</p></div>
+          </div>
+          <div class="lj-item">
+            <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <div><b>预置任务 + 自定义任务</b><p>按门店业务灵活编排，随需调整随时生效</p></div>
+          </div>
+        </div>
+        <div class="ctas"><a class="btn btn-primary" href="#" onclick="openChat();return false;">预约演示</a></div>
+      </div>
+      <div class="lj-demo-r">
+        <video src="灵机素材/lingji-demo.mp4" poster="灵机素材/lingji-demo-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+    </div>
+
+    <div class="footbtn">
+      <a href="#" onclick="return false;">查看全部数字员工</a>
+    </div>
+  </div>
+</section>
+
+<!-- 产品中心：强首屏 + 分类导航 + 产品矩阵 -->
+<section id="products" class="prodsec">
+  <div class="phero">
+    <h1>汽车之家企业产品体系</h1>
+    <p>面向汽车产业客户，提供覆盖智能服务、业务协同与经营增长的数字化产品能力。</p>
+    <a class="ph-cta" href="#">查看全部产品 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+  </div>
+  <div class="pm-wrap">
+    <div class="pm-cats" id="prodTabs">
+      <button class="active" data-tab="featured">精选产品</button>
+      <button data-tab="maas">MaaS 产品</button>
+      <button data-tab="saas">SaaS 产品</button>
+    </div>
+    <div class="pm-panels">
+
+      <!-- 精选产品 -->
+      <div class="pm-panel active" data-tab="featured">
+        <div class="pm-box">
+          <div class="pm-feat">
+            <a class="pm-card" href="lingji.html">
+              <span class="pm-tag">MaaS · AGENT 平台</span>
+              <h3>灵机门店版</h3>
+              <p>面向经销商的 Multi-Agent 平台，预置 15+ 类 AI 数字员工。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+            <a class="pm-card" href="#">
+              <span class="pm-tag">数据决策</span>
+              <h3>车智云</h3>
+              <p>主机厂智能数据决策平台：销量预测、竞争格局、营销漏斗、产品规划。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+            <a class="pm-card" href="#">
+              <span class="pm-tag">线索触达</span>
+              <h3>智慧外呼</h3>
+              <p>大模型自动外呼清洗与邀约线索，提取有效意向。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+          </div>
+          <div class="pm-list">
+            <a class="pm-item" href="#"><h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导。</p></a>
+            <a class="pm-item" href="#"><h5>智慧网销</h5><p>全流程网销管理与邀约到店漏斗。</p></a>
+            <a class="pm-item" href="#"><h5>AI 直播</h5><p>智能直播带货与内容营销。</p></a>
+            <a class="pm-item" href="#"><h5>智效店铺</h5><p>门店运营数字化与人效提升。</p></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MaaS 产品 -->
+      <div class="pm-panel" data-tab="maas">
+        <div class="pm-box">
+          <div class="pm-feat">
+            <a class="pm-card" href="lingji.html">
+              <span class="pm-tag">MaaS · AGENT 平台</span>
+              <h3>灵机门店版</h3>
+              <p>面向经销商的 Multi-Agent 平台，预置 15+ 类 AI 数字员工。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+            <a class="pm-card" href="#">
+              <span class="pm-tag">MaaS · 主机厂</span>
+              <h3>灵机厂商版</h3>
+              <p>反漏斗模式，赋能主机厂联动经销商高效转化。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+          </div>
+          <div class="pm-list">
+            <a class="pm-item" href="#"><h5>家家总助 Agent</h5><p>店总经理智能助手，目标拆解与经营诊断。</p></a>
+            <a class="pm-item" href="#"><h5>数字员工全景</h5><p>外呼、客服、质检、内容等 15+ 角色一览。</p></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SaaS 产品 -->
+      <div class="pm-panel" data-tab="saas">
+        <div class="pm-box">
+          <div class="pm-feat">
+            <a class="pm-card" href="#">
+              <span class="pm-tag">线索触达</span>
+              <h3>智慧外呼</h3>
+              <p>大模型自动外呼清洗与邀约线索，提取有效意向。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+            <a class="pm-card" href="#">
+              <span class="pm-tag">质量保障</span>
+              <h3>智慧质检</h3>
+              <p>外呼通话全量 AI 质检与话术辅导。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+            <a class="pm-card" href="#">
+              <span class="pm-tag">网销管理</span>
+              <h3>智慧网销</h3>
+              <p>全流程网销管理与邀约到店漏斗。</p>
+              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
+            </a>
+          </div>
+          <div class="pm-list">
+            <a class="pm-item" href="#"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入。</p></a>
+            <a class="pm-item" href="#"><h5>企信通</h5><p>企业微信一体化客服与销售协作。</p></a>
+            <a class="pm-item" href="#"><h5>云智选</h5><p>人机协同用户培育与转化。</p></a>
+            <a class="pm-item" href="#"><h5>智慧助手</h5><p>网销/销售一站式智能助手。</p></a>
+            <a class="pm-item" href="#"><h5>AIGC 平台</h5><p>视频剪辑、图文生成等创作能力。</p></a>
+            <a class="pm-item" href="#"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合。</p></a>
+            <a class="pm-item" href="#"><h5>车智云</h5><p>主机厂智能数据决策平台。</p></a>
+            <a class="pm-item" href="#"><h5>AI 直播</h5><p>智能直播带货与内容营销。</p></a>
+            <a class="pm-item" href="#"><h5>AI 私信</h5><p>智能私信触达与潜客激活。</p></a>
+            <a class="pm-item" href="#"><h5>智效店铺</h5><p>门店运营数字化与人效提升。</p></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 解决方案 -->
+<section id="solutions" class="solshowsec">
+  <div class="wrap">
+    <div class="op reveal">
+      <h2>行业解决方案</h2>
+      <p>基于汽车之家产品矩阵，按能力域与行业场景两条线组织</p>
+    </div>
+  </div>
+
+  <div class="sol-tabs reveal">
+    <button class="sol-tab on" data-panel="g">通用解决方案</button>
+    <button class="sol-tab" data-panel="i">行业解决方案</button>
+  </div>
+
+  <!-- 通用解决方案 -->
+  <div class="sol-panel on" data-panel="g">
+    <div class="sol-hero">
+      <div class="sol-hero-l">
+        <span class="sol-tag">主推 · 仓颉大模型</span>
+        <h3>仓颉大模型：汽车垂域认知引擎</h3>
+        <p>汽车之家自研大模型，深耕汽车垂域认知——支撑 AI 选车、图片诊断、智能问答等核心场景，让 AI 真正读懂车、读懂用户。</p>
+        <a class="btn btn-primary" href="#" onclick="openChat();return false;">立即咨询</a>
+      </div>
+      <div class="sol-hero-r"><img src="灵机素材/sol-hero-general.png" alt="灵机数字员工蓝图示意"></div>
+    </div>
+    <div class="sol-grid">
+      <a class="sol-cell" href="#cases">
+        <h4>行业大模型 - 汽车垂域认知</h4>
+        <p>为主机厂与经销商提供 AI 选车、图片诊断等垂域理解能力，依托自研仓颉大模型。</p>
+        <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="sol-cell" href="#cases">
+        <h4>智能营销 - 全域获客</h4>
+        <p>为经销商打通内容种草到线索承接的全域获客链路，依托智慧网销与 AI 直播、AI 私信。</p>
+        <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="sol-cell" href="#cases">
+        <h4>智能触达 - AI 外呼与线索清洗</h4>
+        <p>为经销商 DCC 团队完成大模型外呼清洗与自动邀约，配套智慧质检全量通话质检。</p>
+        <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="sol-cell" href="#cases">
+        <h4>数据智能 - 洞察决策</h4>
+        <p>为主机厂提供销量预测、竞争格局、营销漏斗等数据决策支持，服务 80+ 主机厂。</p>
+        <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+        <a class="sol-cell" href="#cases">
+          <h4>线索管理 - 全链路协同</h4>
+          <p>为经销商集团打通跨系统线索流转与人机协同培育，依托智慧数联与企信通。</p>
+          <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sol-cell sol-allcard" href="#" onclick="openChat();return false;">
+          <h4>全部解决方案</h4>
+          <p>查看汽车之家面向汽车行业全场景的解决方案全集。</p>
+          <span class="sol-arrow"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+  <!-- 行业解决方案 -->
+  <div class="sol-panel" data-panel="i">
+    <div class="sol-hero">
+      <div class="sol-hero-l">
+        <span class="sol-tag">主推 · 灵机门店版</span>
+        <h3>灵机门店版：经销商全链路数智化</h3>
+        <p>2.5w+ 合作门店共同验证——从 AI 外呼清洗到店总经营助手，获客、转化、经营一站式覆盖，邀约效率提升 30%。</p>
+        <a class="btn btn-primary" href="#" onclick="openChat();return false;">立即咨询</a>
+      </div>
+      <div class="sol-hero-r"><img src="灵机素材/sol-hero-industry.png" alt="经销商 4S 数智化门店蓝图示意"></div>
+    </div>
+    <div class="sol-grid">
+      <a class="sol-cell" href="#cases">
+        <h4>主机厂 - 数据决策与智能营销</h4>
+        <p>从销量预测、竞争分析到 AIGC 内容规模化生产，服务 80+ 主机厂品牌。</p>
+        <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="sol-cell" href="#cases">
+        <h4>二手车 - 线索承接与客户培育</h4>
+        <p>智能助手配合企微协同经营，覆盖二手车经销商及经销商集团。</p>
+        <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="sol-cell" href="#cases">
+        <h4>新能源 - 直营门店获客与运营</h4>
+        <p>数字员工配合 AI 直播获客，服务新能源品牌直营/代理门店体系。</p>
+        <span class="sol-more">查看案例 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="sol-cell sol-allcard" href="#" onclick="openChat();return false;">
+        <h4>全部解决方案</h4>
+        <p>查看汽车之家面向汽车行业全场景的解决方案全集。</p>
+        <span class="sol-arrow"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- 品牌案例 -->
+<section id="cases" class="casessec">
+  <div class="wrap case-hero reveal">
+    <h2>AI 驱动汽车产业增长<br><em>与汽车之家一起数智进化</em></h2>
+    <a class="case-all" href="#" onclick="openChat();return false;">全部客户案例 <span>↗</span></a>
+  </div>
+  <div class="brand-wall reveal" aria-label="合作品牌">
+    <div class="bw-row"><div class="bw-track">
+      <a class="bw-item" href="#case-byd">比亚迪</a>
+      <a class="bw-item" href="#case-audi">一汽奥迪</a>
+      <a class="bw-item" href="#case-lixiang">理想汽车</a>
+      <a class="bw-item" href="#case-changan">长安汽车</a>
+      <a class="bw-item" href="#case-nio">蔚来</a>
+      <a class="bw-item" href="#case-pangda">庞大集团</a>
+      <a class="bw-item" href="#case-byd">比亚迪</a>
+      <a class="bw-item" href="#case-audi">一汽奥迪</a>
+      <a class="bw-item" href="#case-lixiang">理想汽车</a>
+      <a class="bw-item" href="#case-changan">长安汽车</a>
+      <a class="bw-item" href="#case-nio">蔚来</a>
+      <a class="bw-item" href="#case-pangda">庞大集团</a>
+    </div></div>
+    <div class="bw-row"><div class="bw-track rev">
+      <a class="bw-item" href="#case-changan">长安汽车</a>
+      <a class="bw-item" href="#case-nio">蔚来</a>
+      <a class="bw-item" href="#case-pangda">庞大集团</a>
+      <a class="bw-item" href="#case-byd">比亚迪</a>
+      <a class="bw-item" href="#case-audi">一汽奥迪</a>
+      <a class="bw-item" href="#case-lixiang">理想汽车</a>
+      <a class="bw-item" href="#case-changan">长安汽车</a>
+      <a class="bw-item" href="#case-nio">蔚来</a>
+      <a class="bw-item" href="#case-pangda">庞大集团</a>
+      <a class="bw-item" href="#case-byd">比亚迪</a>
+      <a class="bw-item" href="#case-audi">一汽奥迪</a>
+      <a class="bw-item" href="#case-lixiang">理想汽车</a>
+    </div></div>
+  </div>
+  <p class="bw-note">已服务 100+ 主机厂 · 25,000+ 经销商 · 50,000+ 二手车商</p>
+  <div class="wrap">
+    <div class="case-grid reveal">
+
+      <a class="case-card statement" href="#" onclick="openChat();return false;">
+        <span class="tag">产业实践</span>
+        <h3>汽车之家以 AI 数字员工重构汽车流通链路，让 100+ 主机厂与 25,000+ 经销商在同一个数智底座上持续增长。</h3>
+        <span class="cc-more">了解产业实践 →</span>
+      </a>
+
+      <a class="case-card feat" href="#" id="case-byd">
+        <div class="cc-body">
+          <span class="tag">头部品牌</span>
+          <h4>比亚迪</h4>
+          <p>主机厂反漏斗联动经销商，总部一键下发策略与任务，800+ 门店同步执行，AI 数字员工完成线索清洗、邀约与跟进，形成「策略-执行-反馈」闭环。</p>
+          <div class="metrics"><div><b>800+</b><span>覆盖经销商</span></div><div><b>30%</b><span>邀约效率提升</span></div></div>
+        </div>
+        <div class="cc-img"><img src="./灵机素材/case-byd.png" alt="比亚迪品牌案例" loading="lazy"></div>
+      </a>
+
+      <a class="case-card vcard" href="#" id="case-lixiang">
+        <div class="cc-img"><img src="./灵机素材/case-lixiang.png" alt="理想汽车案例" loading="lazy"></div>
+        <div class="cc-body" style="padding:28px">
+          <span class="tag">新势力</span>
+          <h4>理想汽车</h4>
+          <p>直营门店智能线索培育，7×24 小时跟进留资用户，试驾到店转化显著提升。</p>
+          <div class="metrics"><div><b>24h</b><span>智能跟进</span></div><div><b>2x</b><span>线索活跃度</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card vcard" href="#" id="case-audi">
+        <div class="cc-img"><img src="./灵机素材/case-audi.png" alt="一汽奥迪案例" loading="lazy"></div>
+        <div class="cc-body" style="padding:28px">
+          <span class="tag">合资品牌</span>
+          <h4>一汽奥迪</h4>
+          <p>大模型外呼清洗线索池，话术质检持续优化外呼策略，覆盖全国 200+ 经销商。</p>
+          <div class="metrics"><div><b>+30%</b><span>接通率提升</span></div><div><b>+20%</b><span>有效率提升</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card vcard" href="#" id="case-changan">
+        <div class="cc-img"><img src="./灵机素材/case-changan.png" alt="长安汽车案例" loading="lazy"></div>
+        <div class="cc-body" style="padding:28px">
+          <span class="tag">自主品牌</span>
+          <h4>长安汽车</h4>
+          <p>店总经理 Agent 每日自动拆解销售目标、识别经营风险并推送改善建议。</p>
+          <div class="metrics"><div><b>15+</b><span>数字员工角色</span></div><div><b>显著</b><span>运营效率提升</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card feat" href="#" id="case-pangda">
+        <div class="cc-img"><img src="./灵机素材/case-pangda.png" alt="庞大集团案例" loading="lazy"></div>
+        <div class="cc-body">
+          <span class="tag">区域集团</span>
+          <h4>庞大集团</h4>
+          <p>多门店数据聚合、统一经营看板与跨店资源调配，集团层面实现人效与线索转化双提升。</p>
+          <div class="metrics"><div><b>多店</b><span>统一经营看板</span></div><div><b>双增长</b><span>人效 &amp; 转化</span></div></div>
+        </div>
+      </a>
+
+      <a class="case-card feat" href="#" id="case-nio">
+        <div class="cc-body">
+          <span class="tag">新能源</span>
+          <h4>蔚来汽车</h4>
+          <p>AI 助手嵌入销售顾问工作流，自动完成试驾邀约、置换评估与售后关怀，覆盖用户全生命周期。</p>
+          <div class="metrics"><div><b>全链路</b><span>用户生命周期</span></div><div><b>高效</b><span>顾问人效释放</span></div></div>
+        </div>
+        <div class="cc-img"><img src="./灵机素材/case-nio.png" alt="蔚来汽车案例" loading="lazy"></div>
+      </a>
+
+    </div>
+    <div class="cases-foot">
+      <a class="btn btn-primary" href="#" onclick="openChat();return false;">查看更多案例</a>
+      <a class="btn btn-ghost" href="#" onclick="openChat();return false;">预约案例分享</a>
+    </div>
+  </div>
+</section>
+
+<!-- 资料中心 CTA -->
+<!-- FAQ -->
+<!-- 页脚 -->
+<footer id="about">
+  <div class="wrap">
+      <div class="foot">
+      <div class="col">
+        <div class="brand2"><span class="logo">家</span>汽车之家</div>
+        <p class="desc">中国领先的汽车互联网平台，以数据与 AI 赋能汽车经销商全链路数智化增长。</p>
+      </div>
+      <div class="col"><h5>产品</h5><a href="#lingji">Autoclaw · 灵机平台</a><a href="#lingji">仓颉大模型</a><a href="#" onclick="openChat();return false;">立即咨询</a></div>
+      <div class="col"><h5>解决方案</h5><a href="#lingji">智能获客</a><a href="#lingji">线索转化</a><a href="#lingji">门店经营</a><a href="#lingji">售后诊断</a></div>
+      <div class="col"><h5>关于我们</h5><a href="#" onclick="openChat();return false;">公司介绍</a><a href="#" onclick="openChat();return false;">投资者关系</a><a href="#" onclick="openChat();return false;">加入我们</a><a href="#" onclick="openChat();return false;">联系方式</a></div>
+    </div>
+    <div class="foot-bottom">© 2026 汽车之家 autohome.com.cn · 灵机 AI 数字员工平台 · 本页为概念原型 Demo</div>
+  </div>
+</footer>
+
+<!-- 家家总助悬浮 agent：已按企业级视觉规范移除悬浮头像入口，对话窗口保留（导航登录/注册仍可唤起） -->
+
+<div class="agent-dialog" id="agentDialog">
+  <div class="agent-head">
+    <div class="ava"><img src="灵机素材/形象-店总经理@2x.png" alt="家家总助"></div>
+    <div class="info">
+      <h4>家家总助</h4>
+      <p>在线 · 立即响应</p>
+    </div>
+    <button class="close" id="agentClose" aria-label="关闭">×</button>
+  </div>
+  <div class="agent-body" id="agentBody">
+
+    <div class="agent-step active" data-step="welcome">
+      <div class="agent-msg bot">您好 👋 我是汽车之家灵机平台的家家总助。请描述您的需求，我会为您匹配对应的数字员工团队。</div>
+      <div class="agent-quick">
+        <button data-q="我想了解灵机门店版">了解灵机门店版</button>
+        <button data-q="怎么接入 AI 数字员工">接入 AI 数字员工</button>
+        <button data-q="申请免费试用">申请免费试用</button>
+        <button data-q="预约产品演示">预约产品演示</button>
+      </div>
+    </div>
+
+    <div class="agent-step" data-step="reply">
+      <div class="agent-msg bot" id="agentReply">正在为您匹配…</div>
+      <div class="agent-msg bot">为您匹配到以下数字员工团队，请留下您的手机号，专属顾问 1 个工作日内联系您。</div>
+      <div class="agent-quick">
+        <button data-go="contact">留下手机号</button>
+        <button data-go="done">稍后再说</button>
+      </div>
+    </div>
+
+    <div class="agent-step" data-step="contact">
+      <div class="agent-msg bot">请留下您的手机号，我们将在 1 个工作日内联系您。</div>
+      <div class="agent-input" style="padding:0;border-top:none;background:transparent">
+        <input type="tel" id="agentPhone" placeholder="请输入手机号" maxlength="11">
+        <button id="agentSubmit">提交</button>
+      </div>
+    </div>
+
+    <div class="agent-step" data-step="done">
+      <div class="agent-msg bot">感谢您的咨询！我们已收到您的需求，将在 1 个工作日内联系您 🎉</div>
+      <div class="agent-quick">
+        <button data-go="welcome">继续咨询</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="agent-input">
+    <input type="text" id="agentInput" placeholder="输入您的问题…">
+    <button id="agentSend">➤</button>
+  </div>
+</div>
+
+<script>
+// ---- 顶部栏滚动态 ----
+const topbar=document.getElementById('topbar');
+function onScroll(){
+  topbar.classList.toggle('scrolled',window.scrollY>20);
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// ---- HERO 轮播 ----
+const slides=document.getElementById('slides');
+const total=slides.children.length;
+const dots=document.getElementById('heroDots');
+let cur=0,timer=null;
+for(let i=0;i<total;i++){const b=document.createElement('button');b.dataset.i=i;if(i===0)b.classList.add('active');b.onclick=()=>go(i);dots.appendChild(b);}
+function go(i){cur=(i+total)%total;slides.style.transform=`translateX(-${cur*100}%)`;[...dots.children].forEach((d,k)=>d.classList.toggle('active',k===cur));restart();}
+function next(){go(cur+1)}function prev(){go(cur-1)}
+function restart(){clearInterval(timer);timer=setInterval(next,6000);}
+document.getElementById('nextSlide').onclick=next;
+document.getElementById('prevSlide').onclick=prev;
+restart();
+const heroEl=document.querySelector('.hero');
+if(heroEl){
+  heroEl.addEventListener('mouseenter',()=>clearInterval(timer));
+  heroEl.addEventListener('mouseleave',restart);
+}
+
+// 顶部假导航：仅门面，不跳转本页
+document.querySelectorAll('#topnavLinks a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+
+// 顶部「产品」mega：分类切换
+const prodMegaCats=document.getElementById('prodMegaCats');
+if(prodMegaCats){
+  prodMegaCats.addEventListener('click',e=>{
+    const c=e.target.closest('.mcat'); if(!c)return;
+    const cat=c.dataset.cat;
+    prodMegaCats.querySelectorAll('.mcat').forEach(x=>x.classList.toggle('on',x===c));
+    document.querySelectorAll('#prodMegaBody .mega-group').forEach(g=>g.classList.toggle('on',g.dataset.cat===cat));
+  });
+}
+
+// 顶部「解决方案」mega：分类切换
+const solMegaCats=document.getElementById('solMegaCats');
+if(solMegaCats){
+  solMegaCats.addEventListener('click',e=>{
+    const c=e.target.closest('.mcat'); if(!c)return;
+    const cat=c.dataset.cat;
+    solMegaCats.querySelectorAll('.mcat').forEach(x=>x.classList.toggle('on',x===c));
+    document.querySelectorAll('#solMegaBody .mega-group').forEach(g=>g.classList.toggle('on',g.dataset.cat===cat));
+  });
+}
+
+// 顶部「品牌案例」mega：分类切换
+const caseMegaCats=document.getElementById('caseMegaCats');
+if(caseMegaCats){
+  caseMegaCats.addEventListener('click',e=>{
+    const c=e.target.closest('.mcat'); if(!c)return;
+    const cat=c.dataset.cat;
+    caseMegaCats.querySelectorAll('.mcat').forEach(x=>x.classList.toggle('on',x===c));
+    document.querySelectorAll('#caseMegaBody .mega-group').forEach(g=>g.classList.toggle('on',g.dataset.cat===cat));
+  });
+}
+
+// ---- 滚动入场 ----
+const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal,.prod').forEach(el=>io.observe(el));
+
+// ---- 家家总助悬浮 agent ----
+const agentFab=document.getElementById('agentFab'),
+      agentDialog=document.getElementById('agentDialog'),
+      agentBody=document.getElementById('agentBody'),
+      agentInput=document.getElementById('agentInput'),
+      agentSend=document.getElementById('agentSend'),
+      agentClose=document.getElementById('agentClose'),
+      agentPhone=document.getElementById('agentPhone'),
+      agentSubmit=document.getElementById('agentSubmit'),
+      agentReply=document.getElementById('agentReply');
+
+function showStep(name){
+  agentBody.querySelectorAll('.agent-step').forEach(s=>s.classList.toggle('active',s.dataset.step===name));
+  agentBody.scrollTop=agentBody.scrollHeight;
+}
+
+// 简单关键词回复映射（模拟 agent 分析）
+const REPLIES={
+  '我想了解灵机门店版':'灵机门店版是面向经销商的 Multi-Agent 平台，预置 15+ 类 AI 数字员工，覆盖获客、转化、经营、售后全链路。',
+  '怎么接入 AI 数字员工':'接入流程：①免费试用申请 → ②专属顾问评估门店 → ④2 周天内完成部署 → ⑤上岗陪跑，最快 1 周见效。',
+  '申请免费试用':'已为您准备免费试用通道，留个手机号，专属顾问联系您开通体验账号。',
+  '预约产品演示':'已记录您的演示预约意向，留个手机号 + 城市，专属顾问 1 个工作日内联系您安排。'
+};
+
+if(agentFab){agentFab.onclick=()=>agentDialog.classList.toggle('open');}
+agentClose.onclick=()=>agentDialog.classList.remove('open');
+window.openChat=()=>agentDialog.classList.add('open');
+
+// 快捷问题按钮
+agentBody.querySelectorAll('.agent-quick button[data-q]').forEach(b=>{
+  b.onclick=()=>{
+    const q=b.dataset.q;
+    agentReply.textContent=REPLIES[q]||'已收到您的需求。';
+    showStep('reply');
+  };
+});
+agentBody.querySelectorAll('.agent-quick button[data-go]').forEach(b=>{
+  b.onclick=()=>{
+    const go=b.dataset.go;
+    if(go==='welcome') showStep('welcome');
+    else if(go==='contact') showStep('contact');
+    else if(go==='done') showStep('done');
+  };
+});
+
+// 输入框 + 发送
+agentSend.onclick=()=>{
+  const v=agentInput.value.trim();
+  if(!v)return;
+  agentInput.value='';
+  agentReply.textContent='收到："'+v.slice(0,30)+(v.length>30?'…':'')+'"\n\n正在为您匹配最合适的数字员工团队...';
+  showStep('reply');
+};
+agentInput.addEventListener('keydown',e=>{if(e.key==='Enter')agentSend.click();});
+
+// 提交手机号
+agentSubmit.onclick=()=>{
+  const phone=(agentPhone.value||'').trim();
+  if(!/^1[3-9]\d{9}$/.test(phone)){
+    alert('请输入正确的 11 位手机号');
+    return;
+  }
+  console.log('[家家总助] 收到手机号:',phone);
+  showStep('done');
+};
+
+// ---- 解决方案滑动 ----
+(function(){
+  const track=document.getElementById('solutionTrack');
+  if(!track)return;
+  const prev=document.getElementById('solutionPrev'),next=document.getElementById('solutionNext');
+  const gap=20;let cardW=0,visible=4,idx=0,maxIdx=0;
+  function calc(){
+    const wrapW=track.parentElement.clientWidth;
+    if(wrapW<=480){visible=1.2}
+    else if(wrapW<=768){visible=2}
+    else if(wrapW<=1100){visible=3}
+    else{visible=4}
+    cardW=(wrapW-(Math.ceil(visible)-1)*gap)/visible;
+    Array.from(track.children).forEach(c=>c.style.width=cardW+'px');
+    maxIdx=Math.max(0,track.children.length-Math.ceil(visible));
+    idx=Math.min(idx,maxIdx);
+    move();
+  }
+  function move(){
+    track.style.transform='translateX('+(-idx*(cardW+gap))+'px)';
+    prev.disabled=idx===0;
+    next.disabled=idx>=maxIdx;
+  }
+  prev.onclick=()=>{if(idx>0){idx--;move()}};
+  next.onclick=()=>{if(idx<maxIdx){idx++;move()}};
+  window.addEventListener('resize',calc);
+  calc();
+})();
+
+// ---- 产品矩阵标签切换 ----
+(function(){
+  const tabs=document.getElementById('prodTabs');
+  if(!tabs)return;
+  tabs.onclick=e=>{
+    const b=e.target.closest('button');
+    if(!b)return;
+    const tab=b.dataset.tab;
+    [...tabs.children].forEach(x=>x.classList.toggle('active',x===b));
+    document.querySelectorAll('.pm-panel').forEach(p=>p.classList.toggle('active',p.dataset.tab===tab));
+  };
+})();
+
+// ---- 品牌案例横向滑动（旧版已下线，案例墙为纯 CSS 动画） ----
+
+// ---- 解决方案 tab 切换 ----
+(function(){
+  const tabs=document.querySelectorAll('.sol-tab');
+  const panels=document.querySelectorAll('.sol-panel');
+  if(!tabs.length)return;
+  tabs.forEach(t=>{
+    t.addEventListener('click',()=>{
+      const key=t.dataset.panel;
+      tabs.forEach(x=>x.classList.toggle('on',x===t));
+      panels.forEach(p=>p.classList.toggle('on',p.dataset.panel===key));
+    });
+  });
+})();
+
+</script></body>
+</html>

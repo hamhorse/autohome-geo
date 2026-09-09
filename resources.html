@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资源中心 - 常见问题与产品文档 | 汽车之家企业产品官网</title>
+<meta name="description" content="汽车之家企业产品官网资源中心：汇集汽车之家企业产品的常见问题与产品资料，帮助您快速了解业务场景、选择合适方案。">
+<meta name="author" content="汽车之家">
+<style>
+:root{
+  --orange:#1890FF; --orange-d:#0A66CC; --blue:#1890FF; --blue-d:#0A66CC;
+  --ink:#0b1525; --navy:#0A1428; --navy2:#0E1B33; --muted:#7a8aa3;
+  --bg:#f4f7fc; --card:#ffffff; --line:#e6ecf5;
+  --shadow:0 18px 50px rgba(11,21,37,.10); --shadow-lg:0 30px 80px rgba(11,21,37,.18);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:"PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.placeholder{color:#b8860b;border-bottom:1px dashed #e0a800;cursor:help;background:#fff8e6}
+
+/* ---------- 顶部主导航 ---------- */
+header.top{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:.3s}
+header.top.scrolled{box-shadow:0 6px 24px rgba(11,21,37,.08)}
+.nav{display:flex;align-items:center;height:66px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);margin-right:18px;white-space:nowrap}
+.brand .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--orange),#40A9FF);display:grid;place-items:center;color:#fff;font-weight:900;font-size:18px;box-shadow:0 6px 16px rgba(24,144,255,.35)}
+.brand b{color:var(--orange)}
+.topnav{display:flex;align-items:center;gap:6px;flex:1;justify-content:center}
+.nav-item{position:relative}
+.nav-item>a{display:flex;align-items:center;gap:5px;font-size:15px;font-weight:600;color:#243246;padding:22px 16px;transition:.2s;white-space:nowrap}
+.nav-item>a:hover{color:var(--orange)}
+.nav-item>a .caret{font-size:10px;opacity:.6;transition:.2s}
+.nav-item:hover>a .caret{transform:rotate(180deg);opacity:1}
+.nav-cta{margin-left:auto;display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:24px;font-weight:700;font-size:14px;cursor:pointer;transition:.22s;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--orange),#40A9FF);color:#fff;box-shadow:0 8px 22px rgba(24,144,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(24,144,255,.45)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* 全宽 mega 下拉（产品 / 解决方案 / 行业场景） */
+.mega{position:fixed;top:66px;left:0;right:0;width:100%;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 70px rgba(11,21,37,.15);opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s;z-index:1001;min-height:360px}
+.nav-item:hover .mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-inner{display:flex;max-width:1240px;margin:0 auto;padding:28px 24px;gap:28px}
+.mega-cats{width:200px;flex-shrink:0;display:flex;flex-direction:column;gap:4px;border-right:1px solid var(--line);padding-right:20px}
+.mega-cats .mcat{text-align:left;padding:11px 14px;border-radius:8px;color:#46566f;font-size:14.5px;font-weight:700;cursor:default}
+.mega-cats .mcat.on{background:#f1f7ff;color:var(--orange)}
+.mega-body{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 22px;align-content:start}
+.mega-group{display:none;grid-template-columns:repeat(3,1fr);gap:10px 22px;grid-column:1/-1;align-content:start}
+.mega-group.on{display:grid}
+.mega-group[data-cat="i"]{grid-template-columns:repeat(2,1fr)}
+.mega-sub{grid-column:1/-1;font-size:12px;font-weight:700;color:#6b7a90;padding:6px 2px 0;letter-spacing:.4px;border-top:1px dashed #eef1f6}
+.mega-sub:first-child{border-top:none;padding-top:2px}
+.mcard{display:block;padding:13px 14px;border-radius:11px;transition:.18s}
+.mcard:hover{background:#f6f9ff}
+.mcard h5{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:7px}
+.mcard p{font-size:12.5px;color:var(--muted);line-height:1.45}
+.mcard .mtag{display:inline-block;font-size:10.5px;font-weight:700;color:var(--blue);background:#eaf3ff;padding:2px 8px;border-radius:9px;margin-bottom:6px}
+.mcard .mchips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.mcard .mchips span{font-size:10.5px;font-weight:700;color:var(--blue);background:#eaf3ff;padding:2px 8px;border-radius:9px}
+.mcard .mclient{margin-top:8px;padding-top:7px;border-top:1px dashed #eef1f6;font-size:11.5px;color:#8a97ab}
+.mcard .mclient b{color:#46566f;font-weight:700;margin-right:4px}
+.tag-hot{display:inline-flex;align-items:center;padding:1px 6px;border-radius:4px;background:#ffefef;color:#ff3b30;font-size:10px;font-weight:800;border:1px solid rgba(255,59,48,.15)}
+.tag-new{display:inline-flex;align-items:center;padding:1px 6px;border-radius:4px;background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:800;border:1px solid rgba(46,125,50,.15)}
+.mega-foot{border-top:1px solid var(--line);margin-top:8px;padding-top:16px;grid-column:1/-1}
+.mega-foot a{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;font-weight:700;color:var(--ink);transition:.2s}
+.mega-foot a:hover{border-color:var(--orange);color:var(--orange)}
+
+/* 紧凑下拉（关于我们） */
+.mega-compact{position:absolute;top:100%;left:50%;width:220px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:10px;opacity:0;visibility:hidden;transform:translateX(-50%) translateY(10px);transition:.22s;z-index:1001}
+.nav-item:hover .mega-compact{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mega-compact a{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:10px;font-size:14px;font-weight:600;color:#243246;transition:.2s}
+.mega-compact a:hover{background:#e8f2ff;color:var(--orange)}
+.mega-compact a::after{content:">";color:var(--muted);font-size:12px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* 导航搜索栏 */
+.nav-search{display:flex;align-items:center;gap:8px;background:#f4f6fa;border:1px solid var(--line);border-radius:22px;padding:9px 16px;width:235px;transition:.2s}
+.nav-search:focus-within{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(24,144,255,.12)}
+.nav-search svg{flex:none;color:#98a6bb}
+.nav-search input{border:none;outline:none;background:transparent;font-size:13.5px;width:100%;color:var(--ink)}
+.nav-search input::placeholder{color:#a5b1c2}
+/* 资源中心文字导航入口（搜索框与登录之间） */
+.nav-res{position:relative;font-size:15px;font-weight:600;color:#243246;padding:22px 6px;transition:.2s;white-space:nowrap}
+.nav-res::after{content:'';position:absolute;left:50%;bottom:14px;transform:translateX(-50%) scaleX(0);width:20px;height:2.5px;border-radius:2px;background:var(--blue);transition:.25s}
+.nav-res:hover{color:var(--blue)}
+.nav-res:hover::after{transform:translateX(-50%) scaleX(1)}
+/* 页脚 */
+footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.foot .col h5{color:#fff;font-size:15px;margin-bottom:16px}
+.foot .col a{display:block;color:#9fb0cd;font-size:14px;padding:6px 0;transition:.2s}
+.foot .col a:hover{color:var(--orange)}
+.foot .brand2{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.foot .brand2 .logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--orange),#40A9FF);display:grid;place-items:center;color:#fff;font-weight:900}
+.foot .desc{font-size:13px;color:#8595b3;max-width:280px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding-top:20px;font-size:13px;color:#7a8aa3;text-align:center}
+
+
+/* 资源中心导航入口高亮态 */
+.nav-res.current{color:var(--blue)}
+.nav-res.current::after{transform:translateX(-50%) scaleX(1)}
+/* 通用小节头 */
+.rsec{padding:80px 0}
+.rsec .op{text-align:center;max-width:820px;margin:0 auto 44px}
+.rsec .op h2{font-size:38px;font-weight:900;letter-spacing:.5px;line-height:1.3;color:var(--ink)}
+.rsec .op p{margin-top:13px;font-size:15.5px;color:var(--muted);line-height:1.7}
+@media(max-width:960px){
+  .nav-search{display:none}
+  .rsec .op h2{font-size:28px}
+  .rsec{padding:56px 0}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){.foot{grid-template-columns:1fr}}
+
+/* ---------- 资源中心首页 ---------- */
+.res-hero{position:relative;margin-top:66px;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;background-image:linear-gradient(180deg,rgba(7,19,42,.74) 0%,rgba(7,19,42,.80) 60%,rgba(7,19,42,.88) 100%),url('灵机素材/resources-hero.jpg');background-size:cover;background-position:center;padding:64px 24px 76px}
+.res-hero .inner{max-width:820px;position:relative}
+.res-hero .crumb{font-size:13.5px;color:rgba(255,255,255,.72);margin-bottom:20px}
+.res-hero .crumb a{color:rgba(255,255,255,.85);transition:.2s}
+.res-hero .crumb a:hover{color:#fff}
+.res-hero h1{font-size:54px;font-weight:900;color:#fff;letter-spacing:2px;line-height:1.2}
+.res-hero .lead{margin-top:18px;font-size:17px;color:rgba(255,255,255,.85);line-height:1.75}
+.res-search{display:flex;align-items:center;gap:10px;max-width:640px;margin:34px auto 0;background:#fff;padding:8px 8px 8px 24px;box-shadow:0 18px 50px rgba(4,12,28,.45)}
+.res-search svg{flex:none;color:#98a6bb}
+.res-search input{flex:1;border:none;outline:none;font-size:15px;color:var(--ink);background:transparent;min-width:0}
+.res-search button{flex:none;border:none;cursor:pointer;background:var(--blue);color:#fff;font-size:15px;font-weight:700;padding:11px 32px;transition:.22s}
+.res-search button:hover{background:var(--blue-d);transform:translateY(-1px)}
+/* 常见问题：场景卡片（两列，全直角） */
+.sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sc-card{display:flex;gap:24px;background:#fff;border:1px solid var(--line);padding:26px 28px;cursor:pointer;transition:border-color .2s,transform .2s}
+.sc-card:hover{border-color:#b9d9f7;transform:translateY(-2px)}
+.sc-left{flex:0 0 150px;border-right:1px solid #eef2f8;padding-right:22px}
+.sc-head{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit}
+.sc-icon{width:46px;height:46px;display:grid;place-items:center;color:var(--blue);background:#eef6ff;transition:.2s}
+.sc-card:hover .sc-icon{background:var(--blue);color:#fff}
+.sc-head h3{font-size:16.5px;font-weight:800;color:var(--ink);line-height:1.5}
+.sc-right{flex:1;display:flex;flex-direction:column;min-width:0}
+.sc-q{font-size:14px;color:#46566f;text-decoration:none;padding:6px 0;transition:.18s;line-height:1.55}
+.sc-q::before{content:'';display:inline-block;width:4px;height:4px;background:#c2cddd;margin-right:9px;vertical-align:3px;transition:.18s}
+.sc-q:hover{color:var(--blue)}
+.sc-q:hover::before{background:var(--blue)}
+.sc-more{margin-top:auto;padding-top:10px;font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:5px;align-self:flex-end}
+.sc-more:hover{gap:8px}
+/* 产品文档（紧凑条目，全直角） */
+.doc-group{margin-bottom:34px}
+.doc-group:last-child{margin-bottom:0}
+.dg-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.dg-head h3{font-size:19px;font-weight:900;color:var(--ink)}
+.dg-line{flex:1;height:1px;background:var(--line)}
+.doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.doc-grid.g-maas{grid-template-columns:repeat(4,1fr)}
+.doc-item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:16px 18px;text-decoration:none;transition:.2s}
+.doc-item:hover{border-color:#b9d9f7;background:#f9fcff;transform:translateY(-2px)}
+.di-tag{flex:none;font-size:11px;font-weight:800;letter-spacing:1px;color:var(--blue);background:#eef6ff;padding:3px 8px}
+.di-name{flex:1;font-size:15px;font-weight:700;color:var(--ink);transition:color .18s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.doc-item:hover .di-name{color:var(--blue)}
+.di-arrow{flex:none;color:#c2cddd;transition:.2s;display:grid;place-items:center}
+.doc-item:hover .di-arrow{color:var(--blue);transform:translateX(3px)}
+@media(max-width:960px){
+  .res-hero{min-height:0;padding:56px 20px 64px}
+  .res-hero h1{font-size:36px;letter-spacing:0}
+  .res-hero .lead{font-size:15px}
+  .sc-grid{grid-template-columns:1fr}
+  .sc-card{flex-direction:column;gap:16px}
+  .sc-left{flex:none;border-right:none;border-bottom:1px solid #eef2f8;padding:0 0 14px}
+  .sc-head{flex-direction:row;align-items:center}
+  .doc-grid,.doc-grid.g-maas{grid-template-columns:1fr}
+}
+@media(max-width:640px){.res-hero h1{font-size:34px} .res-search{flex-wrap:wrap;padding:12px 16px} .res-search button{width:100%}}
+</style>
+</head>
+<body>
+<header class="top" id="topbar">
+  <div class="wrap nav">
+    <a href="index.html#home" class="brand"><span class="logo">家</span>汽车<b>之家</b></a>
+    <nav class="topnav nav-menu" id="topnavLinks">
+      <div class="nav-item">
+        <a href="index.html">活动 <span class="caret">▾</span></a>
+        <div class="mega-compact">
+          <a href="index.html">818 全球超级车展</a>
+          <a href="index.html">双 11 购车节</a>
+          <a href="index.html">新车上市直播</a>
+          <a href="index.html">线下车展预约</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="index.html">产品 <span class="caret">▾</span></a>
+        <div class="mega">
+          <div class="mega-inner">
+            <div class="mega-cats" id="prodMegaCats">
+              <div class="mcat on" data-cat="agent">智能体</div>
+              <div class="mcat" data-cat="saas">SaaS 产品</div>
+              <div class="mcat" data-cat="digital">数字化产品</div>
+            </div>
+            <div class="mega-body" id="prodMegaBody">
+              <div class="mega-group on" data-cat="agent">
+                <a class="mcard" href="lingji.html"><h5>灵机门店版 <span class="tag-new">NEW</span></h5><p>全链路数字员工平台（获客·转化·经营·售后）</p></a>
+                <a class="mcard" href="index.html"><h5>灵机厂商版</h5><p>反漏斗模式，赋能主机厂联动经销商</p></a>
+              </div>
+              <div class="mega-group" data-cat="saas">
+                <div class="mega-sub">沟通触达</div>
+                <a class="mcard" href="index.html"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入</p></a>
+                <a class="mcard" href="index.html"><h5>智慧外呼</h5><p>大模型自动外呼清洗线索</p></a>
+                <a class="mcard" href="index.html"><h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导，准确率 92%+</p></a>
+                <a class="mcard" href="index.html"><h5>企信通</h5><p>企业微信一体化客服与销售协作</p></a>
+                <div class="mega-sub">网销转化</div>
+                <a class="mcard" href="index.html"><h5>智慧网销</h5><p>全流程网销管理，邀约到店与漏斗分析</p></a>
+                <a class="mcard" href="index.html"><h5>云智选</h5><p>人机协同用户培育，提升线索质量</p></a>
+                <div class="mega-sub">内容与助手</div>
+                <a class="mcard" href="index.html"><h5>智慧助手</h5><p>网销/销售一站式智能助手</p></a>
+                <a class="mcard" href="index.html"><h5>AIGC 内容生产</h5><p>视频剪辑、图文生成等创作能力</p></a>
+                <div class="mega-sub">数据联通</div>
+                <a class="mcard" href="index.html"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合</p></a>
+              </div>
+              <div class="mega-group" data-cat="digital">
+                <a class="mcard" href="index.html"><h5>车智云</h5><p>主机厂智能数据决策平台，服务 80+ 主机厂</p></a>
+                <a class="mcard" href="index.html"><h5>AI 直播</h5><p>智能直播带货与内容营销</p></a>
+                <a class="mcard" href="index.html"><h5>AI 私信</h5><p>智能私信触达与潜客激活</p></a>
+                <a class="mcard" href="index.html"><h5>智效店铺</h5><p>门店运营数字化与人效提升</p></a>
+              </div>
+              <div class="mega-foot">
+                <a href="index.html">查看全部产品 ›</a>
+                <a href="index.html">预约产品演示 ›</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="index.html">解决方案 <span class="caret">▾</span></a>
+        <div class="mega">
+          <div class="mega-inner">
+            <div class="mega-cats" id="solMegaCats">
+              <div class="mcat on" data-cat="g">通用解决方案</div>
+              <div class="mcat" data-cat="i">行业解决方案</div>
+            </div>
+            <div class="mega-body" id="solMegaBody">
+              <div class="mega-group on" data-cat="g">
+                <a class="mcard" href="index.html#lingji"><h5>AI Agent 数字员工 - 流程自动化</h5><p>为门店自动承接线索清洗、邀约、跟进等固定流程</p><div class="mchips"><span>灵机</span><span>仓颉大模型</span></div></a>
+                <a class="mcard" href="index.html#products"><h5>行业大模型 - 汽车垂域认知</h5><p>为主机厂与经销商提供 AI 选车、图片诊断等垂域理解</p><div class="mchips"><span>仓颉大模型</span><span>家家小秘</span></div></a>
+                <a class="mcard" href="index.html#products"><h5>智能营销 - 全域获客</h5><p>为经销商打通内容种草到线索承接的获客链路</p><div class="mchips"><span>智慧网销</span><span>AI 直播</span><span>AI 私信</span></div></a>
+                <a class="mcard" href="index.html#products"><h5>智能触达 - AI 外呼与线索清洗</h5><p>为经销商 DCC 团队完成大模型外呼清洗与自动邀约</p><div class="mchips"><span>智慧外呼</span><span>智慧质检</span></div></a>
+                <a class="mcard" href="index.html#products"><h5>数据智能 - 洞察决策</h5><p>为主机厂提供销量预测、竞争格局、营销漏斗决策</p><div class="mchips"><span>车智云</span><span>UVN-B 分群</span></div></a>
+                <a class="mcard" href="index.html#products"><h5>线索管理 - 全链路协同</h5><p>为经销商集团打通跨系统线索流转与人机协同培育</p><div class="mchips"><span>智慧数联</span><span>企信通</span><span>云智选</span></div></a>
+              </div>
+              <div class="mega-group" data-cat="i">
+                <a class="mcard" href="index.html#products"><h5>主机厂 - 数据决策与智能营销</h5><p>从销量预测、竞争分析到 AIGC 内容规模化生产</p><div class="mchips"><span>车智云</span><span>仓颉大模型</span><span>AIGC 内容生产</span></div><div class="mclient"><b>使用客户</b>80+ 主机厂品牌</div></a>
+                <a class="mcard" href="index.html#lingji"><h5>经销商 4S - 全链路数智化门店</h5><p>获客、转化、经营全链路数智化一站式覆盖</p><div class="mchips"><span>灵机</span><span>智慧外呼</span><span>智慧网销</span><span>智效店铺</span></div><div class="mclient"><b>使用客户</b>2.5w+ 合作门店</div></a>
+                <a class="mcard" href="index.html#products"><h5>二手车 - 线索承接与客户培育</h5><p>智能助手配合企微协同的线索承接与培育</p><div class="mchips"><span>智慧助手</span><span>企信通</span><span>云智选</span></div><div class="mclient"><b>使用客户</b>二手车经销商及经销商集团</div></a>
+                <a class="mcard" href="index.html#lingji"><h5>新能源 - 直营门店获客与运营</h5><p>数字员工配合 AI 直播的门店获客与用户运营</p><div class="mchips"><span>灵机</span><span>AI 直播</span><span>智慧数联</span></div><div class="mclient"><b>使用客户</b>新能源品牌直营/代理门店体系</div></a>
+              </div>
+              <div class="mega-foot">
+                <a href="index.html">查看全部方案 ›</a>
+                <a href="index.html">获取方案资料 ›</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="index.html#cases">品牌案例 <span class="caret">▾</span></a>
+        <div class="mega">
+          <div class="mega-inner">
+            <div class="mega-cats" id="caseMegaCats">
+              <div class="mcat on" data-cat="all">全部案例</div>
+              <div class="mcat" data-cat="oem">主机厂品牌</div>
+              <div class="mcat" data-cat="ne">新能源品牌</div>
+              <div class="mcat" data-cat="dealer">经销商集团</div>
+            </div>
+            <div class="mega-body" id="caseMegaBody">
+              <div class="mega-group on" data-cat="all">
+                <a class="mcard" href="index.html#case-byd"><span class="mtag">头部品牌</span><h5>比亚迪</h5><p>主机厂反漏斗联动经销商，800+ 门店同步执行，邀约效率提升 30%</p></a>
+                <a class="mcard" href="index.html#case-audi"><span class="mtag">合资品牌</span><h5>一汽奥迪</h5><p>大模型外呼清洗线索池，话术质检优化外呼策略，接通率提升 30%</p></a>
+                <a class="mcard" href="index.html#case-changan"><span class="mtag">自主品牌</span><h5>长安汽车</h5><p>店总经理 Agent 每日拆解目标、识别经营风险并推送改善建议</p></a>
+                <a class="mcard" href="index.html#case-lixiang"><span class="mtag">新势力</span><h5>理想汽车</h5><p>直营门店智能线索培育，7×24 小时跟进留资用户，试驾到店转化提升</p></a>
+                <a class="mcard" href="index.html#case-nio"><span class="mtag">新能源</span><h5>蔚来</h5><p>AI 助手嵌入销售顾问工作流，试驾邀约到售后关怀覆盖全生命周期</p></a>
+                <a class="mcard" href="index.html#case-pangda"><span class="mtag">经销商集团</span><h5>庞大集团</h5><p>多门店数据聚合与统一经营看板，人效与线索转化双提升</p></a>
+              </div>
+              <div class="mega-group" data-cat="oem">
+                <a class="mcard" href="index.html#case-byd"><span class="mtag">头部品牌</span><h5>比亚迪</h5><p>主机厂反漏斗联动经销商，800+ 门店同步执行，邀约效率提升 30%</p></a>
+                <a class="mcard" href="index.html#case-audi"><span class="mtag">合资品牌</span><h5>一汽奥迪</h5><p>大模型外呼清洗线索池，话术质检优化外呼策略，接通率提升 30%</p></a>
+                <a class="mcard" href="index.html#case-changan"><span class="mtag">自主品牌</span><h5>长安汽车</h5><p>店总经理 Agent 每日拆解目标、识别经营风险并推送改善建议</p></a>
+              </div>
+              <div class="mega-group" data-cat="ne">
+                <a class="mcard" href="index.html#case-lixiang"><span class="mtag">新势力</span><h5>理想汽车</h5><p>直营门店智能线索培育，7×24 小时跟进留资用户，试驾到店转化提升</p></a>
+                <a class="mcard" href="index.html#case-nio"><span class="mtag">新能源</span><h5>蔚来</h5><p>AI 助手嵌入销售顾问工作流，试驾邀约到售后关怀覆盖全生命周期</p></a>
+              </div>
+              <div class="mega-group" data-cat="dealer">
+                <a class="mcard" href="index.html#case-pangda"><span class="mtag">经销商集团</span><h5>庞大集团</h5><p>多门店数据聚合与统一经营看板，人效与线索转化双提升</p></a>
+              </div>
+              <div class="mega-foot">
+                <a href="index.html#cases">查看全部案例 ›</a>
+                <a href="index.html" onclick="openChat();return false;">预约案例分享 ›</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="index.html">关于我们 <span class="caret">▾</span></a>
+        <div class="mega-compact">
+          <a href="index.html">公司介绍</a>
+          <a href="index.html">投资者关系</a>
+          <a href="index.html">社会责任</a>
+          <a href="index.html">加入我们</a>
+          <a href="index.html">联系方式</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-cta">
+      <label class="nav-search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" placeholder="搜索产品 / 方案 / 案例" aria-label="站内搜索"></label>
+      <a href="resources.html" class="nav-res current">资源中心</a>
+      <a href="lingji.html#contact" class="btn btn-ghost">登录</a>
+      <a href="lingji.html#contact" class="btn btn-primary">注册</a>
+    </div>
+  </div>
+</header>
+
+<!-- 首屏价值主张 -->
+<section class="res-hero">
+  <div class="inner">
+    <div class="crumb"><a href="index.html">首页</a> / 资源中心</div>
+    <h1>资源中心</h1>
+    <p class="lead">汇集汽车之家企业产品的常见问题与产品资料，帮助您快速了解业务场景、选择合适方案。</p>
+    <label class="res-search">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" placeholder="搜索问题、产品或关键词" aria-label="资源中心搜索">
+      <button type="button">搜索</button>
+    </label>
+  </div>
+</section>
+
+<!-- 常见问题：业务场景 -->
+<section class="rsec" id="faq">
+  <div class="wrap">
+    <div class="op">
+      <h2>常见问题</h2>
+      <p>围绕线索全生命周期中的常见业务场景，快速查看热门问题与完整解答。</p>
+    </div>
+    <div class="sc-grid">
+    <div class="sc-card" data-href="document/scenarios/lead-distribution.html">
+      <div class="sc-left">
+        <a class="sc-head" href="document/scenarios/lead-distribution.html">
+          <span class="sc-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 6.5v4M12 10.5L5.8 17M12 10.5v6.5M12 10.5l6.2 6.5"/></svg></span>
+          <h3>线索获取与分发</h3>
+        </a>
+      </div>
+      <div class="sc-right">
+          <a class="sc-q" href="document/scenarios/lead-distribution.html#unified-dashboard">如何建立统一的数据看板？</a>
+          <a class="sc-q" href="document/scenarios/lead-distribution.html#omni-channel-lead">多渠道线索如何统一汇聚与管理？</a>
+          <a class="sc-q" href="document/scenarios/lead-distribution.html#timely-distribution">新增线索如何及时分发到门店？</a>
+          <a class="sc-q" href="document/scenarios/lead-distribution.html#ownership-rules">线索归属与分配如何规范？</a>
+        <a class="sc-more" href="document/scenarios/lead-distribution.html">查看全部问题 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="sc-card" data-href="document/scenarios/contact-rate.html">
+      <div class="sc-left">
+        <a class="sc-head" href="document/scenarios/contact-rate.html">
+          <span class="sc-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M7.5 13a4.5 4.5 0 0 1 9 0"/><circle cx="12" cy="15" r="1.6"/><path d="M12 16.5V21"/></svg></span>
+          <h3>线索触达与接通效率</h3>
+        </a>
+      </div>
+      <div class="sc-right">
+          <a class="sc-q" href="document/scenarios/contact-rate.html#how-to-improve-contact-rate">如何提高线索接通率？</a>
+          <a class="sc-q" href="document/scenarios/contact-rate.html#reach-unconnected">未接通线索如何持续触达？</a>
+          <a class="sc-q" href="document/scenarios/contact-rate.html#timing-frequency">触达时段与频次如何安排更有效？</a>
+          <a class="sc-q" href="document/scenarios/contact-rate.html#first-response-speed">首次触达响应如何提速？</a>
+        <a class="sc-more" href="document/scenarios/contact-rate.html">查看全部问题 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="sc-card" data-href="document/scenarios/follow-conversion.html">
+      <div class="sc-left">
+        <a class="sc-head" href="document/scenarios/follow-conversion.html">
+          <span class="sc-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l6-6 4 4 8-9"/><path d="M15 7h6v6"/></svg></span>
+          <h3>销售跟进与线索转化率</h3>
+        </a>
+      </div>
+      <div class="sc-right">
+          <a class="sc-q" href="document/scenarios/follow-conversion.html#identify-high-intent">如何识别高意向线索？</a>
+          <a class="sc-q" href="document/scenarios/follow-conversion.html#follow-up-efficiency">如何提升销售跟进效率？</a>
+          <a class="sc-q" href="document/scenarios/follow-conversion.html#conversion-evaluation">如何评估线索转化效果？</a>
+          <a class="sc-q" href="document/scenarios/follow-conversion.html#follow-record-reuse">跟进记录如何沉淀与复用？</a>
+        <a class="sc-more" href="document/scenarios/follow-conversion.html">查看全部问题 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="sc-card" data-href="document/scenarios/nurture-activation.html">
+      <div class="sc-left">
+        <a class="sc-head" href="document/scenarios/nurture-activation.html">
+          <span class="sc-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 3v4.5h-4.5"/></svg></span>
+          <h3>客户培育与激活</h3>
+        </a>
+      </div>
+      <div class="sc-right">
+          <a class="sc-q" href="document/scenarios/nurture-activation.html#reduce-lead-loss">如何降低线索流失？</a>
+          <a class="sc-q" href="document/scenarios/nurture-activation.html#reactivate-silent">沉默客户如何重新激活？</a>
+          <a class="sc-q" href="document/scenarios/nurture-activation.html#long-cycle-nurture">长周期意向如何持续培育？</a>
+          <a class="sc-q" href="document/scenarios/nurture-activation.html#content-matching">培育内容如何与客户阶段匹配？</a>
+        <a class="sc-more" href="document/scenarios/nurture-activation.html">查看全部问题 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="sc-card" data-href="document/scenarios/qc-improvement.html">
+      <div class="sc-left">
+        <a class="sc-head" href="document/scenarios/qc-improvement.html">
+          <span class="sc-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.8-3.4 7.8-7 9.8C8.4 18.8 5 15.8 5 11V6z"/><path d="M9 11.5l2 2 4-4"/></svg></span>
+          <h3>销售顾问质检与经营提升</h3>
+        </a>
+      </div>
+      <div class="sc-right">
+          <a class="sc-q" href="document/scenarios/qc-improvement.html#data-security">如何保障业务数据权限与安全？</a>
+          <a class="sc-q" href="document/scenarios/qc-improvement.html#process-qc-review">销售沟通过程如何质检复盘？</a>
+          <a class="sc-q" href="document/scenarios/qc-improvement.html#goal-tracking">门店经营目标如何拆解跟踪？</a>
+          <a class="sc-q" href="document/scenarios/qc-improvement.html#script-improvement">团队服务话术如何统一提升？</a>
+        <a class="sc-more" href="document/scenarios/qc-improvement.html">查看全部问题 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- 产品文档 -->
+<section class="rsec" id="docs" style="padding-top:0">
+  <div class="wrap">
+    <div class="op">
+      <h2>产品文档</h2>
+      <p>按产品查看相关介绍、适用场景与关联问题。</p>
+    </div>
+    <div class="doc-group">
+      <div class="dg-head"><h3>MaaS 产品</h3><span class="dg-line"></span></div>
+      <div class="doc-grid g-maas">
+      <a class="doc-item" href="document/products/lingji-store.html">
+        <span class="di-tag">MaaS</span>
+        <span class="di-name">灵机门店版</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/lingji-oem.html">
+        <span class="di-tag">MaaS</span>
+        <span class="di-name">灵机厂商版</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      </div>
+    </div>
+    <div class="doc-group">
+      <div class="dg-head"><h3>SaaS 产品</h3><span class="dg-line"></span></div>
+      <div class="doc-grid g-saas">
+      <a class="doc-item" href="document/products/zhihui-waihu.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">智慧外呼</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/zhihui-wangxiao.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">智慧网销</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/zhihui-zhijian.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">智慧质检</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/zhihui-tongxin.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">智慧通信</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/zhihui-shulian.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">智慧数联</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/aigc.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">AIGC 平台</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/qinxintong.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">企信通</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/yunzhixuan.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">云智选</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/chezhiyun.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">车智云</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/ai-zhibo.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">AI 直播</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/ai-sixin.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">AI 私信</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="doc-item" href="document/products/zhixiao-dianpu.html">
+        <span class="di-tag">SaaS</span>
+        <span class="di-name">智效店铺</span>
+        <span class="di-arrow"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap">
+      <div class="foot">
+      <div class="col">
+        <div class="brand2"><span class="logo">家</span>汽车之家</div>
+        <p class="desc">中国领先的汽车互联网平台，以数据与 AI 赋能汽车经销商全链路数智化增长。</p>
+      </div>
+      <div class="col"><h5>产品</h5><a href="lingji.html">Autoclaw · 灵机平台</a><a href="lingji.html">仓颉大模型</a><a href="lingji.html#contact">立即咨询</a></div>
+      <div class="col"><h5>解决方案</h5><a href="lingji.html">智能获客</a><a href="lingji.html">线索转化</a><a href="lingji.html">门店经营</a><a href="lingji.html">售后诊断</a></div>
+      <div class="col"><h5>关于我们</h5><a href="lingji.html#contact">公司介绍</a><a href="lingji.html#contact">投资者关系</a><a href="lingji.html#contact">加入我们</a><a href="lingji.html#contact">联系方式</a></div>
+    </div>
+    <div class="foot-bottom">© 2026 汽车之家 autohome.com.cn · 灵机 AI 数字员工平台 · 本页为概念原型 Demo</div>
+  </div>
+</footer>
+
+<script>
+// ---- 顶部栏滚动态 ----
+const topbar=document.getElementById('topbar');
+function onScroll(){topbar.classList.toggle('scrolled',window.scrollY>20);}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+// ---- mega 分类切换 ----
+function bindMega(catsId,bodyId){
+  const cats=document.getElementById(catsId); if(!cats)return;
+  cats.addEventListener('click',e=>{
+    const c=e.target.closest('.mcat'); if(!c)return;
+    cats.querySelectorAll('.mcat').forEach(x=>x.classList.toggle('on',x===c));
+    document.querySelectorAll('#'+bodyId+' .mega-group').forEach(g=>g.classList.toggle('on',g.dataset.cat===c.dataset.cat));
+  });
+}
+bindMega('prodMegaCats','prodMegaBody');
+bindMega('solMegaCats','solMegaBody');
+bindMega('caseMegaCats','caseMegaBody');
+// 占位链接不跳转
+document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+
+// 场景卡片：点击空白区域进入场景页（问题链接各自跳转并带锚点）
+document.querySelectorAll('.sc-card').forEach(c=>{
+  c.addEventListener('click',e=>{
+    if(e.target.closest('a'))return;
+    window.location.href=c.dataset.href;
+  });
+});
+</script>
+</body>
+</html>
