@@ -230,7 +230,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .crumbs b{color:var(--ink);font-weight:700}
 
 /* 首屏价值主张 */
-.p-hero{position:relative;padding:34px 0 64px;background:linear-gradient(180deg,#eaf4ff 0%,#f6faff 62%,#fff 100%);overflow:hidden}
+.p-hero{position:relative;padding:34px 0 40px;background:linear-gradient(180deg,#eaf4ff 0%,#f6faff 62%,#fff 100%);overflow:hidden}
 .p-hero::before{content:"";position:absolute;left:50%;top:0;width:1200px;height:560px;background:radial-gradient(ellipse at top,rgba(24,144,255,.16),transparent 65%);transform:translateX(-50%);pointer-events:none}
 .p-hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center;position:relative;z-index:1}
 .p-hero h1{font-size:clamp(32px,3.4vw,44px);font-weight:900;line-height:1.3;letter-spacing:-.5px;margin-bottom:16px}
@@ -252,15 +252,6 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .ph .ph-s{font-size:12px;margin-top:5px;color:#8aa2c0}
 .p-hero .ph{width:100%;min-height:380px;box-shadow:0 18px 50px rgba(24,86,144,.10);background-color:#fff}
 
-/* 吸顶锚点导航 */
-.p-subnav{position:sticky;top:101px;z-index:900;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.p-subnav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-.p-subnav .wrap::-webkit-scrollbar{display:none}
-.p-subnav a{flex:none;position:relative;padding:15px 18px;font-size:14.5px;font-weight:600;color:#46566f;transition:.2s;white-space:nowrap}
-.p-subnav a:hover{color:var(--blue)}
-.p-subnav a.on{color:var(--blue);font-weight:800}
-.p-subnav a.on::after{content:'';position:absolute;left:18px;right:18px;bottom:0;height:2.5px;border-radius:2px;background:var(--blue)}
-
 /* 通用模块 */
 .psec{padding:84px 0;position:relative}
 .psec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(24,144,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(24,144,255,.045) 1px,transparent 1px);background-size:38px 38px;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%)}
@@ -270,88 +261,91 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .psec .op h2 em{font-style:normal;display:block;background:linear-gradient(120deg,#1890FF,#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .psec.alt{background:#fff}
 
-/* 版本与服务方案 */
-.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.plan-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 28px;display:flex;flex-direction:column;gap:0;transition:.25s;box-shadow:0 2px 16px rgba(24,86,144,.06)}
+/* 热门活动与动态 */
+.news-bar{max-width:1240px;margin:0 auto;padding:26px 24px 10px;position:relative;z-index:2}
+.news-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 26px 14px;display:grid;grid-template-columns:1fr 1fr;gap:6px 48px;box-shadow:0 2px 16px rgba(24,86,144,.06)}
+.news-col .nt{font-size:15.5px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.news-col .nt i{width:4px;height:15px;border-radius:2px;background:linear-gradient(180deg,var(--blue),var(--blue-d));display:inline-block}
+.news-item{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13.5px;color:#46566f;transition:.2s;cursor:pointer}
+.news-item:hover{color:var(--blue)}
+.news-item .tag{flex:none;font-size:10.5px;font-weight:800;color:#d46b0f;background:#fff3e0;padding:2px 9px;border-radius:9px}
+.news-item .tag.blue{color:var(--blue);background:#eaf3ff}
+.news-item .arr{margin-left:auto;color:#c3cede;font-size:12px;transition:.2s}
+.news-item:hover .arr{color:var(--blue);transform:translateX(2px)}
+@media(max-width:1024px){.news-card{grid-template-columns:1fr}}
+
+/* 核心功能（能力 × 场景，左右交替双栏） */
+.cf-unit{display:grid;grid-template-columns:48% 1fr;gap:44px;align-items:start;margin-bottom:60px}
+.cf-unit.rev .cf-visual{order:2}
+.cf-unit.rev .cf-body{order:1}
+.cf-visual img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block;border:1px solid var(--line);background:#fff}
+.cf-scene{margin-top:16px;background:#f7fafd;border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.cf-scene .st{font-size:14px;font-weight:800;color:#0A66CC;margin-bottom:6px}
+.cf-scene .sx{font-size:13px;color:#5a6a82;line-height:1.75}
+.cf-body .ct{font-size:25px;font-weight:900;letter-spacing:.5px;margin-bottom:10px}
+.cf-body .cd{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:6px}
+.cf-list{margin-top:4px}
+.cf-item{padding:17px 0;border-bottom:1px solid var(--line)}
+.cf-item:last-child{border-bottom:none;padding-bottom:0}
+.cf-item .fn{font-size:15.5px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.cf-item .fd{font-size:13.5px;color:#46566f;line-height:1.8}
+@media(max-width:1024px){.cf-unit{grid-template-columns:1fr;gap:22px;margin-bottom:48px}.cf-unit.rev .cf-visual{order:0}}
+
+/* 版本与服务方案（腾讯云式版本对比卡） */
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s;box-shadow:0 2px 16px rgba(24,86,144,.06)}
 .plan-card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(24,86,144,.13)}
 .plan-card.hot{border-color:var(--blue);box-shadow:0 14px 44px rgba(24,144,255,.16)}
-.plan-tag{align-self:flex-start;font-size:11.5px;font-weight:800;color:var(--blue);background:#eaf3ff;padding:3px 12px;border-radius:10px;letter-spacing:1px;margin-bottom:16px}
-.plan-card h3{font-size:22px;font-weight:900;margin-bottom:6px}
-.plan-card .for{font-size:13px;color:var(--muted);margin-bottom:18px}
-.plan-row{display:flex;gap:10px;padding:11px 0;border-top:1px dashed var(--line);font-size:13.5px;line-height:1.65}
-.plan-row .k{flex:0 0 64px;color:var(--muted)}
-.plan-row .v{color:#243246}
-.plan-card .btn{margin-top:22px;justify-content:center}
+.pc-ribbon{position:absolute;top:0;right:0;z-index:2;font-size:11.5px;font-weight:800;color:#fff;padding:5px 14px;border-radius:0 0 0 12px;background:linear-gradient(120deg,#ff9a2e,#ff6a00);box-shadow:0 4px 12px rgba(255,106,0,.30)}
+.plan-card.hot .pc-ribbon{background:linear-gradient(120deg,#ff5f57,#e02020);box-shadow:0 4px 12px rgba(224,32,32,.30)}
+.plan-card.new .pc-ribbon{background:linear-gradient(120deg,var(--blue-l),var(--blue-d));box-shadow:0 4px 12px rgba(24,144,255,.30)}
+.pc-head{background:linear-gradient(160deg,#eaf4ff,#f8fbff);padding:24px 24px 18px;border-bottom:1px solid var(--line)}
+.pc-head h3{font-size:21px;font-weight:900;margin-bottom:6px}
+.pc-head .for{font-size:13px;color:#46566f;line-height:1.6}
+.pc-spec{padding:16px 24px 4px;display:flex;flex-direction:column}
+.pc-row{display:flex;gap:12px;padding:6px 0;font-size:13px;line-height:1.6}
+.pc-row .k{flex:0 0 64px;color:var(--muted)}
+.pc-row .v{color:#243246}
+.pc-feats{padding:10px 24px 8px;border-top:1px dashed var(--line);margin-top:12px;flex:1}
+.pc-feats .ft{font-size:13px;font-weight:800;color:#46566f;margin:8px 0 8px}
+.pc-feats ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.pc-feats li{display:flex;gap:8px;font-size:12.5px;color:#46566f;line-height:1.55}
+.pc-feats li svg{flex:none;color:var(--blue);margin-top:2px}
+.pc-feats li b{color:var(--ink);font-weight:700}
+.pc-foot{margin-top:auto;padding:16px 24px 22px;border-top:1px solid var(--line)}
+.pc-price{font-size:26px;font-weight:900;color:var(--ink);margin-bottom:12px;line-height:1.1}
+.pc-price .unit{font-size:13px;font-weight:700;color:var(--muted);margin-left:4px}
+.pc-btn{display:flex;justify-content:center;align-items:center;width:100%;padding:12px 0;border-radius:24px;font-size:14.5px;font-weight:800;transition:.2s;border:1.5px solid var(--blue)}
+.pc-btn.solid{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(24,144,255,.26)}
+.pc-btn.solid:hover{background:var(--blue-d);transform:translateY(-1px)}
+.pc-btn.line{color:var(--blue);background:#fff}
+.pc-btn.line:hover{background:#eaf3ff}
 .plans-note{text-align:center;font-size:12.5px;color:#9aa9bf;margin-top:18px}
 
-/* 产品功能：左菜单 + 右面板 */
-.feat-layout{display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:start}
-.feat-menu{position:sticky;top:172px;display:flex;flex-direction:column;gap:6px}
-.feat-menu button{position:relative;text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:16px 18px;font-size:15px;font-weight:700;color:#2c3c55;cursor:pointer;transition:.2s;font-family:inherit;display:flex;align-items:center;gap:11px}
-.feat-menu button svg{flex:none;color:#8aa2c0;transition:.2s}
-.feat-menu button:hover{border-color:var(--blue);color:var(--blue)}
-.feat-menu button.on{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 10px 26px rgba(24,144,255,.30)}
-.feat-menu button.on svg{color:#fff}
-.feat-stage{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 16px rgba(24,86,144,.06);min-height:460px}
-.feat-panel{display:none;padding:34px 36px}
-.feat-panel.on{display:grid;grid-template-columns:1fr .92fr;gap:30px;align-items:center;animation:fadeUp .45s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}}
-.feat-panel h3{font-size:21px;font-weight:900;margin-bottom:8px}
-.feat-panel .fd{font-size:14px;color:var(--muted);margin-bottom:18px;line-height:1.7}
-.feat-panel ul{list-style:none;display:flex;flex-direction:column;gap:11px}
-.feat-panel ul li{display:flex;gap:10px;font-size:14px;color:#243246;line-height:1.65}
-.feat-panel ul li svg{flex:none;color:var(--blue);margin-top:3px}
-.feat-panel ul li b{font-weight:800}
-.feat-panel .ph{min-height:300px;width:100%}
-.feat-panel .btn{margin-top:22px}
+/* 客户案例（TRTC 式：实拍图 + 引言卡 + 文字字标 logo） */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.case-card{display:flex;flex-direction:column}
+.case-img{border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(11,21,37,.10)}
+.case-img img{width:100%;height:220px;object-fit:cover;display:block}
+.case-quote{position:relative;margin:-36px 14px 0;background:#fff;border-radius:12px;padding:16px 20px 16px;box-shadow:0 12px 30px rgba(11,21,37,.10)}
+.case-quote::before{content:'\201C';position:absolute;top:0;left:14px;font-size:46px;font-weight:900;color:#d8e5f4;line-height:1;font-family:Georgia,serif}
+.case-quote .q{font-size:13px;color:#243246;line-height:1.75;margin:16px 0 14px}
+.case-quote .who{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+.clogo{display:inline-flex;align-items:center;justify-content:center;flex:none;height:26px;padding:0 9px;border-radius:6px;background:#eef4fb;color:#0b1525;font-weight:900;font-size:11.5px;letter-spacing:1.5px}
+.case-quote .wn b{display:block;font-size:13px;font-weight:800;color:var(--ink)}
+.case-quote .wn span{font-size:11.5px;color:var(--muted)}
+.case-tabs{display:flex;justify-content:center;gap:30px;margin:44px 0 28px;border-bottom:1px solid var(--line)}
+.case-tabs button{background:none;border:none;font-size:14.5px;font-weight:700;color:#46566f;padding:10px 2px;cursor:pointer;position:relative;font-family:inherit;transition:.2s}
+.case-tabs button:hover{color:var(--blue)}
+.case-tabs button.on{color:var(--blue)}
+.case-tabs button.on::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2.5px;border-radius:2px;background:var(--blue)}
+.logo-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.lw-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:9px;font-size:13px;font-weight:700;color:#243246;transition:.2s}
+.lw-item:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(24,86,144,.10)}
+.lw-item .clogo{height:28px;font-size:12px}
+@media(max-width:1024px){.case-grid{grid-template-columns:1fr}.logo-wall{grid-template-columns:repeat(3,1fr)}}
 
-/* 产品框架 */
-.fw-desc{text-align:center;font-size:16.5px;color:#243246;max-width:820px;margin:0 auto 34px;line-height:1.8}
-.fw-desc b{color:var(--blue);font-weight:800}
-.fw-layers{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:26px}
-.fw-layers span{font-size:12.5px;font-weight:700;color:#46566f;background:#fff;border:1px solid var(--line);padding:6px 16px;border-radius:14px}
-.fw-ph{max-width:980px;margin:0 auto;min-height:430px}
-
-/* 产品优势 */
-.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
-.adv-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px;transition:.25s}
-.adv-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(24,86,144,.12)}
-.adv-card .n{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:2px;margin-bottom:12px}
-.adv-card h3{font-size:17.5px;font-weight:900;margin-bottom:10px}
-.adv-card p{font-size:13px;color:var(--muted);line-height:1.7}
-.adv-card .vs{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:12px;color:#8aa2c0}
-.adv-card .vs b{color:#b05e2a;font-weight:700}
-.cmp-table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.cmp-table th,.cmp-table td{padding:15px 18px;font-size:13.5px;text-align:left;border-bottom:1px solid var(--line);line-height:1.6}
-.cmp-table tr:last-child th,.cmp-table tr:last-child td{border-bottom:none}
-.cmp-table thead th{background:#f4f9ff;font-size:13px;font-weight:800;color:#46566f}
-.cmp-table thead th.hl{color:var(--blue);background:#eaf3ff}
-.cmp-table td.hl{background:#f7fbff;color:var(--ink);font-weight:600}
-.cmp-table tbody th{font-weight:800;color:#243246;background:#fbfdff;width:130px}
-
-/* 应用场景 */
-.sc-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}
-.sc-tab{border:1px solid var(--line);background:#fff;border-radius:24px;padding:11px 26px;font-size:14.5px;font-weight:700;color:#46566f;cursor:pointer;transition:.2s;font-family:inherit}
-.sc-tab.on{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(24,144,255,.28)}
-.sc-panel{display:none}
-.sc-panel.on{display:block;animation:fadeUp .4s ease}
-.sc-chips{display:flex;flex-wrap:wrap;gap:12px;max-width:860px;margin:0 auto}
-.sc-chip{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 22px;font-size:14.5px;font-weight:700;color:#243246;transition:.2s;display:flex;align-items:center;gap:9px}
-.sc-chip:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
-.sc-chip i{width:7px;height:7px;border-radius:50%;background:var(--blue);opacity:.55}
-
-/* 客户案例 */
-.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.case-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
-.case-card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(24,86,144,.13)}
-.case-card .ph{border:none;border-radius:0;min-height:180px;border-bottom:1px solid var(--line)}
-.case-body{padding:22px 24px;display:flex;flex-direction:column;gap:9px;flex:1}
-.case-body .ct{font-size:12px;font-weight:800;color:var(--blue)}
-.case-body h3{font-size:16.5px;font-weight:900;line-height:1.5}
-.case-body p{font-size:13px;color:var(--muted);line-height:1.7;flex:1}
-.case-body .more{font-size:13px;font-weight:700;color:var(--blue)}
-
-/* 常见问题 */
+/* 常见问题 FAQ */
 .faq-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
 .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.2s}
 .faq-item.open{border-color:var(--blue);box-shadow:0 10px 30px rgba(24,144,255,.10)}
@@ -370,10 +364,9 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 @media(max-width:1024px){
  .p-hero .wrap{grid-template-columns:1fr}
  .feat-layout{grid-template-columns:1fr}
- .feat-menu{position:static;flex-direction:row;overflow-x:auto}
- .feat-menu button{flex:none;white-space:nowrap}
- .feat-panel.on{grid-template-columns:1fr}
- .plans-grid,.case-grid{grid-template-columns:1fr}
+ .cf-unit{grid-template-columns:1fr;gap:22px;margin-bottom:48px}
+ .cf-unit.rev .cf-visual{order:0}
+ .case-grid{grid-template-columns:1fr}
  .adv-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
@@ -562,7 +555,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
         <div class="val"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>800+ 门店</b>同步执行，数字员工统一上岗</span></div>
       </div>
       <div class="ctas">
-        <a class="btn btn-primary" href="#plans">免费试用</a>
+        <a class="btn btn-primary" href="#contact">免费试用</a>
         <a class="btn btn-ghost" href="#contact">预约演示</a>
       </div>
     </div>
@@ -570,261 +563,244 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
   </div>
 </section>
 
-<!-- ===== 吸顶锚点导航 ===== -->
-<nav class="p-subnav" id="subnav">
-  <div class="wrap">
-    <a href="#plans">版本方案</a>
-    <a href="#features">产品功能</a>
-    <a href="#framework">产品框架</a>
-    <a href="#advantages">产品优势</a>
-    <a href="#scenarios">应用场景</a>
-    <a href="#cases">客户案例</a>
-    <a href="#faq">常见问题</a>
+<!-- ===== 热门活动与动态 ===== -->
+<div class="news-bar reveal">
+  <div class="news-card">
+    <div class="news-col">
+      <div class="nt"><i></i>热门活动</div>
+      <div class="news-item"><span class="tag">热门活动</span>818 全球超级车展 · 多品牌联动专场<span class="arr">›</span></div>
+      <div class="news-item"><span class="tag">进行中</span>新车上市直播季 · 看直播领看车礼包<span class="arr">›</span></div>
+      <div class="news-item"><span class="tag">报名</span>线下车展预约通道开放 · 就近参展<span class="arr">›</span></div>
+    </div>
+    <div class="news-col">
+      <div class="nt"><i></i>最新动态</div>
+      <div class="news-item"><span class="tag blue">产品</span>灵机门店版预置 15+ 类数字员工，开箱即用<span class="arr">›</span></div>
+      <div class="news-item"><span class="tag blue">案例</span>800+ 门店同步执行数字员工任务，邀约效率提升 30%<span class="arr">›</span></div>
+      <div class="news-item"><span class="tag blue">技术</span>智慧质检外呼通话全量 AI 质检，准确率 92%+<span class="arr">›</span></div>
+    </div>
   </div>
-</nav>
+</div>
+
 
 <!-- ===== 版本与服务方案 ===== -->
-<section class="psec alt" id="plans">
+<section class="psec" id="plans">
   <div class="wrap">
     <div class="op reveal">
       <h2>版本与服务方案<br><em>按规模与采购方式选择开通路径</em></h2>
     </div>
     <div class="plans-grid reveal">
+
       <div class="plan-card">
-        <span class="plan-tag">体验</span>
-        <h3>免费试用</h3>
-        <p class="for">适用：单店体验、新客评估</p>
-        <div class="plan-row"><span class="k">交付方式</span><span class="v">SaaS 在线开通，预置数字员工即开即用</span></div>
-        <div class="plan-row"><span class="k">服务范围</span><span class="v">试点功能组合 + 限定试用额度</span></div>
-        <div class="plan-row"><span class="k">适用判断</span><span class="v">希望先验证效果、业务复杂度低的门店</span></div>
-        <a class="btn btn-ghost" href="#contact">立即试用</a>
+        <span class="pc-ribbon">免费体验</span>
+        <div class="pc-head">
+          <h3>试用版</h3>
+          <p class="for">适用对象：单店体验、新客效果评估</p>
+        </div>
+        <div class="pc-spec">
+          <div class="pc-row"><span class="k">接入方式</span><span class="v">SaaS 在线开通，注册即用</span></div>
+          <div class="pc-row"><span class="k">起售规模</span><span class="v">1 门店 起</span></div>
+          <div class="pc-row"><span class="k">交付周期</span><span class="v">开通即可使用（占位）</span></div>
+        </div>
+        <div class="pc-feats">
+          <p class="ft">核心功能与服务</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>预置数字员工基础组合（8 类核心角色）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>门店经营晨报 / 日报（占位）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>线索批量清洗（限定试用额度）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>通话质检抽样版</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>AIGC 内容生成试用</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>经营数据看板基础版</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>在线支持与知识库</span></li>
+          </ul>
+        </div>
+        <div class="pc-foot">
+          <div class="pc-price">¥0<span class="unit">/月</span></div>
+          <a class="pc-btn line" href="#contact">免费试用</a>
+        </div>
       </div>
+
       <div class="plan-card hot">
-        <span class="plan-tag">标准</span>
-        <h3>标准化开通</h3>
-        <p class="for">适用：单店及小型经销商集团</p>
-        <div class="plan-row"><span class="k">交付方式</span><span class="v">全功能开通 + 标准配置 + 使用培训</span></div>
-        <div class="plan-row"><span class="k">服务范围</span><span class="v">在线支持、版本升级与运维保障</span></div>
-        <div class="plan-row"><span class="k">适用判断</span><span class="v">业务场景明确、希望快速全量上线的门店</span></div>
-        <a class="btn btn-primary" href="#contact">标准化开通</a>
+        <span class="pc-ribbon">热门</span>
+        <div class="pc-head">
+          <h3>标准版</h3>
+          <p class="for">适用对象：单店及小型经销商集团</p>
+        </div>
+        <div class="pc-spec">
+          <div class="pc-row"><span class="k">接入方式</span><span class="v">SaaS 标准化开通 + 标准配置培训</span></div>
+          <div class="pc-row"><span class="k">起售规模</span><span class="v">1 门店 起</span></div>
+          <div class="pc-row"><span class="k">交付周期</span><span class="v">按开通范围评估（占位）</span></div>
+        </div>
+        <div class="pc-feats">
+          <p class="ft">包含试用版全部功能，另提供</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>全量 15+ 类数字员工，按业务按需启用</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>线索清洗全量额度与沉睡客户激活外呼</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>100% 全量通话质检与话术评分</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>优秀话术自动沉淀，团队复用</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>AIGC 图文视频生成与多平台一键分发</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>自定义任务编排，一句话目标自动拆解</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>DSS / CRM 系统对接（占位）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>在线支持、版本升级与运维保障</span></li>
+          </ul>
+        </div>
+        <div class="pc-foot">
+          <div class="pc-price">按需报价</div>
+          <a class="pc-btn solid" href="#contact">标准化开通</a>
+        </div>
       </div>
-      <div class="plan-card">
-        <span class="plan-tag">定制</span>
-        <h3>专属方案</h3>
-        <p class="for">适用：中大型集团、主机厂联动项目</p>
-        <div class="plan-row"><span class="k">交付方式</span><span class="v">定制化部署、系统对接与专属配置</span></div>
-        <div class="plan-row"><span class="k">服务范围</span><span class="v">专属服务团队与项目制交付</span></div>
-        <div class="plan-row"><span class="k">适用判断</span><span class="v">多品牌多门店、有深度集成与定制需求</span></div>
-        <a class="btn btn-ghost" href="#contact">咨询专属方案</a>
+
+      <div class="plan-card new">
+        <span class="pc-ribbon">全新</span>
+        <div class="pc-head">
+          <h3>旗舰版</h3>
+          <p class="for">适用对象：中大型集团、主机厂联动项目</p>
+        </div>
+        <div class="pc-spec">
+          <div class="pc-row"><span class="k">接入方式</span><span class="v">定制化部署，支持专属集成（占位）</span></div>
+          <div class="pc-row"><span class="k">起售规模</span><span class="v">按项目评估</span></div>
+          <div class="pc-row"><span class="k">交付方式</span><span class="v">项目制实施与专属服务</span></div>
+        </div>
+        <div class="pc-feats">
+          <p class="ft">包含标准版全部功能，另提供</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>集团级多店经营看板与异常预警</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>跨店任务协同与统一策略下发</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>主机厂反漏斗联动执行通道</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属话术模型调优（占位）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属客户成功团队与定制培训</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属服务 SLA 与安全保障（占位）</span></li>
+          </ul>
+        </div>
+        <div class="pc-foot">
+          <div class="pc-price">联系销售</div>
+          <a class="pc-btn solid" href="#contact">咨询专属方案</a>
+        </div>
       </div>
+
     </div>
-    <p class="plans-note">以上版本划分为模板占位内容，正式交付边界与服务细节以产品资料与商务确认为准。</p>
+    <p class="plans-note">以上版本划分为模板占位内容，正式功能清单、价格与交付边界以产品资料与商务确认为准。</p>
   </div>
 </section>
 
-<!-- ===== 产品功能 ===== -->
-<section class="psec" id="features">
+<!-- ===== 核心功能（融合应用场景） ===== -->
+<section class="psec alt" id="features">
   <div class="wrap">
     <div class="op reveal">
-      <h2>产品功能<br><em>五组能力覆盖门店全链路</em></h2>
+      <h2>核心功能<br><em>产品能力与适用场景一一对应</em></h2>
     </div>
-    <div class="feat-layout reveal">
-      <div class="feat-menu" id="featMenu">
-        <button class="on" data-f="f1"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>门店经营管理</button>
-        <button data-f="f2"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>线索清洗与激活</button>
-        <button data-f="f3"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>智能外呼与邀约</button>
-        <button data-f="f4"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>通话质检与辅导</button>
-        <button data-f="f5"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>内容营销分发</button>
-      </div>
-      <div class="feat-stage" id="featStage">
-        <div class="feat-panel on" data-f="f1">
-          <div>
-            <h3>门店经营管理 · 家家总助</h3>
-            <p class="fd">门店经营大脑，一句话目标即可自动拆解、分配、执行，经营结果每日可见。</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>经营目标拆解：</b>自然语言输入目标，自动分解为可执行任务</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>数据诊断与洞察：</b>全量经营数据自动归因，异常指标标红</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>任务智能分配：</b>按 Agent 角色自动派发并跟踪执行进度</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>经营晨报 / 日报：</b>每日定时推送，改善建议一键采纳</span></li>
-            </ul>
-            <a class="btn btn-primary" href="#contact">立即咨询</a>
-          </div>
-          <div class="ph"><div><div class="ph-ic">▤</div><div class="ph-t">功能界面演示图</div><div class="ph-s">占位符 · 替换为家家总助工作台截图</div></div></div>
-        </div>
-        <div class="feat-panel" data-f="f2">
-          <div>
-            <h3>线索清洗与激活</h3>
-            <p class="fd">大模型批量外呼重新盘活线索池，只把高意向客户交给销售顾问。</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>线索批量清洗：</b>隔夜线索自动清洗与实时意向分级</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>沉睡客户激活：</b>针对沉睡/未触达客户多轮外呼唤醒</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>真人音色克隆：</b>自然拟人对话，接通体验接近真人</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>动态话术生成：</b>按客户画像与业务场景动态调整策略</span></li>
-            </ul>
-            <a class="btn btn-primary" href="#contact">立即咨询</a>
-          </div>
-          <div class="ph"><div><div class="ph-ic">▤</div><div class="ph-t">功能界面演示图</div><div class="ph-s">占位符 · 替换为外呼清洗工作流截图</div></div></div>
-        </div>
-        <div class="feat-panel" data-f="f3">
-          <div>
-            <h3>智能外呼与邀约</h3>
-            <p class="fd">置换、试驾、保养等业务名单自动外呼，加速客户到店转化。</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>置换政策匹配：</b>按政策名单一键触达目标客户</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>意向客户邀约：</b>多轮对话确认意向并预约到店时间</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>到店预约提醒：</b>到店前自动提醒，降低爽约率</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>结果回流：</b>通话结果自动回写，跟进状态实时更新</span></li>
-            </ul>
-            <a class="btn btn-primary" href="#contact">立即咨询</a>
-          </div>
-          <div class="ph"><div><div class="ph-ic">▤</div><div class="ph-t">功能界面演示图</div><div class="ph-s">占位符 · 替换为邀约任务执行截图</div></div></div>
-        </div>
-        <div class="feat-panel" data-f="f4">
-          <div>
-            <h3>通话质检与辅导</h3>
-            <p class="fd">全量通话自动质检，话术问题即时发现、辅导建议直接到人。</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>100% 全量质检：</b>告别人工抽检，每一通电话都有评分</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>话术评分与建议：</b>按 SOP 维度评分，指出改进点</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>优秀话术提炼：</b>自动沉淀高成交话术，团队复用</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>辅导闭环：</b>分析—辅导—验证—再优化持续迭代</span></li>
-            </ul>
-            <a class="btn btn-primary" href="#contact">立即咨询</a>
-          </div>
-          <div class="ph"><div><div class="ph-ic">▤</div><div class="ph-t">功能界面演示图</div><div class="ph-s">占位符 · 替换为质检报告截图</div></div></div>
-        </div>
-        <div class="feat-panel" data-f="f5">
-          <div>
-            <h3>内容营销分发</h3>
-            <p class="fd">AI 图文视频一键生成与分发，门店新媒体内容不断供。</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>AIGC 图文生成：</b>按营销日历批量产出车型内容</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>短视频智能剪辑：</b>素材自动成片，降低制作门槛</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>多平台一键分发：</b>主流内容平台同步发布</span></li>
-              <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>效果追踪：</b>发布效果回流，反哺内容策略</span></li>
-            </ul>
-            <a class="btn btn-primary" href="#contact">立即咨询</a>
-          </div>
-          <div class="ph"><div><div class="ph-ic">▤</div><div class="ph-t">功能界面演示图</div><div class="ph-s">占位符 · 替换为内容发布工作台截图</div></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== 产品框架 ===== -->
-<section class="psec alt" id="framework">
-  <div class="wrap">
-    <div class="op reveal">
-      <h2>产品框架<br><em>一个大脑指挥，一支团队执行</em></h2>
+    <div class="cf-unit reveal">
+      <div class="cf-visual">
+        <img src="灵机素材/feat-outreach.png" alt="线索触达与任务管理流程概念图">
+        <div class="cf-scene">
+          <p class="st">适用场景 · AI 外呼</p>
+          <p class="sx">适用于经销商 DCC 团队对新老线索的首轮触达。在促销活动、新车上市等需要集中联系客户的业务节点，替代人工逐拨打揽，提升触达效率与覆盖率。</p>
+        </div>
+      </div>
+      <div class="cf-body">
+        <h3 class="ct">线索触达与任务管理</h3>
+        <p class="cd">帮助 DCC 主管与销售顾问统一管理外呼任务与跟进节奏，覆盖任务创建、分配到结果回收，用于提升线索触达的及时率与覆盖率。</p>
+        <div class="cf-list">
+          <div class="cf-item">
+            <p class="fn">配置触达任务</p>
+            <p class="fd">销售或运营人员可按线索来源、状态和业务规则创建外呼与跟进任务，并将任务分配至对应成员，便于统一安排后续联系与跟进节奏。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">分配跟进成员</p>
+            <p class="fd">管理者可按团队、坐席与业务线划分任务归属，系统自动记录每条任务的执行人与执行状态，结果用于绩效考核与任务再分配。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">汇总触达结果</p>
+            <p class="fd">系统自动回收接通情况、意向标记与跟进记录，形成触达结果汇总，供管理者复盘触达策略并调整下一轮任务安排。</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="fw-desc reveal">以<b>家家总助</b>为门店经营大脑，15+ 类数字员工为执行单元，依托汽车之家垂域数据与自研大模型能力，贯通「线索 → 门店 → 成交 → 售后」全链路。</p>
-    <div class="fw-layers reveal">
-      <span>交互层 · 工作台与移动端</span>
-      <span>Agent 执行层 · 15+ 数字员工</span>
-      <span>数据分析层 · 经营诊断与画像</span>
-      <span>系统集成层 · DSS / CRM / DCC 对接</span>
-    </div>
-    <div class="ph fw-ph reveal"><div><div class="ph-ic">◻</div><div class="ph-t">产品架构图 / 业务流程图</div><div class="ph-s">占位符 · 替换为正式架构图（四层结构示意）</div></div></div>
-  </div>
-</section>
 
-<!-- ===== 产品优势 ===== -->
-<section class="psec" id="advantages">
-  <div class="wrap">
-    <div class="op reveal">
-      <h2>产品优势<br><em>与传统模式、通用工具的差异</em></h2>
-    </div>
-    <div class="adv-grid reveal">
-      <div class="adv-card">
-        <div class="n">01</div>
-        <h3>开箱即用</h3>
-        <p>预置 15+ 类汽车营销数字员工，无需自行搭建与训练，开通即可上岗。</p>
-        <div class="vs">对比通用 AI 平台：<b>需自建 Agent 与调试</b></div>
+    <div class="cf-unit rev reveal">
+      <div class="cf-visual">
+        <img src="灵机素材/feat-cleansing.png" alt="线索清洗与意向分级概念图">
+        <div class="cf-scene">
+          <p class="st">适用场景 · 线索清洗</p>
+          <p class="sx">适用于拥有大量历史沉睡线索的门店与集团。在线索存量过剩、人力不足以逐一跟进的条件下，批量甄别客户意向，把有效线索交还给销售团队。</p>
+        </div>
       </div>
-      <div class="adv-card">
-        <div class="n">02</div>
-        <h3>更懂汽车业务</h3>
-        <p>依托汽车之家垂域数据与自研大模型，懂车型、懂客户、懂门店经营场景。</p>
-        <div class="vs">对比通用大模型：<b>缺乏汽车行业场景理解</b></div>
-      </div>
-      <div class="adv-card">
-        <div class="n">03</div>
-        <h3>全链路闭环</h3>
-        <p>获客、转化、经营、售后一体覆盖，数据在链路内自动流转与回流。</p>
-        <div class="vs">对比单点工具：<b>环节割裂、数据孤岛</b></div>
-      </div>
-      <div class="adv-card">
-        <div class="n">04</div>
-        <h3>主机厂联动</h3>
-        <p>反漏斗模式支持主机厂与经销商协同执行，品牌策略直达一线门店。</p>
-        <div class="vs">对比门店自建：<b>缺乏品牌与门店协同通道</b></div>
+      <div class="cf-body">
+        <h3 class="ct">线索清洗与意向分级</h3>
+        <p class="cd">面向 DCC 团队对存量和新增线索做批量清洗，自动识别意向水平并输出分级结果，帮助团队把人力集中在高意向客户上。</p>
+        <div class="cf-list">
+          <div class="cf-item">
+            <p class="fn">批量清洗线索</p>
+            <p class="fd">运营人员可对历史沉睡或新增线索发起批量清洗，系统通过大模型对话自动完成首轮触达与信息核实，减少人工逐一拨打的重复工作。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">标记意向等级</p>
+            <p class="fd">系统依据对话内容自动识别购买意向并输出分级标记，区分高意向、待培育与沉默客户，结果直接用于后续跟进优先级排序。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">回流清洗结果</p>
+            <p class="fd">清洗结果自动回写至线索池并同步跟进建议，销售顾问可在工作台中按等级筛选客户，顺畅衔接后续邀约与到店安排。</p>
+          </div>
+        </div>
       </div>
     </div>
-    <table class="cmp-table reveal">
-      <thead>
-        <tr><th style="width:130px">对比维度</th><th class="hl">灵机门店版 AutoClaw</th><th>传统人工模式</th><th>通用 AI 工具</th></tr>
-      </thead>
-      <tbody>
-        <tr><th>上线周期</th><td class="hl">预置任务即开即用，开通即可执行</td><td>招聘、培训周期长，能力靠人带</td><td>需自行选型、开发与调试</td></tr>
-        <tr><th>业务理解</th><td class="hl">汽车垂域场景原生，懂车懂客户</td><td>依赖个人经验，水平参差</td><td>通用能力，不懂汽车业务语境</td></tr>
-        <tr><th>覆盖范围</th><td class="hl">获客、转化、经营、售后全链路</td><td>单点环节，跨环节靠人工衔接</td><td>单点功能，链路数据不通</td></tr>
-        <tr><th>质检复盘</th><td class="hl">100% 全量自动质检与经营日报</td><td>人工抽检，覆盖率低</td><td>有分析能力，无业务执行闭环</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
 
-<!-- ===== 应用场景 ===== -->
-<section class="psec alt" id="scenarios">
-  <div class="wrap">
-    <div class="op reveal">
-      <h2>应用场景<br><em>按门店业务环节即点即用</em></h2>
-    </div>
-    <div class="sc-tabs reveal" id="scTabs">
-      <button class="sc-tab on" data-s="s1">新车销售</button>
-      <button class="sc-tab" data-s="s2">售后保有</button>
-      <button class="sc-tab" data-s="s3">二手车置换</button>
-      <button class="sc-tab" data-s="s4">集团经营</button>
-    </div>
-    <div class="reveal">
-      <div class="sc-panel on" data-s="s1">
-        <div class="sc-chips">
-          <span class="sc-chip"><i></i>新车线索清洗</span>
-          <span class="sc-chip"><i></i>邀约到店</span>
-          <span class="sc-chip"><i></i>试驾提醒</span>
-          <span class="sc-chip"><i></i>网销线索跟进</span>
-          <span class="sc-chip"><i></i>到店客户分配</span>
-          <span class="sc-chip"><i></i>战败客户挽回</span>
+    <div class="cf-unit reveal">
+      <div class="cf-visual">
+        <img src="灵机素材/feat-quality.png" alt="通话质检与话术辅导概念图">
+        <div class="cf-scene">
+          <p class="st">适用场景 · 通话质检</p>
+          <p class="sx">适用于配备电销与邀约团队的门店。在需要监控服务标准、改进话术质量的管理要求下，替代人工抽检实现全量通话覆盖。</p>
         </div>
       </div>
-      <div class="sc-panel" data-s="s2">
-        <div class="sc-chips">
-          <span class="sc-chip"><i></i>保养到期提醒</span>
-          <span class="sc-chip"><i></i>流失客户预警</span>
-          <span class="sc-chip"><i></i>续保触达</span>
-          <span class="sc-chip"><i></i>客户画像分层</span>
-          <span class="sc-chip"><i></i>售后回访质检</span>
-        </div>
-      </div>
-      <div class="sc-panel" data-s="s3">
-        <div class="sc-chips">
-          <span class="sc-chip"><i></i>置换政策触达</span>
-          <span class="sc-chip"><i></i>旧车评估邀约</span>
-          <span class="sc-chip"><i></i>增换购意向识别</span>
-          <span class="sc-chip"><i></i>置换订单跟进</span>
-        </div>
-      </div>
-      <div class="sc-panel" data-s="s4">
-        <div class="sc-chips">
-          <span class="sc-chip"><i></i>多店经营看板</span>
-          <span class="sc-chip"><i></i>经营目标拆解</span>
-          <span class="sc-chip"><i></i>异常指标预警</span>
-          <span class="sc-chip"><i></i>每日经营晨报</span>
-          <span class="sc-chip"><i></i>跨店任务协同</span>
+      <div class="cf-body">
+        <h3 class="ct">通话质检与话术辅导</h3>
+        <p class="cd">服务质检与销售管理者，对全量通话进行自动质检与评分，定位话术问题并沉淀优秀表达，用于服务质量监控与团队能力提升。</p>
+        <div class="cf-list">
+          <div class="cf-item">
+            <p class="fn">全量质检通话</p>
+            <p class="fd">质检人员可按业务规则对全部通话执行自动质检，无需人工抽样，系统逐通识别执行偏差与风险表达并生成质检记录。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">生成话术评分</p>
+            <p class="fd">系统按话术维度对每通电话输出评分与改进点，形成个人与团队的质量看板，结果用于定位共性问题与确定辅导重点。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">提炼优秀话术</p>
+            <p class="fd">系统自动归集高成交通话中的优秀话术片段，沉淀为团队话术库，供新人培训与一线销售参考复用。</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="cf-unit rev reveal">
+      <div class="cf-visual">
+        <img src="灵机素材/feat-report.png" alt="门店经营与数据分析概念图">
+        <div class="cf-scene">
+          <p class="st">适用场景 · 经营晨报</p>
+          <p class="sx">适用于门店总经理与集团管理层的日常经营场景。在多环节数据分散、复盘依赖人工统计的条件下，自动汇总诊断，支撑当日经营决策。</p>
+        </div>
+      </div>
+      <div class="cf-body">
+        <h3 class="ct">门店经营与数据分析</h3>
+        <p class="cd">面向门店总经理与集团管理层，围绕线索、到店、成交等核心指标做自动诊断与每日推送，支撑经营复盘与目标管理。</p>
+        <div class="cf-list">
+          <div class="cf-item">
+            <p class="fn">拆解经营目标</p>
+            <p class="fd">管理者以自然语言输入经营目标，系统自动拆解为可执行任务并匹配对应数字员工，明确责任分工与完成节奏。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">推送经营晨报</p>
+            <p class="fd">系统每日定时汇总昨日线索、到店、成交与目标差距，生成结构化晨报推送给管理层，作为当日经营安排的依据。</p>
+          </div>
+          <div class="cf-item">
+            <p class="fn">预警异常指标</p>
+            <p class="fd">系统持续监测核心指标波动，自动识别异常并附归因与改善建议，帮助管理者及时干预而非事后复盘。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -836,33 +812,45 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
     </div>
     <div class="case-grid reveal">
       <div class="case-card">
-        <div class="ph"><div><div class="ph-ic">▨</div><div class="ph-t">案例配图</div><div class="ph-s">占位符</div></div></div>
-        <div class="case-body">
-          <span class="ct">头部品牌 · 800+ 门店</span>
-          <h3>主机厂反漏斗联动经销商，邀约效率提升 30%</h3>
-          <p>数字员工统一执行品牌邀约策略，团队只跟进系统标记的高意向线索，DCC 人效大幅提升。</p>
-          <span class="more">了解详情 ›</span>
+        <div class="case-img"><img src="灵机素材/case-byd.jpg" alt="经销商门店展厅实拍"></div>
+        <div class="case-quote">
+          <p class="q">外呼清洗专员上线后，团队只跟进系统标记的高意向线索，三个 DCC 专员干出了过去六个人的活。</p>
+          <div class="who"><span class="clogo">BYD</span><div class="wn"><b>比亚迪经销商门店</b><span>邀约效率提升 30% · 800+ 门店同步执行</span></div></div>
         </div>
       </div>
       <div class="case-card">
-        <div class="ph"><div><div class="ph-ic">▨</div><div class="ph-t">案例配图</div><div class="ph-s">占位符</div></div></div>
-        <div class="case-body">
-          <span class="ct">合资品牌 · 4S 店</span>
-          <h3>大模型外呼清洗线索池，接通率提升 30%</h3>
-          <p>沉睡线索池重新激活，外呼策略经话术质检持续优化，通话质量与意向转化同步提升。</p>
-          <span class="more">了解详情 ›</span>
+        <div class="case-img"><img src="灵机素材/case-audi.jpg" alt="新车交付现场实拍"></div>
+        <div class="case-quote">
+          <p class="q">大模型外呼把沉睡线索池重新洗了一遍，接通率提升 30%，质检还能直接给出话术改进建议。</p>
+          <div class="who"><span class="clogo">AUDI</span><div class="wn"><b>一汽奥迪 4S 店</b><span>外呼接通率提升 30%</span></div></div>
         </div>
       </div>
       <div class="case-card">
-        <div class="ph"><div><div class="ph-ic">▨</div><div class="ph-t">案例配图</div><div class="ph-s">占位符</div></div></div>
-        <div class="case-body">
-          <span class="ct">自主品牌 · 门店经营</span>
-          <h3>店总经理 Agent 每日经营晨报，异常一目了然</h3>
-          <p>每天早上 8 点半自动推送经营晨报，哪个环节掉了链子、今天该盯什么，管理者一眼看清。</p>
-          <span class="more">了解详情 ›</span>
+        <div class="case-img"><img src="灵机素材/case-changan.jpg" alt="新车展示区实拍"></div>
+        <div class="case-quote">
+          <p class="q">每天早上 8 点半收到经营晨报，昨天哪个环节掉了链子、今天该盯什么，一目了然。</p>
+          <div class="who"><span class="clogo">CHANGAN</span><div class="wn"><b>长安汽车门店</b><span>店总经理 Agent · 每日经营晨报</span></div></div>
         </div>
       </div>
     </div>
+
+    <div class="case-tabs reveal" id="caseTabs">
+      <button class="on">全部</button>
+      <button>整车厂</button>
+      <button>经销商集团</button>
+      <button>新能源</button>
+      <button>汽车金融</button>
+    </div>
+
+    <div class="logo-wall reveal">
+      <div class="lw-item"><span class="clogo">BYD</span>比亚迪</div>
+      <div class="lw-item"><span class="clogo">AUDI</span>一汽奥迪</div>
+      <div class="lw-item"><span class="clogo">LI XIANG</span>理想汽车</div>
+      <div class="lw-item"><span class="clogo">NIO</span>蔚来</div>
+      <div class="lw-item"><span class="clogo">CHANGAN</span>长安汽车</div>
+      <div class="lw-item"><span class="clogo">PANGDA</span>庞大集团</div>
+    </div>
+    <p class="plans-note">合作品牌标识以文字字标占位，正式上线替换为品牌官方 logo。</p>
   </div>
 </section>
 
@@ -900,6 +888,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
     </div>
   </div>
 </section>
+
 
 <!-- ===== 底部 CTA ===== -->
 <section class="p-cta" id="contact">
@@ -941,24 +930,15 @@ function bindMega(catsId){
 }
 ['prodMegaCats','solMegaCats','caseMegaCats'].forEach(bindMega);
 
+// 案例 tab（视觉切换）
+const caseTabs=document.getElementById('caseTabs');
+caseTabs.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b)return;
+  caseTabs.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+});
+
 // 登录/注册等动作统一引导到底部 CTA
 function openChat(){document.getElementById('contact').scrollIntoView({behavior:'smooth'});}
-
-// 产品功能 tab
-const featMenu=document.getElementById('featMenu');
-featMenu.addEventListener('click',e=>{
-  const b=e.target.closest('button'); if(!b)return;
-  featMenu.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
-  document.querySelectorAll('#featStage .feat-panel').forEach(p=>p.classList.toggle('on',p.dataset.f===b.dataset.f));
-});
-
-// 应用场景 tab
-const scTabs=document.getElementById('scTabs');
-scTabs.addEventListener('click',e=>{
-  const b=e.target.closest('.sc-tab'); if(!b)return;
-  scTabs.querySelectorAll('.sc-tab').forEach(x=>x.classList.toggle('on',x===b));
-  document.querySelectorAll('.sc-panel').forEach(p=>p.classList.toggle('on',p.dataset.s===b.dataset.s));
-});
 
 // FAQ 手风琴
 document.querySelectorAll('#faqList .faq-item').forEach(item=>{
@@ -969,22 +949,6 @@ document.querySelectorAll('#faqList .faq-item').forEach(item=>{
     if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
   });
 });
-
-// 锚点导航 scrollspy + 平滑滚动
-const subLinks=[...document.querySelectorAll('#subnav a')];
-subLinks.forEach(a=>a.addEventListener('click',ev=>{
-  ev.preventDefault();
-  const t=document.querySelector(a.getAttribute('href'));
-  if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-150,behavior:'smooth'});
-}));
-const spy=new IntersectionObserver(es=>{
-  es.forEach(en=>{
-    if(en.isIntersecting){
-      subLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id));
-    }
-  });
-},{rootMargin:'-30% 0px -60% 0px'});
-document.querySelectorAll('#plans,#features,#framework,#advantages,#scenarios,#cases,#faq').forEach(s=>spy.observe(s));
 </script>
 </body>
 </html>
