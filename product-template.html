@@ -230,13 +230,13 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .crumbs b{color:var(--ink);font-weight:700}
 
 /* 首屏价值主张 */
-.p-hero{position:relative;padding:34px 0 40px;background:linear-gradient(180deg,#eaf4ff 0%,#f6faff 62%,#fff 100%);overflow:hidden}
+.p-hero{position:relative;padding:88px 0 100px;background:linear-gradient(180deg,#eaf4ff 0%,#f6faff 62%,#fff 100%);overflow:hidden}
 .p-hero::before{content:"";position:absolute;left:50%;top:0;width:1200px;height:560px;background:radial-gradient(ellipse at top,rgba(24,144,255,.16),transparent 65%);transform:translateX(-50%);pointer-events:none}
-.p-hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center;position:relative;z-index:1}
-.p-hero h1{font-size:clamp(32px,3.4vw,44px);font-weight:900;line-height:1.3;letter-spacing:-.5px;margin-bottom:16px}
+.p-hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:68px;align-items:center;position:relative;z-index:1}
+.p-hero h1{font-size:clamp(32px,3.4vw,44px);font-weight:700;line-height:1.35;letter-spacing:1.5px;margin-bottom:24px}
 .p-hero h1 em{font-style:normal;display:block;background:linear-gradient(120deg,var(--blue),#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.p-hero .pos{font-size:16.5px;color:#3a4a63;line-height:1.75;max-width:560px;margin-bottom:26px}
-.p-hero .vals{display:flex;flex-direction:column;gap:9px;margin-bottom:30px}
+.p-hero .pos{font-size:16.5px;color:#3a4a63;line-height:1.85;max-width:540px;margin-bottom:34px}
+.p-hero .vals{display:flex;flex-direction:column;gap:15px;margin-bottom:42px}
 .p-hero .val{display:flex;align-items:center;gap:10px;font-size:14.5px;color:#243246}
 .p-hero .val svg{flex:none;color:var(--blue)}
 .p-hero .val b{font-weight:800;color:var(--ink)}
@@ -253,10 +253,10 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .p-hero .ph{width:100%;min-height:380px;box-shadow:0 18px 50px rgba(24,86,144,.10);background-color:#fff}
 
 /* 通用模块 */
-.psec{padding:84px 0;position:relative}
+.psec{padding:118px 0;position:relative}
 .psec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(24,144,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(24,144,255,.045) 1px,transparent 1px);background-size:38px 38px;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 78%,transparent 100%)}
 .psec .wrap{position:relative;z-index:1}
-.psec .op{text-align:center;max-width:780px;margin:0 auto 52px}
+.psec .op{text-align:center;max-width:780px;margin:0 auto 72px}
 .psec .op h2{font-size:40px;font-weight:900;letter-spacing:.5px;line-height:1.35}
 .psec .op h2 em{font-style:normal;display:block;background:linear-gradient(120deg,#1890FF,#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .psec.alt{background:#fff}
@@ -275,7 +275,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 @media(max-width:1024px){.news-card{grid-template-columns:1fr}}
 
 /* 核心功能（能力 × 场景，左右交替双栏） */
-.cf-unit{display:grid;grid-template-columns:48% 1fr;gap:44px;align-items:start;margin-bottom:60px}
+.cf-unit{display:grid;grid-template-columns:48% 1fr;gap:48px;align-items:start;margin-bottom:92px}
 .cf-unit.rev .cf-visual{order:2}
 .cf-unit.rev .cf-body{order:1}
 .cf-visual img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block;border:1px solid var(--line);background:#fff}
@@ -361,8 +361,11 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .faq-a p{padding:0 24px 20px;font-size:14px;color:#46566f;line-height:1.8}
 
+/* 宋体标题（火山式简洁大气） */
+.p-hero h1,.psec .op h2,.p-cta h2{font-family:"Songti SC","STZhongsong","STSong","SimSun",serif;font-weight:700;letter-spacing:1.5px}
+
 /* 底部 CTA */
-.p-cta{text-align:center;padding:84px 24px;background:linear-gradient(180deg,#fff,#f2f8ff)}
+.p-cta{text-align:center;padding:118px 24px;background:linear-gradient(180deg,#fff,#f2f8ff)}
 .p-cta h2{font-size:34px;font-weight:900;margin-bottom:12px}
 .p-cta p{color:var(--muted);font-size:15px;margin-bottom:28px}
 .p-cta .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
