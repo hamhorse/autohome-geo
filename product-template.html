@@ -96,7 +96,7 @@ header.top{background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bo
 
 /* 通用板块 */
 .sec{padding:88px 0;position:relative}
-.sec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(24,144,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(24,144,255,.045) 1px,transparent 1px);background-size:38px 38px;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%)}
+.sec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(24,144,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(24,144,255,.045) 1px,transparent 1px);background-size:38px 38px;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 78%,transparent 100%)}
 .sec .wrap{position:relative;z-index:1}
 .sec .op{text-align:center;max-width:780px;margin:0 auto 56px}
 .sec .op h2{font-size:40px;font-weight:900;letter-spacing:.5px;line-height:1.35;margin-bottom:14px}
@@ -254,7 +254,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 
 /* 通用模块 */
 .psec{padding:84px 0;position:relative}
-.psec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(24,144,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(24,144,255,.045) 1px,transparent 1px);background-size:38px 38px;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%)}
+.psec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(24,144,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(24,144,255,.045) 1px,transparent 1px);background-size:38px 38px;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 78%,transparent 100%)}
 .psec .wrap{position:relative;z-index:1}
 .psec .op{text-align:center;max-width:780px;margin:0 auto 52px}
 .psec .op h2{font-size:40px;font-weight:900;letter-spacing:.5px;line-height:1.35}
@@ -279,9 +279,15 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .cf-unit.rev .cf-visual{order:2}
 .cf-unit.rev .cf-body{order:1}
 .cf-visual img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;display:block;border:1px solid var(--line);background:#fff}
-.cf-scene{margin-top:16px;background:#f7fafd;border:1px solid var(--line);border-radius:12px;padding:16px 20px}
-.cf-scene .st{font-size:14px;font-weight:800;color:#0A66CC;margin-bottom:6px}
-.cf-scene .sx{font-size:13px;color:#5a6a82;line-height:1.75}
+.cf-carousel{position:relative}
+.cf-slide{display:none}
+.cf-slide.on{display:block;animation:cfFade .45s ease}
+@keyframes cfFade{from{opacity:0}to{opacity:1}}
+.cf-cap .ct{font-size:15.5px;font-weight:800;color:var(--ink);margin:14px 0 6px}
+.cf-cap .sx{font-size:13.5px;color:#5a6a82;line-height:1.75}
+.cf-dots{display:flex;gap:7px;margin-top:14px}
+.cf-dots span{width:7px;height:7px;border-radius:4px;background:#d4dfe9;cursor:pointer;transition:.25s}
+.cf-dots span.on{width:20px;background:var(--blue)}
 .cf-body .ct{font-size:25px;font-weight:900;letter-spacing:.5px;margin-bottom:10px}
 .cf-body .cd{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:6px}
 .cf-list{margin-top:4px}
@@ -691,10 +697,22 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 
     <div class="cf-unit reveal">
       <div class="cf-visual">
-        <img src="灵机素材/feat-outreach.png" alt="线索触达与任务管理流程概念图">
-        <div class="cf-scene">
-          <p class="st">适用场景 · AI 外呼</p>
-          <p class="sx">适用于经销商 DCC 团队对新老线索的首轮触达。在促销活动、新车上市等需要集中联系客户的业务节点，替代人工逐拨打揽，提升触达效率与覆盖率。</p>
+        <div class="cf-carousel">
+          <div class="cf-slide on">
+            <img src="灵机素材/feat-outreach.png" alt="AI 外呼场景实拍">
+            <div class="cf-cap">
+              <p class="ct">AI 外呼</p>
+              <p class="sx">数字员工按任务队列自动外呼，接通后按话术开场、追问意向，全程录音留档。</p>
+            </div>
+          </div>
+          <div class="cf-slide">
+            <img src="灵机素材/feat-invite.jpg" alt="邀约到店场景实拍">
+            <div class="cf-cap">
+              <p class="ct">邀约到店</p>
+              <p class="sx">试驾邀约、活动通知、保养提醒批量执行，到店意向自动同步给销售顾问跟进。</p>
+            </div>
+          </div>
+          <div class="cf-dots"><span class="on"></span><span></span></div>
         </div>
       </div>
       <div class="cf-body">
@@ -719,10 +737,22 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 
     <div class="cf-unit rev reveal">
       <div class="cf-visual">
-        <img src="灵机素材/feat-cleansing.png" alt="线索清洗与意向分级概念图">
-        <div class="cf-scene">
-          <p class="st">适用场景 · 线索清洗</p>
-          <p class="sx">适用于拥有大量历史沉睡线索的门店与集团。在线索存量过剩、人力不足以逐一跟进的条件下，批量甄别客户意向，把有效线索交还给销售团队。</p>
+        <div class="cf-carousel">
+          <div class="cf-slide on">
+            <img src="灵机素材/feat-cleansing.png" alt="线索清洗场景实拍">
+            <div class="cf-cap">
+              <p class="ct">线索清洗</p>
+              <p class="sx">批量验证新线索的号码真实性与意向真伪，有效线索实时回流 DSS / CRM 分配跟进。</p>
+            </div>
+          </div>
+          <div class="cf-slide">
+            <img src="灵机素材/feat-reactivate.jpg" alt="战败激活场景实拍">
+            <div class="cf-cap">
+              <p class="ct">战败激活</p>
+              <p class="sx">对历史战败线索定期再触达，捕捉新增换购需求，激活线索重新进入分配池。</p>
+            </div>
+          </div>
+          <div class="cf-dots"><span class="on"></span><span></span></div>
         </div>
       </div>
       <div class="cf-body">
@@ -747,10 +777,22 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 
     <div class="cf-unit reveal">
       <div class="cf-visual">
-        <img src="灵机素材/feat-quality.png" alt="通话质检与话术辅导概念图">
-        <div class="cf-scene">
-          <p class="st">适用场景 · 通话质检</p>
-          <p class="sx">适用于配备电销与邀约团队的门店。在需要监控服务标准、改进话术质量的管理要求下，替代人工抽检实现全量通话覆盖。</p>
+        <div class="cf-carousel">
+          <div class="cf-slide on">
+            <img src="灵机素材/feat-quality.png" alt="通话质检场景实拍">
+            <div class="cf-cap">
+              <p class="ct">通话质检</p>
+              <p class="sx">全量质检外呼与接听录音，覆盖开场白、异议处理、邀约动作等关键执行环节。</p>
+            </div>
+          </div>
+          <div class="cf-slide">
+            <img src="灵机素材/feat-coach.jpg" alt="话术辅导场景实拍">
+            <div class="cf-cap">
+              <p class="ct">话术辅导</p>
+              <p class="sx">基于质检结果定位失分环节，生成改进建议与优秀话术案例，供专员对照学习。</p>
+            </div>
+          </div>
+          <div class="cf-dots"><span class="on"></span><span></span></div>
         </div>
       </div>
       <div class="cf-body">
@@ -775,10 +817,22 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 
     <div class="cf-unit rev reveal">
       <div class="cf-visual">
-        <img src="灵机素材/feat-report.png" alt="门店经营与数据分析概念图">
-        <div class="cf-scene">
-          <p class="st">适用场景 · 经营晨报</p>
-          <p class="sx">适用于门店总经理与集团管理层的日常经营场景。在多环节数据分散、复盘依赖人工统计的条件下，自动汇总诊断，支撑当日经营决策。</p>
+        <div class="cf-carousel">
+          <div class="cf-slide on">
+            <img src="灵机素材/feat-report.png" alt="经营晨报场景实拍">
+            <div class="cf-cap">
+              <p class="ct">经营晨报</p>
+              <p class="sx">每日汇总线索、触达、到店与成交数据，生成经营晨报定时推送门店管理层。</p>
+            </div>
+          </div>
+          <div class="cf-slide">
+            <img src="灵机素材/feat-alert.jpg" alt="异常预警场景实拍">
+            <div class="cf-cap">
+              <p class="ct">异常预警</p>
+              <p class="sx">关键指标偏离阈值自动预警，定位到渠道与环节，辅助管理层当日决策。</p>
+            </div>
+          </div>
+          <div class="cf-dots"><span class="on"></span><span></span></div>
         </div>
       </div>
       <div class="cf-body">
@@ -939,6 +993,19 @@ caseTabs.addEventListener('click',e=>{
 
 // 登录/注册等动作统一引导到底部 CTA
 function openChat(){document.getElementById('contact').scrollIntoView({behavior:'smooth'});}
+
+// 场景轮播
+document.querySelectorAll('.cf-carousel').forEach(c=>{
+  const slides=c.querySelectorAll('.cf-slide'), dots=c.querySelectorAll('.cf-dots span');
+  let i=0, timer=null;
+  const go=n=>{slides[i].classList.remove('on');dots[i].classList.remove('on');i=(n+slides.length)%slides.length;slides[i].classList.add('on');dots[i].classList.add('on');};
+  const start=()=>{timer=setInterval(()=>go(i+1),5000);};
+  const stop=()=>clearInterval(timer);
+  start();
+  c.addEventListener('mouseenter',stop);
+  c.addEventListener('mouseleave',start);
+  dots.forEach((d,n)=>d.addEventListener('click',()=>go(n)));
+});
 
 // FAQ 手风琴
 document.querySelectorAll('#faqList .faq-item').forEach(item=>{
