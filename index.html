@@ -504,43 +504,28 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 .prodsec .phero .ph-cta:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 10px 26px rgba(24,144,255,.32)}
 .prodsec .phero .ph-cta svg{transition:.2s}
 .prodsec .phero .ph-cta:hover svg{transform:translate(2px,-2px)}
-.pm-wrap{max-width:1240px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
-.pm-cats{position:sticky;top:96px;display:flex;flex-direction:column;gap:6px;padding:14px 0}
-.pm-cats button{position:relative;text-align:left;padding:15px 20px 15px 24px;border:none;background:transparent;border-radius:0;font-size:17px;font-weight:700;color:#2c3c55;cursor:pointer;transition:.2s;font-family:inherit}
-.pm-cats button::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%) scaleY(0);width:4px;height:22px;background:var(--blue);transition:.22s}
-.pm-cats button:hover{color:var(--blue)}
-.pm-cats button.active{background:rgba(255,255,255,.88);color:var(--blue);box-shadow:0 4px 16px rgba(24,86,144,.08)}
-.pm-cats button.active::before{transform:translateY(-50%) scaleY(1)}
-.pm-box{background:#fff;border-radius:16px;box-shadow:0 24px 70px rgba(24,86,144,.10);padding:30px;min-height:520px}
-.pm-panel{display:none;animation:fadeIn .35s}
-.pm-panel.active{display:block}
-.pm-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.pm-card{display:flex;flex-direction:column;background:#fff;border-radius:12px;border:none;padding:26px 26px 24px;box-shadow:0 2px 16px rgba(24,86,144,.09);transition:.25s;text-decoration:none;color:inherit}
-.pm-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(24,86,144,.15)}
-.pm-card .pm-tag{display:block;font-size:12px;font-weight:700;letter-spacing:2px;color:#6b7a90;margin-bottom:12px}
-.pm-card h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:8px}
-.pm-card p{font-size:13.5px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:20px}
-.pm-actions{display:flex;align-items:center;gap:18px;margin-top:auto}
-.pm-btn{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-size:13.5px;font-weight:700;padding:9px 20px;border-radius:20px;transition:.2s;text-decoration:none}
-.pm-btn:hover{background:var(--blue-d)}
-.pm-link{font-size:13.5px;font-weight:600;color:#5a6b85;transition:.2s}
-.pm-card:hover .pm-link{color:var(--blue)}
-.pm-list{margin-top:26px;border-top:1px solid #eef2f8;padding-top:6px;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
-.pm-item{display:block;padding:13px 4px;border-bottom:1px solid #f2f5fa;text-decoration:none}
-.pm-item h5{font-size:15px;font-weight:700;color:var(--ink);transition:color .18s}
-.pm-item p{margin-top:3px;font-size:12.5px;color:var(--muted);line-height:1.6}
-.pm-item:hover h5{color:var(--blue)}
+/* 产品矩阵：按类型分容器（中关村式），容器按内容量定宽 */
+.pm-grid{max-width:1240px;margin:40px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.pcard{position:relative;background:#fff;border:1px solid rgba(24,86,144,.10);border-radius:16px;padding:24px 24px 20px;transition:.25s;text-decoration:none;color:inherit;overflow:hidden}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(24,86,144,.13);border-color:rgba(24,144,255,.35)}
+.pcard.s4{grid-column:span 4}.pcard.s5{grid-column:span 5}.pcard.s3{grid-column:span 3}
+.pc-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.pc-icon{width:38px;height:38px;border-radius:10px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;flex:none}
+.pc-tt h3{font-size:19px;font-weight:900;color:var(--ink);letter-spacing:-.2px}
+.pc-tt p{font-size:12.5px;color:#6b7a90;margin-top:3px}
+.pc-art{position:absolute;right:12px;top:14px;opacity:.55;pointer-events:none}
+.pc-items{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.pcard.solo .pc-items{grid-template-columns:1fr}
+.pc-item h5{font-size:15px;font-weight:800;color:var(--ink)}
+.pc-item h5 a{color:inherit;text-decoration:none}
+.pc-item h5 a:hover{color:var(--blue)}
+.pc-item p{font-size:12.5px;color:#6b7a90;line-height:1.6;margin-top:4px}
+@media(max-width:1024px){.pm-grid .pcard{grid-column:span 12 !important}}
+
 @media(max-width:960px){
   .prodsec .phero{min-height:0;padding:110px 20px 44px}
   .prodsec .phero h1{font-size:30px;letter-spacing:0}
   .prodsec .phero p{font-size:15px}
-  .pm-wrap{grid-template-columns:1fr;gap:20px}
-  .pm-cats{flex-direction:row;position:static;overflow-x:auto;gap:8px;padding-bottom:4px}
-  .pm-cats button{white-space:nowrap;padding:11px 16px}
-  .pm-cats button::before{display:none}
-  .pm-feat{grid-template-columns:1fr}
-  .pm-list{grid-template-columns:1fr}
-  .pm-box{padding:20px}
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:.95}50%{transform:scale(.5);opacity:.45}}
@@ -1037,111 +1022,79 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 <section id="products" class="prodsec">
   <div class="phero">
     <h1>汽车之家企业产品体系</h1>
-    <a class="ph-cta" href="#">查看全部产品 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    <p>从获客、转化到经营决策，AI 产品矩阵覆盖汽车生意全链路</p>
   </div>
-  <div class="pm-wrap">
-    <div class="pm-cats" id="prodTabs">
-      <button class="active" data-tab="featured">精选产品</button>
-      <button data-tab="maas">MaaS 产品</button>
-      <button data-tab="saas">SaaS 产品</button>
-    </div>
-    <div class="pm-panels">
-
-      <!-- 精选产品 -->
-      <div class="pm-panel active" data-tab="featured">
-        <div class="pm-box">
-          <div class="pm-feat">
-            <a class="pm-card" href="lingji.html">
-              <span class="pm-tag">MaaS · AGENT 平台</span>
-              <h3>灵机门店版</h3>
-              <p>面向经销商的 Multi-Agent 平台，预置 15+ 类 AI 数字员工。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-            <a class="pm-card" href="#">
-              <span class="pm-tag">数据决策</span>
-              <h3>车智云</h3>
-              <p>主机厂智能数据决策平台：销量预测、竞争格局、营销漏斗、产品规划。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-            <a class="pm-card" href="#">
-              <span class="pm-tag">线索触达</span>
-              <h3>智慧外呼</h3>
-              <p>大模型自动外呼清洗与邀约线索，提取有效意向。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-          </div>
-          <div class="pm-list">
-            <a class="pm-item" href="#"><h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导。</p></a>
-            <a class="pm-item" href="#"><h5>智慧网销</h5><p>全流程网销管理与邀约到店漏斗。</p></a>
-            <a class="pm-item" href="#"><h5>AI 直播</h5><p>智能直播带货与内容营销。</p></a>
-            <a class="pm-item" href="#"><h5>智效店铺</h5><p>门店运营数字化与人效提升。</p></a>
-          </div>
-        </div>
+  <div class="pm-grid">
+    <a class="pcard s4" href="#">
+      <div class="pc-head">
+        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <div class="pc-tt"><h3>智能营销</h3><p>内容驱动获客</p></div>
+        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><circle cx="18" cy="24" r="10" stroke-dasharray="3 3" opacity=".55"/><circle cx="46" cy="14" r="4" opacity=".7"/><circle cx="64" cy="32" r="6" opacity=".7"/><path d="M27 21l15-5M50 17l10 11" opacity=".6"/></svg></div>
       </div>
-
-      <!-- MaaS 产品 -->
-      <div class="pm-panel" data-tab="maas">
-        <div class="pm-box">
-          <div class="pm-feat">
-            <a class="pm-card" href="lingji.html">
-              <span class="pm-tag">MaaS · AGENT 平台</span>
-              <h3>灵机门店版</h3>
-              <p>面向经销商的 Multi-Agent 平台，预置 15+ 类 AI 数字员工。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-            <a class="pm-card" href="#">
-              <span class="pm-tag">MaaS · 主机厂</span>
-              <h3>灵机厂商版</h3>
-              <p>反漏斗模式，赋能主机厂联动经销商高效转化。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-          </div>
-          <div class="pm-list">
-            <a class="pm-item" href="#"><h5>家家总助 Agent</h5><p>店总经理智能助手，目标拆解与经营诊断。</p></a>
-            <a class="pm-item" href="#"><h5>数字员工全景</h5><p>外呼、客服、质检、内容等 15+ 角色一览。</p></a>
-          </div>
-        </div>
+      <div class="pc-items">
+        <div class="pc-item"><h5>AI 直播</h5><p>智能直播带货与内容营销</p></div>
+        <div class="pc-item"><h5>AIGC 平台</h5><p>视频图文智能内容生产</p></div>
+        <div class="pc-item"><h5>AI 私信</h5><p>智能私信触达潜客激活</p></div>
       </div>
-
-      <!-- SaaS 产品 -->
-      <div class="pm-panel" data-tab="saas">
-        <div class="pm-box">
-          <div class="pm-feat">
-            <a class="pm-card" href="#">
-              <span class="pm-tag">线索触达</span>
-              <h3>智慧外呼</h3>
-              <p>大模型自动外呼清洗与邀约线索，提取有效意向。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-            <a class="pm-card" href="#">
-              <span class="pm-tag">质量保障</span>
-              <h3>智慧质检</h3>
-              <p>外呼通话全量 AI 质检与话术辅导。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-            <a class="pm-card" href="#">
-              <span class="pm-tag">网销管理</span>
-              <h3>智慧网销</h3>
-              <p>全流程网销管理与邀约到店漏斗。</p>
-              <span class="pm-actions"><span class="pm-btn">立即咨询</span><span class="pm-link">查看详情 ›</span></span>
-            </a>
-          </div>
-          <div class="pm-list">
-            <a class="pm-item" href="#"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入。</p></a>
-            <a class="pm-item" href="#"><h5>企信通</h5><p>企业微信一体化客服与销售协作。</p></a>
-            <a class="pm-item" href="#"><h5>云智选</h5><p>人机协同用户培育与转化。</p></a>
-            <a class="pm-item" href="#"><h5>智慧助手</h5><p>网销/销售一站式智能助手。</p></a>
-            <a class="pm-item" href="#"><h5>AIGC 平台</h5><p>视频剪辑、图文生成等创作能力。</p></a>
-            <a class="pm-item" href="#"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合。</p></a>
-            <a class="pm-item" href="#"><h5>车智云</h5><p>主机厂智能数据决策平台。</p></a>
-            <a class="pm-item" href="#"><h5>AI 直播</h5><p>智能直播带货与内容营销。</p></a>
-            <a class="pm-item" href="#"><h5>AI 私信</h5><p>智能私信触达与潜客激活。</p></a>
-            <a class="pm-item" href="#"><h5>智效店铺</h5><p>门店运营数字化与人效提升。</p></a>
-          </div>
-        </div>
+    </a>
+    <a class="pcard s5" href="#">
+      <div class="pc-head">
+        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+        <div class="pc-tt"><h3>智能销售</h3><p>线索到成交转化</p></div>
+        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><path d="M6 38c12-2 14-26 26-26s12 18 24 18 14-14 22-16" opacity=".6"/><circle cx="56" cy="30" r="3.5" opacity=".8"/></svg></div>
       </div>
-
-    </div>
+      <div class="pc-items">
+        <div class="pc-item"><h5>智慧外呼</h5><p>大模型外呼清洗与邀约</p></div>
+        <div class="pc-item"><h5>智慧网销</h5><p>全流程网销管理漏斗</p></div>
+        <div class="pc-item"><h5>云智选</h5><p>人机协同培育转化</p></div>
+        <div class="pc-item"><h5>智慧质检</h5><p>全量通话质检与话术辅导</p></div>
+      </div>
+    </a>
+    <a class="pcard s3" href="#">
+      <div class="pc-head">
+        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4" height="7" rx="2"/><rect x="18" y="13" width="4" height="7" rx="2"/></svg></div>
+        <div class="pc-tt"><h3>智能通信</h3><p>全渠道云接待</p></div>
+        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><rect x="8" y="10" width="16" height="12" rx="2" opacity=".6"/><rect x="34" y="24" width="16" height="12" rx="2" opacity=".7"/><rect x="60" y="8" width="16" height="12" rx="2" opacity=".5"/><path d="M24 16l10 8M50 28l10-8" stroke-dasharray="3 3" opacity=".55"/></svg></div>
+      </div>
+      <div class="pc-items">
+        <div class="pc-item"><h5>智慧通信</h5><p>400 云电话接待</p></div>
+        <div class="pc-item"><h5>企信通</h5><p>企微客服销售协作</p></div>
+        <div class="pc-item"><h5>智慧助手</h5><p>网销一站式智能助手</p></div>
+      </div>
+    </a>
+    <a class="pcard s5" href="lingji.html">
+      <div class="pc-head">
+        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M12 4v4M8 13h.01M16 13h.01M9 22v-3M15 22v-3"/></svg></div>
+        <div class="pc-tt"><h3>AI 数字员工</h3><p>Multi-Agent 智能体矩阵</p></div>
+        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><circle cx="18" cy="24" r="10" stroke-dasharray="3 3" opacity=".55"/><circle cx="46" cy="14" r="4" opacity=".7"/><circle cx="64" cy="32" r="6" opacity=".7"/><path d="M27 21l15-5M50 17l10 11" opacity=".6"/></svg></div>
+      </div>
+      <div class="pc-items">
+        <div class="pc-item"><h5>灵机门店版</h5><p>预置 15+ 类数字员工</p></div>
+        <div class="pc-item"><h5>灵机厂商版</h5><p>反漏斗联动主机厂经销商</p></div>
+        <div class="pc-item"><h5>数字员工全景</h5><p>外呼客服质检内容角色一览</p></div>
+      </div>
+    </a>
+    <a class="pcard s4" href="#">
+      <div class="pc-head">
+        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10h16V10"/><path d="M2 10l2-6h16l2 6H2z"/><path d="M10 20v-6h4v6"/></svg></div>
+        <div class="pc-tt"><h3>门店运营</h3><p>数字化人效提升</p></div>
+        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><path d="M6 38c12-2 14-26 26-26s12 18 24 18 14-14 22-16" opacity=".6"/><circle cx="56" cy="30" r="3.5" opacity=".8"/></svg></div>
+      </div>
+      <div class="pc-items">
+        <div class="pc-item"><h5>智效店铺</h5><p>门店运营数字化人效提升</p></div>
+        <div class="pc-item"><h5>家家总助</h5><p>店总经营诊断与目标拆解</p></div>
+      </div>
+    </a>
+    <a class="pcard s3 solo" href="#">
+      <div class="pc-head">
+        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg></div>
+        <div class="pc-tt"><h3>数据决策</h3><p>主机厂智能决策</p></div>
+        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><rect x="8" y="10" width="16" height="12" rx="2" opacity=".6"/><rect x="34" y="24" width="16" height="12" rx="2" opacity=".7"/><rect x="60" y="8" width="16" height="12" rx="2" opacity=".5"/><path d="M24 16l10 8M50 28l10-8" stroke-dasharray="3 3" opacity=".55"/></svg></div>
+      </div>
+      <div class="pc-items">
+        <div class="pc-item"><h5>车智云</h5><p>销量预测、竞争格局与营销漏斗</p></div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -1585,19 +1538,6 @@ agentSubmit.onclick=()=>{
   next.onclick=()=>{if(idx<maxIdx){idx++;move()}};
   window.addEventListener('resize',calc);
   calc();
-})();
-
-// ---- 产品矩阵标签切换 ----
-(function(){
-  const tabs=document.getElementById('prodTabs');
-  if(!tabs)return;
-  tabs.onclick=e=>{
-    const b=e.target.closest('button');
-    if(!b)return;
-    const tab=b.dataset.tab;
-    [...tabs.children].forEach(x=>x.classList.toggle('active',x===b));
-    document.querySelectorAll('.pm-panel').forEach(p=>p.classList.toggle('active',p.dataset.tab===tab));
-  };
 })();
 
 // ---- 品牌案例横向滑动（旧版已下线，案例墙为纯 CSS 动画） ----
