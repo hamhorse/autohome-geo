@@ -991,28 +991,62 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
       <div class="hero-content">
         <div>
 
-          <h1>看车 · 买车 · 用车 · 换车</h1>
-          <p class="lead">省时省心省钱，超级补贴、真实返现、0 首付，一站搞定。</p>
-          <a href="#" class="btn btn-primary" onclick="openChat();return false;">去看看</a>
+          <h1>车商汇</h1>
+          <p class="lead">经销商一站式 SaaS 工作台，AI 自动化运营开箱即用，<br>以销量驱动流量，每 5 个购车人中 1 个通过汽车之家成交。</p>
+          <a href="#" class="btn btn-primary" onclick="openChat();return false;">立即咨询</a>
         </div>
-        <div class="hero-visual" aria-label="汽车之家购车平台">
-          <div class="real">
-            <div class="rhead"><span class="dot"></span><b>汽车之家</b><span class="nav">购车平台</span></div>
-            <div class="tabs"><span class="on">新能源</span><span>轿车</span><span>SUV</span><span>MPV</span><span>二手车</span></div>
-            <div class="cards">
-              <div class="car">
-                <div class="thumb"><svg viewBox="0 0 64 28"><path d="M6 20 L14 20 L18 12 L40 12 L46 20 L58 20 L58 23 L6 23 Z" fill="#fff" opacity=".95"/><circle cx="18" cy="23" r="3.2" fill="#1890FF"/><circle cx="46" cy="23" r="3.2" fill="#1890FF"/></svg></div>
-                <div class="info"><b>传祺 M8</b><div class="price">¥17.98 万起<small> 指导价</small></div><span class="badge">500 元现金补贴</span><div class="sub">0 首付 · 真实返现</div></div>
-              </div>
-              <div class="car">
-                <div class="thumb"><svg viewBox="0 0 64 28"><path d="M6 20 L14 20 L18 12 L40 12 L46 20 L58 20 L58 23 L6 23 Z" fill="#fff" opacity=".95"/><circle cx="18" cy="23" r="3.2" fill="#1890FF"/><circle cx="46" cy="23" r="3.2" fill="#1890FF"/></svg></div>
-                <div class="info"><b>岚图知音</b><div class="price">¥19.69 万起<small> 指导价</small></div><span class="badge">0 首付起</span><div class="sub">全网补贴攻略</div></div>
-              </div>
-              <div class="car">
-                <div class="thumb"><svg viewBox="0 0 64 28"><path d="M6 20 L14 20 L18 12 L40 12 L46 20 L58 20 L58 23 L6 23 Z" fill="#fff" opacity=".95"/><circle cx="18" cy="23" r="3.2" fill="#1890FF"/><circle cx="46" cy="23" r="3.2" fill="#1890FF"/></svg></div>
-                <div class="info"><b>驱逐舰 05</b><div class="price">¥7.98 万起<small> 指导价</small></div><span class="badge">至高补 2 万</span><div class="sub">限时优惠</div></div>
-              </div>
-            </div>
+        <div class="hero-visual" aria-label="车商汇经销商工作台">
+          <div class="wn-flow">
+            <svg viewBox="0 0 400 286">
+              <defs>
+                <linearGradient id="cshg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1890FF"/>
+                  <stop offset="100%" stop-color="#0A66CC"/>
+                </linearGradient>
+              </defs>
+              <!-- 流动连接线：三路能力汇入工作台 -->
+              <path class="wn-line" d="M186 110 C160 138 168 168 186 194" fill="none" stroke="#1890FF" stroke-width="2" stroke-dasharray="6 7"/>
+              <path class="wn-line d2" d="M100 160 C138 176 152 186 172 200" fill="none" stroke="#1890FF" stroke-width="2" stroke-dasharray="6 7"/>
+              <path class="wn-line d3" d="M300 160 C262 176 248 186 228 200" fill="none" stroke="#1890FF" stroke-width="2" stroke-dasharray="6 7"/>
+              <!-- 节点 1：线索智控引擎 -->
+              <g>
+                <rect x="158" y="34" width="86" height="76" rx="16" fill="#fff" stroke="#cfe4fb"/>
+                <circle cx="201" cy="58" r="11" fill="#eaf3ff"/>
+                <circle cx="197" cy="58" r="2" fill="#1890FF"/><circle cx="203.5" cy="55" r="1.6" fill="#1890FF"/><circle cx="205" cy="61" r="1.4" fill="#7b5cff"/>
+                <path d="M192.5 60.5a9 9 0 0 1 15-6.8" fill="none" stroke="#1890FF" stroke-width="1.6" stroke-linecap="round"/>
+                <text x="201" y="86" text-anchor="middle" font-size="12" font-weight="800" fill="#12233d">线索智控引擎</text>
+                <text x="201" y="101" text-anchor="middle" font-size="9.5" fill="#6b7a90">意向识别 · 购车管家</text>
+              </g>
+              <!-- 节点 2：多场景获客 -->
+              <g>
+                <rect x="16" y="112" width="84" height="76" rx="16" fill="#fff" stroke="#cfe4fb"/>
+                <circle cx="58" cy="136" r="11" fill="#eaf3ff"/>
+                <path d="M55 131.5l9 4.5-9 4.5z" fill="none" stroke="#1890FF" stroke-width="1.7" stroke-linejoin="round"/>
+                <text x="58" y="164" text-anchor="middle" font-size="12" font-weight="800" fill="#12233d">多场景获客</text>
+                <text x="58" y="179" text-anchor="middle" font-size="9.5" fill="#6b7a90">直播 · 短视频 · 小程序</text>
+              </g>
+              <!-- 节点 3：AI 自动化运营 -->
+              <g>
+                <rect x="300" y="112" width="88" height="76" rx="16" fill="#fff" stroke="#cfe4fb"/>
+                <circle cx="344" cy="136" r="11" fill="#eaf3ff"/>
+                <path d="M344 129.5v4M344 138.5v4M337.5 134h4M346.5 134h4M339.3 129.3l2.8 2.8M345.9 135.9l2.8 2.8M348.7 129.3l-2.8 2.8M342.1 135.9l-2.8 2.8" stroke="#1890FF" stroke-width="1.4" stroke-linecap="round"/>
+                <text x="344" y="164" text-anchor="middle" font-size="11.5" font-weight="800" fill="#12233d">AI 自动化运营</text>
+                <text x="344" y="179" text-anchor="middle" font-size="9.5" fill="#6b7a90">内容生产 · 数据分析</text>
+              </g>
+              <!-- 中心：车商汇工作台 -->
+              <g>
+                <rect x="158" y="196" width="86" height="70" rx="16" fill="url(#cshg)"/>
+                <circle cx="201" cy="218" r="11" fill="rgba(255,255,255,.18)"/>
+                <path d="M195 220h12M195 224h8" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+                <text x="201" y="246" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">车商汇工作台</text>
+                <text x="201" y="260" text-anchor="middle" font-size="9.5" fill="rgba(255,255,255,.75)">分级运营 · 会员服务</text>
+              </g>
+              <!-- 底部数据 pill -->
+              <rect x="16" y="236" width="118" height="30" rx="15" fill="#eaf3ff"/>
+              <text x="75" y="255" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0A66CC">每 5 人购车 1 人成交</text>
+              <rect x="270" y="236" width="118" height="30" rx="15" fill="#eaf3ff"/>
+              <text x="329" y="255" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0A66CC">顾问团队 · 驻店服务</text>
+            </svg>
           </div>
         </div>
       </div>
