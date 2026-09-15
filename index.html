@@ -177,9 +177,13 @@ header.top.scrolled{box-shadow:0 6px 24px rgba(11,21,37,.08)}
 @keyframes pulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.3);opacity:0}}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* Slide 2: 曲面梯形漏斗 */
-.funnel-wrap{display:flex;align-items:center;justify-content:center;max-width:600px;width:100%}
-.funnel-wrap svg{width:340px;height:300px;flex-shrink:0}
+/* Slide 2: 智慧网销横向流转节点图 */
+.wn-flow{display:flex;align-items:center;justify-content:center;max-width:560px;width:100%}
+.wn-flow svg{width:400px;height:286px;flex-shrink:0}
+.wn-line{animation:wnflow 1.6s linear infinite}
+.wn-line.d2{animation-delay:.5s}
+.wn-line.d3{animation-delay:.9s}
+@keyframes wnflow{to{stroke-dashoffset:-52}}
 
 /* Slide 3: 真实感购车平台面板 */
 .real{width:300px;background:#fff;border-radius:16px;box-shadow:0 18px 44px rgba(11,21,37,.14);overflow:hidden}
@@ -437,7 +441,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
   .sub-icon svg{width:15px;height:15px}
   .hero-dots{bottom:72px}
   .crew-net{transform:scale(.72)}
-  .funnel-wrap svg{width:260px;height:230px}
+  .wn-flow svg{width:300px;height:214px}
   .real{width:280px}
   .cases{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr 1fr}
@@ -877,41 +881,61 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
       <div class="hero-content">
         <div>
 
-          <h1>汽车之家 SaaS 平台</h1>
-          <p class="lead">覆盖线索分发、CRM、邀约、网销、数据看板，全链路云端即用。</p>
+          <h1>智慧网销</h1>
+          <p class="lead">经销商云端呼叫中心，大数据筛选优质线索、智能工具辅助邀约，<br>全年触达 210 万+ 有效线索，提升到店转化。</p>
           <a href="#" class="btn btn-primary" onclick="openChat();return false;">立即咨询</a>
         </div>
-        <div class="hero-visual" aria-label="线索转化漏斗">
-          <div class="funnel-wrap">
-            <svg viewBox="0 0 360 290">
+        <div class="hero-visual" aria-label="智慧网销线索流转">
+          <div class="wn-flow">
+            <svg viewBox="0 0 400 286">
               <defs>
-                <linearGradient id="fgsurf" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#69b1ff"/>
-                  <stop offset="45%" stop-color="#1890FF"/>
+                <linearGradient id="wng" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#1890FF"/>
                   <stop offset="100%" stop-color="#0A66CC"/>
                 </linearGradient>
               </defs>
-              <ellipse cx="130" cy="16" rx="100" ry="11" fill="#8ec5ff"/>
-              <path d="M30 16 C40 95 72 185 115 274 L145 274 C188 185 220 95 230 16 Z" fill="url(#fgsurf)"/>
-              <path d="M40 66 C90 60 170 60 214 66" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
-              <path d="M60 118 C100 112 170 112 205 118" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
-              <path d="M87 170 C110 165 165 165 194 170" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
-              <path d="M107 222 C118 219 145 219 157 222" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
-              <text x="130" y="44" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">450,343</text>
-              <text x="130" y="96" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">446,982</text>
-              <text x="130" y="148" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">239,861</text>
-              <text x="130" y="200" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">66,933</text>
-              <text x="130" y="252" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">4,106</text>
-              <text x="248" y="22" fill="#46566f" font-size="12" font-weight="800">新增线索</text>
-              <text x="312" y="22" fill="#1890FF" font-size="11" font-weight="800">100%</text>
-              <text x="248" y="72" fill="#46566f" font-size="12" font-weight="800">线索跟进</text>
-              <text x="312" y="72" fill="#1890FF" font-size="11" font-weight="800">99.3%</text>
-              <text x="248" y="124" fill="#46566f" font-size="12" font-weight="800">线索接通</text>
-              <text x="312" y="124" fill="#1890FF" font-size="11" font-weight="800">67.7%</text>
-              <text x="248" y="176" fill="#46566f" font-size="12" font-weight="800">有效通话</text>
-              <text x="312" y="176" fill="#1890FF" font-size="11" font-weight="800">28%</text>
-              <text x="248" y="228" fill="#46566f" font-size="12" font-weight="800">邀约到店</text>
-              <text x="312" y="228" fill="#54637d" font-size="11" font-weight="800">—</text>
+              <!-- 流动连接线 -->
+              <path class="wn-line" d="M92 150 C120 150 130 96 158 96" fill="none" stroke="#1890FF" stroke-width="2" stroke-dasharray="6 7"/>
+              <path class="wn-line d2" d="M244 96 C272 96 282 150 310 150" fill="none" stroke="#1890FF" stroke-width="2" stroke-dasharray="6 7"/>
+              <path class="wn-line d3" d="M92 150 C130 210 240 210 310 158" fill="none" stroke="#8ec5ff" stroke-width="1.6" stroke-dasharray="5 8"/>
+              <!-- 节点 1：线索接入 -->
+              <g>
+                <rect x="16" y="112" width="76" height="76" rx="16" fill="#fff" stroke="#cfe4fb"/>
+                <circle cx="54" cy="136" r="11" fill="#eaf3ff"/>
+                <path d="M49 136l4 4 7-8" fill="none" stroke="#1890FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="54" y="164" text-anchor="middle" font-size="12" font-weight="800" fill="#12233d">线索接入</text>
+                <text x="54" y="179" text-anchor="middle" font-size="9.5" fill="#6b7a90">400 · 全网留资</text>
+              </g>
+              <!-- 节点 2：智能清洗分配 -->
+              <g>
+                <rect x="158" y="58" width="86" height="76" rx="16" fill="#fff" stroke="#cfe4fb"/>
+                <circle cx="201" cy="82" r="11" fill="#eaf3ff"/>
+                <circle cx="197" cy="82" r="2.2" fill="#1890FF"/><circle cx="205" cy="82" r="2.2" fill="#1890FF"/>
+                <path d="M196 86c1.6 2 8.4 2 10 0" fill="none" stroke="#1890FF" stroke-width="1.6" stroke-linecap="round"/>
+                <text x="201" y="110" text-anchor="middle" font-size="12" font-weight="800" fill="#12233d">智能清洗分配</text>
+                <text x="201" y="125" text-anchor="middle" font-size="9.5" fill="#6b7a90">意向分级 · 智能派单</text>
+              </g>
+              <!-- 节点 3：智能邀约触达 -->
+              <g>
+                <rect x="300" y="112" width="84" height="76" rx="16" fill="#fff" stroke="#cfe4fb"/>
+                <circle cx="342" cy="136" r="11" fill="#eaf3ff"/>
+                <path d="M336 131h12v8h-7l-3 3v-3h-2z" fill="none" stroke="#1890FF" stroke-width="1.7" stroke-linejoin="round"/>
+                <text x="342" y="164" text-anchor="middle" font-size="12" font-weight="800" fill="#12233d">智能邀约触达</text>
+                <text x="342" y="179" text-anchor="middle" font-size="9.5" fill="#6b7a90">邀约锦囊 · 弹屏辅助</text>
+              </g>
+              <!-- 节点 4：到店成交（流线下方汇入） -->
+              <g>
+                <rect x="158" y="196" width="86" height="70" rx="16" fill="url(#wng)"/>
+                <circle cx="201" cy="218" r="11" fill="rgba(255,255,255,.18)"/>
+                <path d="M196 218l4 4 7-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="201" y="246" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">到店成交</text>
+                <text x="201" y="260" text-anchor="middle" font-size="9.5" fill="rgba(255,255,255,.75)">战败召回 · 二次挖掘</text>
+              </g>
+              <!-- 底部数据 pill -->
+              <rect x="24" y="196" width="110" height="30" rx="15" fill="#eaf3ff"/>
+              <text x="79" y="215" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0A66CC">全年触达 210 万+ 线索</text>
+              <rect x="272" y="196" width="106" height="30" rx="15" fill="#eaf3ff"/>
+              <text x="325" y="215" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0A66CC">DCC 全业务链检核</text>
             </svg>
           </div>
         </div>
