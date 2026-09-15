@@ -242,7 +242,9 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
 .p-hero .val b{font-weight:800;color:var(--ink)}
 .p-hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
 
-/* 占位组件（图片/原型图统一占位符） */
+
+.ph-img{width:100%;max-width:520px;border-radius:18px;border:1px solid #e6ecf5;box-shadow:0 24px 60px rgba(11,21,37,.12);display:block;margin:0 auto}
+/* 图片组件 */
 .ph{position:relative;display:grid;place-items:center;background:
  linear-gradient(rgba(24,144,255,.05) 1px,transparent 1px),
  linear-gradient(90deg,rgba(24,144,255,.05) 1px,transparent 1px);
@@ -416,32 +418,26 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
                 <div class="mcat" data-cat="digital">数字化产品</div>
               </div>
               <div class="mega-body" id="prodMegaBody">
-                <div class="mega-group on" data-cat="agent">
-                  <a class="mcard" href="lingji.html"><h5>灵机门店版 <span class="tag-new">NEW</span></h5><p>全链路数字员工平台（获客·转化·经营·售后）</p></a>
-                  <a class="mcard" href="#"><h5>灵机厂商版</h5><p>反漏斗模式，赋能主机厂联动经销商</p></a>
-                </div>
-                <div class="mega-group" data-cat="saas">
-                  <div class="mega-sub">沟通触达</div>
-                  <a class="mcard" href="#"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入</p></a>
-                  <a class="mcard" href="#"><h5>智慧外呼</h5><p>大模型自动外呼清洗线索</p></a>
-                  <a class="mcard" href="#"><h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导，准确率 92%+</p></a>
-                  <a class="mcard" href="#"><h5>企信通</h5><p>企业微信一体化客服与销售协作</p></a>
-                  <div class="mega-sub">网销转化</div>
-                  <a class="mcard" href="#"><h5>智慧网销</h5><p>全流程网销管理，邀约到店与漏斗分析</p></a>
-                  <a class="mcard" href="#"><h5>云智选</h5><p>人机协同用户培育，提升线索质量</p></a>
-                  <div class="mega-sub">内容与助手</div>
-                  <a class="mcard" href="#"><h5>智慧助手</h5><p>网销/销售一站式智能助手</p></a>
-                  <a class="mcard" href="#"><h5>AIGC 内容生产</h5><p>视频剪辑、图文生成等创作能力</p></a>
-                  <div class="mega-sub">数据联通</div>
-                  <a class="mcard" href="#"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合</p></a>
-                </div>
-                <div class="mega-group" data-cat="digital">
-                  <a class="mcard" href="#"><h5>车智云</h5><p>主机厂智能数据决策平台，服务 80+ 主机厂</p></a>
-                  <a class="mcard" href="#"><h5>AI 直播</h5><p>智能直播带货与内容营销</p></a>
-                  <a class="mcard" href="#"><h5>AI 私信</h5><p>智能私信触达与潜客激活</p></a>
-                  <a class="mcard" href="#"><h5>智效店铺</h5><p>门店运营数字化与人效提升</p></a>
-                </div>
-                <div class="mega-foot">
+              <div class="mega-group on" data-cat="agent">
+                <a class="mcard" href="lingji.html"><h5>灵机门店版</h5><p>全链路数字员工平台（获客·转化·经营·售后）</p></a>
+                <a class="mcard" href="#"><h5>灵机厂商版</h5><p>反漏斗模式，赋能主机厂联动经销商</p></a>
+              </div>
+              <div class="mega-group" data-cat="saas">
+                <div class="mega-sub">沟通触达</div>
+                <a class="mcard" href="#"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入</p></a>
+                <a class="mcard" href="#"><h5>智慧外呼</h5><p>大模型自动外呼清洗线索</p></a>
+                <a class="mcard" href="#"><h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导</p></a>
+                <div class="mega-sub">网销转化</div>
+                <a class="mcard" href="#"><h5>智慧网销</h5><p>全流程网销管理，邀约到店与漏斗分析</p></a>
+                <a class="mcard" href="#"><h5>云智选</h5><p>人机协同用户培育，提升线索质量</p></a>
+                <a class="mcard" href="#"><h5>智慧助手</h5><p>400 云接待 + 智能写作 + 智能获客</p></a>
+                <a class="mcard" href="#"><h5>企信通</h5><p>企业微信一体化客服与销售协作</p></a>
+                <div class="mega-sub">数据与内容</div>
+                <a class="mcard" href="#"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合</p></a>
+                <a class="mcard" href="#"><h5>AIGC</h5><p>视频剪辑、图文生成等创作能力</p></a>
+                <a class="mcard" href="#"><h5>车智云</h5><p>主机厂大数据平台，服务 80+ 主机厂</p></a>
+              </div>
+              <div class="mega-foot">
                   <a href="index.html#products">查看全部产品 ›</a>
                   <a href="#contact">预约产品演示 ›</a>
                 </div>
@@ -460,27 +456,21 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
                 <div class="mcat" data-cat="c">内容营销</div>
               </div>
               <div class="mega-body" id="solMegaBody">
-                <div class="mega-group on" data-cat="g">
-                  <a class="mcard" href="#"><h5>新车上市引爆</h5><p>汽车之家 App + 直播看车，内容种草与线索承接</p></a>
-                  <a class="mcard" href="#"><h5>区域精准投放</h5><p>数据中台 + 搜索推荐，本地化人群包定向</p></a>
-                  <a class="mcard" href="#"><h5>线索清洗邀约</h5><p>灵机门店版 + 智慧通信，无效线索过滤与自动邀约</p></a>
-                </div>
-                <div class="mega-group" data-cat="t">
-                  <a class="mcard" href="#"><h5>网销到店转化</h5><p>智慧网销 + 云智选，人机协同培育高意向线索</p></a>
-                  <a class="mcard" href="#"><h5>话术质检陪练</h5><p>智慧质检 + AI 客服，全量通话复盘与话术优化</p></a>
-                  <a class="mcard" href="#"><h5>AI 私信跟进</h5><p>AI 私信 + 企信通，7×24 小时潜客激活</p></a>
-                </div>
-                <div class="mega-group" data-cat="o">
-                  <a class="mcard" href="#"><h5>店总经营助手</h5><p>灵机门店版，目标拆解、风险识别与改善建议</p></a>
-                  <a class="mcard" href="#"><h5>多店统一经营</h5><p>车智云 + 智慧数联，集团级经营看板与数据联通</p></a>
-                  <a class="mcard" href="#"><h5>智效店铺运营</h5><p>智效店铺，门店运营数字化与人效提升</p></a>
-                </div>
-                <div class="mega-group" data-cat="c">
-                  <a class="mcard" href="#"><h5>AI 直播矩阵</h5><p>AI 直播 + 内容生产 AI，规模化直播带货与内容生成</p></a>
-                  <a class="mcard" href="#"><h5>新媒体内容生产</h5><p>AIGC 内容生产 + 仓颉大模型，图文视频一键生成</p></a>
-                  <a class="mcard" href="#"><h5>车主社群运营</h5><p>AI 私信 + 客户运营，复购提醒与社群激活</p></a>
-                </div>
-                <div class="mega-foot">
+              <div class="mega-group on" data-cat="g">
+                <a class="mcard" href="#lingji"><h5>AI Agent 数字员工 - 流程自动化</h5><p>为门店自动承接线索清洗、邀约、跟进等固定流程</p><div class="mchips"><span>灵机</span><span>仓颉大模型</span></div></a>
+                <a class="mcard" href="#products"><h5>行业大模型 - 汽车垂域认知</h5><p>为主机厂与经销商提供 AI 选车、图片诊断等垂域理解</p><div class="mchips"><span>仓颉大模型</span><span>AIGC</span></div></a>
+                <a class="mcard" href="#products"><h5>全域获客 - 内容种草到线索</h5><p>为经销商打通内容种草到线索承接的获客链路</p><div class="mchips"><span>智慧网销</span><span>云智选</span><span>AIGC</span></div></a>
+                <a class="mcard" href="#products"><h5>智能触达 - AI 外呼与线索清洗</h5><p>为经销商 DCC 团队完成大模型外呼清洗与自动邀约</p><div class="mchips"><span>智慧外呼</span><span>智慧质检</span></div></a>
+                <a class="mcard" href="#products"><h5>数据智能 - 洞察决策</h5><p>为主机厂提供销量预测、竞争格局、营销漏斗决策</p><div class="mchips"><span>车智云</span><span>智慧数联</span></div></a>
+                <a class="mcard" href="#products"><h5>线索管理 - 全链路协同</h5><p>为经销商集团打通跨系统线索流转与人机协同培育</p><div class="mchips"><span>智慧外呼</span><span>智慧网销</span><span>企信通</span></div></a>
+              </div>
+              <div class="mega-group" data-cat="i">
+                <a class="mcard" href="#products"><h5>主机厂 - 数据决策与智能增长</h5><p>从销量预测、竞争分析到 AIGC 内容规模化生产</p><div class="mchips"><span>车智云</span><span>智慧数联</span><span>AIGC</span></div><div class="mclient"><b>使用客户</b>80+ 主机厂品牌</div></a>
+                <a class="mcard" href="#lingji"><h5>经销商 4S - 全链路数智化门店</h5><p>获客、转化、经营全链路数智化一站式覆盖</p><div class="mchips"><span>灵机</span><span>智慧外呼</span><span>智慧网销</span><span>智慧通信</span></div><div class="mclient"><b>使用客户</b>2.5w+ 合作门店</div></a>
+                <a class="mcard" href="#products"><h5>二手车 - 线索承接与客户培育</h5><p>智能助手配合企微协同的线索承接与培育</p><div class="mchips"><span>智慧助手</span><span>智慧网销</span><span>企信通</span></div><div class="mclient"><b>使用客户</b>二手车经销商及经销商集团</div></a>
+                <a class="mcard" href="#lingji"><h5>新能源 - 直营门店获客与运营</h5><p>数字员工配合智慧网销与智慧数联的门店获客与用户运营</p><div class="mchips"><span>灵机</span><span>智慧网销</span><span>智慧数联</span></div><div class="mclient"><b>使用客户</b>新能源品牌直营/代理门店体系</div></a>
+              </div>
+              <div class="mega-foot">
                   <a href="index.html#solutions">查看全部方案 ›</a>
                   <a href="#contact">获取方案资料 ›</a>
                 </div>
@@ -568,7 +558,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
         <a class="btn btn-ghost" href="#contact">预约演示</a>
       </div>
     </div>
-    <div class="ph"><div><div class="ph-ic">▦</div><div class="ph-t">产品主视觉 / 界面截图</div><div class="ph-s">占位符 · 替换为真实图片</div></div></div>
+    <img class="ph-img" src="灵机素材/sol-hero-industry.png" alt="灵机门店版 · 经销商数智化门店蓝图">
   </div>
 </section>
 
@@ -608,13 +598,13 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
         <div class="pc-spec">
           <div class="pc-row"><span class="k">接入方式</span><span class="v">SaaS 在线开通，注册即用</span></div>
           <div class="pc-row"><span class="k">起售规模</span><span class="v">1 门店 起</span></div>
-          <div class="pc-row"><span class="k">交付周期</span><span class="v">开通即可使用（占位）</span></div>
+          <div class="pc-row"><span class="k">交付周期</span><span class="v">开通即可使用</span></div>
         </div>
         <div class="pc-feats">
           <p class="ft">核心功能与服务</p>
           <ul>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>预置数字员工基础组合（8 类核心角色）</span></li>
-            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>门店经营晨报 / 日报（占位）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>门店经营晨报 / 日报</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>线索批量清洗（限定试用额度）</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>通话质检抽样版</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>AIGC 内容生成试用</span></li>
@@ -637,7 +627,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
         <div class="pc-spec">
           <div class="pc-row"><span class="k">接入方式</span><span class="v">SaaS 标准化开通 + 标准配置培训</span></div>
           <div class="pc-row"><span class="k">起售规模</span><span class="v">1 门店 起</span></div>
-          <div class="pc-row"><span class="k">交付周期</span><span class="v">按开通范围评估（占位）</span></div>
+          <div class="pc-row"><span class="k">交付周期</span><span class="v">按开通范围评估</span></div>
         </div>
         <div class="pc-feats">
           <p class="ft">包含试用版全部功能，另提供</p>
@@ -648,7 +638,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>优秀话术自动沉淀，团队复用</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>AIGC 图文视频生成与多平台一键分发</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>自定义任务编排，一句话目标自动拆解</span></li>
-            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>DSS / CRM 系统对接（占位）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>DSS / CRM 系统对接</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>在线支持、版本升级与运维保障</span></li>
           </ul>
         </div>
@@ -665,7 +655,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
           <p class="for">适用对象：中大型集团、主机厂联动项目</p>
         </div>
         <div class="pc-spec">
-          <div class="pc-row"><span class="k">接入方式</span><span class="v">定制化部署，支持专属集成（占位）</span></div>
+          <div class="pc-row"><span class="k">接入方式</span><span class="v">定制化部署，支持专属集成</span></div>
           <div class="pc-row"><span class="k">起售规模</span><span class="v">按项目评估</span></div>
           <div class="pc-row"><span class="k">交付方式</span><span class="v">项目制实施与专属服务</span></div>
         </div>
@@ -675,9 +665,9 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>集团级多店经营看板与异常预警</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>跨店任务协同与统一策略下发</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>主机厂反漏斗联动执行通道</span></li>
-            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属话术模型调优（占位）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属话术模型调优</span></li>
             <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属客户成功团队与定制培训</span></li>
-            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属服务 SLA 与安全保障（占位）</span></li>
+            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>专属服务 SLA 与安全保障</span></li>
           </ul>
         </div>
         <div class="pc-foot">
@@ -687,7 +677,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
       </div>
 
     </div>
-    <p class="plans-note">以上版本划分为模板占位内容，正式功能清单、价格与交付边界以产品资料与商务确认为准。</p>
+    <p class="plans-note">具体功能清单、价格与交付边界以产品资料与商务确认为准。</p>
   </div>
 </section>
 
@@ -907,7 +897,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
       <div class="lw-item"><span class="clogo">CHANGAN</span>长安汽车</div>
       <div class="lw-item"><span class="clogo">PANGDA</span>庞大集团</div>
     </div>
-    <p class="plans-note">合作品牌标识以文字字标占位，正式上线替换为品牌官方 logo。</p>
+    
   </div>
 </section>
 
@@ -920,19 +910,19 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
     <div class="faq-list reveal" id="faqList">
       <div class="faq-item">
         <button class="faq-q">如何开通免费试用？<span class="pm">+</span></button>
-        <div class="faq-a"><p>提交试用申请后，由商务对接确认试用范围并开通账号，预置数字员工即可直接使用。具体试用额度与功能组合以开通时确认为准。（占位说明，以正式产品资料为准）</p></div>
+        <div class="faq-a"><p>提交试用申请后，由商务对接确认试用范围并开通账号，预置数字员工即可直接使用。具体试用额度与功能组合以开通时确认为准。</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">需要更换门店现有的 DSS / CRM 系统吗？<span class="pm">+</span></button>
-        <div class="faq-a"><p>不需要更换。灵机门店版通过系统集成层与门店现有业务系统对接，线索与通话数据自动流转，具体对接方式与周期在实施阶段确认。（占位说明）</p></div>
+        <div class="faq-a"><p>不需要更换。灵机门店版通过系统集成层与门店现有业务系统对接，线索与通话数据自动流转，具体对接方式与周期在实施阶段确认。</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">部署与上线周期大概多久？<span class="pm">+</span></button>
-        <div class="faq-a"><p>标准化开通场景下，预置任务无需开发，开通培训后即可使用；涉及系统对接与定制配置的项目，周期按实施范围评估。（占位说明，具体周期以商务确认为准）</p></div>
+        <div class="faq-a"><p>标准化开通场景下，预置任务无需开发，开通培训后即可使用；涉及系统对接与定制配置的项目，周期按实施范围评估。</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">门店客户数据安全如何保障？<span class="pm">+</span></button>
-        <div class="faq-a"><p>平台运行在汽车之家安全体系内，数据访问遵循权限最小化原则，通话与经营数据仅用于授权范围内的业务场景。（占位说明，详细安全白皮书可向商务索取）</p></div>
+        <div class="faq-a"><p>平台运行在汽车之家安全体系内，数据访问遵循权限最小化原则，通话与经营数据仅用于授权范围内的业务场景。</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">和直接采购通用大模型工具有什么区别？<span class="pm">+</span></button>
@@ -940,7 +930,7 @@ footer.foot{background:var(--navy);color:#9aa9bf;padding:48px 0 28px;font-size:1
       </div>
       <div class="faq-item">
         <button class="faq-q">计费方式是怎样的？<span class="pm">+</span></button>
-        <div class="faq-a"><p>支持按版本订阅等方式，具体计费口径与报价请联系商务获取正式方案。（占位说明）</p></div>
+        <div class="faq-a"><p>支持按版本订阅等方式，具体计费口径与报价请联系商务获取正式方案。</p></div>
       </div>
     </div>
   </div>
