@@ -533,6 +533,21 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 .pcard{position:relative;background:#fff;border:1px solid rgba(24,86,144,.10);border-radius:16px;padding:24px 24px 20px;transition:.25s;text-decoration:none;color:inherit;overflow:hidden}
 .pcard:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(24,86,144,.13);border-color:rgba(24,144,255,.35)}
 .pcard.s4{grid-column:span 4}.pcard.s5{grid-column:span 5}.pcard.s3{grid-column:span 3}.pcard.s8{grid-column:span 8}
+.pcard.s6{grid-column:span 6}.pcard.s7{grid-column:span 7}
+.pm-sub{grid-column:1/-1;display:flex;align-items:baseline;gap:12px;padding:18px 4px 2px}
+.pm-sub:first-child{padding-top:2px}
+.pm-sub b{font-size:15.5px;font-weight:800;color:#12233d;letter-spacing:-.2px}
+.pm-sub span{font-size:12.5px;color:#7b8aa0}
+.pcard .pc-tag{display:inline-flex;padding:2px 9px;border-radius:9px;font-size:10.5px;font-weight:700;background:#eaf3ff;color:var(--blue);margin-bottom:12px}
+.pcard h5{font-size:16.5px;font-weight:800;color:var(--ink);letter-spacing:-.2px}
+.pcard h5 em{font-style:normal;font-size:11px;color:#ff6a00;background:#fff3e8;padding:1px 7px;border-radius:8px;margin-left:8px;vertical-align:2px}
+.pcard>p{font-size:12.8px;color:#54637d;line-height:1.66;margin-top:6px}
+.pc-more{display:inline-flex;align-items:center;gap:4px;margin-top:14px;font-size:12.5px;font-weight:700;color:var(--blue)}
+.pc-more::after{content:"›";transition:.2s}
+.pcard:hover .pc-more::after{transform:translateX(3px)}
+.pcard.big{background:linear-gradient(135deg,#f2f8ff,#ffffff 55%);border-color:rgba(24,144,255,.22)}
+.pc-stats{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.pc-stats span{font-size:11.5px;font-weight:700;color:#0A66CC;background:#eaf3ff;padding:5px 12px;border-radius:14px}
 .pc-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .pc-icon{width:38px;height:38px;border-radius:10px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;flex:none}
 .pc-tt h3{font-size:19px;font-weight:900;color:var(--ink);letter-spacing:-.2px}
@@ -1124,35 +1139,61 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <p>从获客、转化到经营决策，AI 产品矩阵覆盖汽车生意全链路</p>
   </div>
   <div class="pm-grid">
-    <a class="pcard s4" href="lingji.html">
-      <div class="pc-head">
-        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M12 4v4M8 13h.01M16 13h.01M9 22v-3M15 22v-3"/></svg></div>
-        <div class="pc-tt"><h3>AaaS 产品</h3><p>Agent as a Service · 智能体平台</p></div>
-        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><circle cx="18" cy="24" r="10" stroke-dasharray="3 3" opacity=".55"/><circle cx="46" cy="14" r="4" opacity=".7"/><circle cx="64" cy="32" r="6" opacity=".7"/><path d="M27 21l15-5M50 17l10 11" opacity=".6"/></svg></div>
-      </div>
-      <div class="pc-items">
-        <div class="pc-item"><h5>灵机门店版</h5><p>预置 15+ 类数字员工，覆盖获客·转化·经营·售后</p></div>
-        <div class="pc-item"><h5>灵机厂商版</h5><p>反漏斗模式，赋能主机厂联动经销商高效转化</p></div>
-      </div>
+    <!-- AaaS：两卡独立 -->
+    <a class="pcard s7 big" href="lingji.html">
+      <span class="pc-tag">AaaS · Agent as a Service</span>
+      <h5>灵机门店版<em>主推</em></h5>
+      <p>全链路数字员工平台，预置 15+ 类 AI 数字员工开箱即用，覆盖获客、转化、经营、售后全场景。</p>
+      <div class="pc-stats"><span>2.5w+ 合作门店</span><span>100+ 合作品牌</span><span>周级上线</span></div>
+      <span class="pc-more">进入灵机门店版</span>
     </a>
-    <a class="pcard s8" href="#">
-      <div class="pc-head">
-        <div class="pc-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 22h8"/></svg></div>
-        <div class="pc-tt"><h3>SaaS 产品</h3><p>通信·网销·质检·数据全链路软件</p></div>
-        <div class="pc-art"><svg viewBox="0 0 84 48" width="84" height="48" fill="none" stroke="#1890FF" stroke-width="1"><rect x="8" y="10" width="16" height="12" rx="2" opacity=".6"/><rect x="34" y="24" width="16" height="12" rx="2" opacity=".7"/><rect x="60" y="8" width="16" height="12" rx="2" opacity=".5"/><path d="M24 16l10 8M50 28l10-8" stroke-dasharray="3 3" opacity=".55"/></svg></div>
-      </div>
-      <div class="pc-items">
-        <div class="pc-item"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入</p></div>
-        <div class="pc-item"><h5>智慧网销</h5><p>全流程网销管理，邀约到店与漏斗分析</p></div>
-        <div class="pc-item"><h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导</p></div>
-        <div class="pc-item"><h5>智慧外呼</h5><p>大模型自动外呼清洗线索</p></div>
-        <div class="pc-item"><h5>云智选</h5><p>人机协同用户培育，提升线索质量</p></div>
-        <div class="pc-item"><h5>智慧助手</h5><p>400 云接待 + 智能写作 + 智能获客</p></div>
-        <div class="pc-item"><h5>AIGC</h5><p>视频剪辑、图文生成等创作能力</p></div>
-        <div class="pc-item"><h5>企信通</h5><p>企业微信一体化客服与销售协作</p></div>
-        <div class="pc-item"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合</p></div>
-        <div class="pc-item"><h5>车智云</h5><p>主机厂大数据平台，服务 80+ 主机厂</p></div>
-      </div>
+    <a class="pcard s5" href="document/products/lingji-oem.html">
+      <span class="pc-tag">AaaS · Agent as a Service</span>
+      <h5>灵机厂商版</h5>
+      <p>反漏斗模式，赋能主机厂联动经销商高效转化，厂商与门店线索协同一体化。</p>
+      <span class="pc-more">了解详情</span>
+    </a>
+
+    <!-- SaaS · 沟通触达 -->
+    <div class="pm-sub"><b>沟通触达</b><span>400 云接待、AI 外呼清洗与全量质检</span></div>
+    <a class="pcard s3" href="document/products/zhihui-tongxin.html">
+      <h5>智慧通信</h5><p>400 云接待与全渠道通信接入</p><span class="pc-more">了解详情</span>
+    </a>
+    <a class="pcard s3" href="document/products/zhihui-waihu.html">
+      <h5>智慧外呼</h5><p>大模型自动外呼清洗线索</p><span class="pc-more">了解详情</span>
+    </a>
+    <a class="pcard s3" href="document/products/zhihui-zhijian.html">
+      <h5>智慧质检</h5><p>外呼通话全量 AI 质检与话术辅导</p><span class="pc-more">了解详情</span>
+    </a>
+    <a class="pcard s3" href="document/products/qinxintong.html">
+      <h5>企信通</h5><p>企业微信一体化客服与销售协作</p><span class="pc-more">了解详情</span>
+    </a>
+
+    <!-- SaaS · 网销转化 -->
+    <div class="pm-sub"><b>网销转化</b><span>线索筛选、邀约到店与人机协同培育</span></div>
+    <a class="pcard s6 big" href="document/products/zhihui-wangxiao.html">
+      <h5>智慧网销</h5>
+      <p>全流程网销管理，大数据筛选优质线索、智能工具辅助邀约到店，DCC 全业务链服务检核。</p>
+      <div class="pc-stats"><span>全年触达 210 万+ 有效线索</span><span>邀约效率提升 30%</span></div>
+      <span class="pc-more">了解详情</span>
+    </a>
+    <a class="pcard s3" href="document/products/yunzhixuan.html">
+      <h5>云智选</h5><p>人机协同用户培育，提升线索质量</p><span class="pc-more">了解详情</span>
+    </a>
+    <a class="pcard s3" href="resources.html">
+      <h5>智慧助手</h5><p>智能接待、智能写作与智能获客</p><span class="pc-more">了解详情</span>
+    </a>
+
+    <!-- SaaS · 数据与内容 -->
+    <div class="pm-sub"><b>数据与内容</b><span>主机厂数据决策与内容规模化生产</span></div>
+    <a class="pcard s4" href="document/products/chezhiyun.html">
+      <h5>车智云</h5><p>主机厂大数据平台，销量预测、竞争格局与营销漏斗</p><span class="pc-more">了解详情</span>
+    </a>
+    <a class="pcard s4" href="document/products/zhihui-shulian.html">
+      <h5>智慧数联</h5><p>全链路数据联通与跨系统整合</p><span class="pc-more">了解详情</span>
+    </a>
+    <a class="pcard s4" href="document/products/aigc.html">
+      <h5>AIGC</h5><p>视频剪辑、图文生成等创作能力</p><span class="pc-more">了解详情</span>
     </a>
   </div>
 </section>
