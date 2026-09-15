@@ -121,6 +121,25 @@ header.top.scrolled{box-shadow:0 6px 24px rgba(11,21,37,.08)}
 .mega-compact a:hover{background:#e8f2ff;color:var(--orange)}
 .mega-compact a::after{content:">";color:var(--muted);font-size:12px}
 
+/* 关于我们 mega（仿门户式：左介绍 + 四栏 + 活动卡） */
+.ma-intro{width:250px;flex-shrink:0;border-right:1px solid var(--line);padding-right:26px}
+.ma-title{display:inline-flex;align-items:center;gap:6px;font-size:17px;font-weight:800;color:#0b1525;transition:.2s}
+.ma-title:hover{color:var(--orange)}
+.ma-title::after{content:"›";color:var(--orange);font-weight:700}
+.ma-intro p{font-size:13px;color:#54637d;line-height:1.85;margin-top:12px}
+.ma-col{flex:1;padding-top:6px}
+.ma-col h6{font-size:14.5px;font-weight:800;color:#0b1525;margin-bottom:10px}
+.ma-col a{display:block;font-size:13.5px;color:#54637d;padding:7px 0;transition:.2s}
+.ma-col a:hover{color:var(--orange)}
+.ma-card{position:relative;width:268px;flex-shrink:0;align-self:flex-start;border-radius:14px;background:linear-gradient(140deg,#0a2450 0%,#134a9e 55%,#1a6fd4 100%);color:#fff;padding:22px 20px 20px;overflow:hidden}
+.ma-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 75%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 75%,transparent 100%);pointer-events:none}
+.ma-card span{position:relative;font-size:11px;letter-spacing:2px;opacity:.7}
+.ma-card b{position:relative;display:block;font-size:17px;font-weight:900;line-height:1.45;letter-spacing:-.3px;margin:9px 0 16px}
+.ma-card a{position:relative;display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);padding:7px 15px;border-radius:16px;color:#fff;transition:.2s}
+.ma-card a:hover{background:rgba(255,255,255,.26)}
+.ma-close{position:absolute;top:7px;right:11px;background:none;border:none;color:rgba(255,255,255,.65);font-size:17px;cursor:pointer;z-index:2;line-height:1}
+.ma-close:hover{color:#fff}
+
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 /* ---------- HERO 轮播 + 底部单页锚点导航 ---------- */
@@ -821,12 +840,40 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
       </div>
       <div class="nav-item">
         <a href="#">关于我们 <span class="caret">▾</span></a>
-        <div class="mega-compact">
-          <a href="#">公司介绍</a>
-          <a href="#">投资者关系</a>
-          <a href="#">社会责任</a>
-          <a href="#">加入我们</a>
-          <a href="#">联系方式</a>
+        <div class="mega" style="min-height:0">
+          <div class="mega-inner" style="align-items:flex-start;gap:34px;padding:34px 24px 38px">
+            <div class="ma-intro">
+              <a class="ma-title" href="#about">关于汽车之家</a>
+              <p>汽车之家产研中心，以 AI 大模型与数据能力为核心，构建覆盖获客、转化、经营全链路的 AI 产品矩阵，助力车生态伙伴数智化增长。</p>
+            </div>
+            <div class="ma-col">
+              <h6>品牌介绍</h6>
+              <a href="#about">公司介绍</a>
+              <a href="#about">投资者关系</a>
+              <a href="#about">联系方式</a>
+            </div>
+            <div class="ma-col">
+              <h6>新闻活动</h6>
+              <a href="resources.html">AI 数字员工分论坛</a>
+              <a href="resources.html">产品资料与白皮书</a>
+            </div>
+            <div class="ma-col">
+              <h6>客户案例</h6>
+              <a href="#cases">精选客户案例</a>
+              <a href="#" onclick="openChat();return false;">合作咨询</a>
+            </div>
+            <div class="ma-col">
+              <h6>招募纳才</h6>
+              <a href="#about">加入我们</a>
+              <a href="#about">联系方式</a>
+            </div>
+            <div class="ma-card" id="maCard">
+              <button class="ma-close" onclick="this.parentElement.style.display='none'" aria-label="关闭">×</button>
+              <span>AI 数字员工 · 分论坛</span>
+              <b>2025 汽车之家<br>AI 数字员工分论坛</b>
+              <a href="resources.html">查看资料 ›</a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
