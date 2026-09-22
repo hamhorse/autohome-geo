@@ -397,6 +397,14 @@ table.cmp-t tbody tr:nth-child(even) th{background:#f4f8ff}
 /* 页脚 */
 footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.foot-cta{display:block;text-align:center}
+.foot-cta .brand2{justify-content:center}
+.foot-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:16px 44px;margin-top:30px}
+.foot-nav a{color:#fff;font-size:17.5px;font-weight:800;letter-spacing:.5px;transition:.2s}
+.foot-nav a:hover{color:#40A9FF}
+.foot-sub{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 28px;margin-top:24px}
+.foot-sub a{color:#9fb0cd;font-size:12.5px;transition:.2s}
+.foot-sub a:hover{color:#fff}
 .foot .col h5{color:#fff;font-size:15px;margin-bottom:16px}
 .foot .col a{display:block;color:#9fb0cd;font-size:14px;padding:6px 0;transition:.2s}
 .foot .col a:hover{color:var(--orange)}
@@ -1356,14 +1364,24 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 <!-- 页脚 -->
 <footer id="about">
   <div class="wrap">
-      <div class="foot">
-      <div class="col">
-        <div class="brand2"><span class="logo">家</span>汽车之家</div>
-        <p class="desc">中国领先的汽车互联网平台，以数据与 AI 赋能汽车经销商全链路数智化增长。</p>
+      <div class="foot foot-cta">
+      <div class="brand2"><span class="logo">家</span>汽车之家</div>
+      <nav class="foot-nav">
+        <a href="#home">活动</a>
+        <a href="#products">产品</a>
+        <a href="#solutions">解决方案</a>
+        <a href="#cases">品牌案例</a>
+        <a href="resources.html">资源中心</a>
+        <a href="#about">关于我们</a>
+      </nav>
+      <div class="foot-sub">
+        <a href="lingji.html">灵机门店版</a>
+        <a href="document/products/zhihui-wangxiao.html">智慧网销</a>
+        <a href="document/products/zhihui-waihu.html">智慧外呼</a>
+        <a href="document/products/chezhiyun.html">车智云</a>
+        <a href="document/products/aigc.html">AIGC</a>
+        <a href="#" onclick="openChat();return false;">立即咨询</a>
       </div>
-      <div class="col"><h5>产品</h5><a href="#lingji">Autoclaw · 灵机平台</a><a href="#lingji">仓颉大模型</a><a href="#" onclick="openChat();return false;">立即咨询</a></div>
-      <div class="col"><h5>解决方案</h5><a href="#lingji">智能获客</a><a href="#lingji">线索转化</a><a href="#lingji">门店经营</a><a href="#lingji">售后诊断</a></div>
-      <div class="col"><h5>关于我们</h5><a href="#" onclick="openChat();return false;">公司介绍</a><a href="#" onclick="openChat();return false;">投资者关系</a><a href="#" onclick="openChat();return false;">加入我们</a><a href="#" onclick="openChat();return false;">联系方式</a></div>
     </div>
     <div class="foot-bottom">© 2026 汽车之家 autohome.com.cn · 灵机 AI 数字员工平台 · 本页为概念原型 Demo</div>
   </div>
