@@ -555,7 +555,17 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
 .pc-head{display:flex;align-items:center;gap:9px;margin-bottom:6px;padding-bottom:13px;border-bottom:1px solid #eef3fa}
 .pc-head svg{color:var(--blue);flex:none}
 .pc-head b{font-size:16.5px;font-weight:800;color:#12233d;letter-spacing:-.2px}
-.pc-head span{font-size:12px;color:#8a97ab;margin-left:4px}
+/* 灵机 AaaS 专属小卡 */
+.pcard.aaas{display:flex;flex-direction:column;text-decoration:none;border:none;color:#fff;background:linear-gradient(160deg,#1e8fff 0%,#0e6fe0 52%,#6357f2 100%)}
+.pcard.aaas:hover{box-shadow:0 16px 40px rgba(18,108,225,.38);border-color:transparent;transform:translateY(-3px)}
+.pcard.aaas::before{content:"";position:absolute;top:-46px;right:-46px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.07)}
+.pcard.aaas::after{content:"";position:absolute;bottom:-58px;right:26px;width:150px;height:150px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.18)}
+.pcard.aaas .aa-badge{position:relative;z-index:1;display:inline-flex;align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.5px;color:#eaf4ff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 12px}
+.pcard.aaas h5{position:relative;z-index:1;font-size:21px;font-weight:900;letter-spacing:-.3px;color:#fff;margin-top:18px}
+.pcard.aaas p{position:relative;z-index:1;font-size:12.8px;color:rgba(255,255,255,.85);line-height:1.65;margin-top:8px}
+.pcard.aaas .aa-go{position:relative;z-index:1;margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:#fff}
+.pcard.aaas .aa-go svg{transition:.2s}
+.pcard.aaas:hover .aa-go svg{transform:translateX(4px)}
 .pc-items{display:grid;grid-template-columns:1fr 1fr;gap:15px 26px;margin-top:14px}
 .pc-item{display:block;text-decoration:none;color:inherit}
 .pc-item h5{font-size:14.5px;font-weight:800;color:var(--ink);letter-spacing:-.2px;transition:.18s}
@@ -1139,22 +1149,19 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <p>从获客、转化到经营决策，AI 产品矩阵覆盖汽车生意全链路</p>
   </div>
   <div class="pm-grid">
-    <!-- 灵机 AaaS -->
-    <div class="pcard s4">
-      <div class="pc-head">
-        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M12 4v4M8 13h.01M16 13h.01M9 22v-3M15 22v-3"/></svg>
-        <b>灵机</b><span>Agent as a Service</span>
-      </div>
-      <div class="pc-items">
-        <a class="pc-item" href="lingji.html"><h5>灵机门店版</h5><p>预置 15+ 类数字员工，覆盖获客、转化、经营、售后全场景</p></a>
-      </div>
-    </div>
+    <!-- 灵机 AaaS 专属小卡 -->
+    <a class="pcard aaas s4" href="lingji.html">
+      <span class="aa-badge">AaaS · Agent as a Service</span>
+      <h5>灵机门店版</h5>
+      <p>预置 15+ 类数字员工，覆盖获客、转化、经营、售后全场景</p>
+      <span class="aa-go">了解详情<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+    </a>
 
     <!-- 获客转化 -->
     <div class="pcard s8">
       <div class="pc-head">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-        <b>获客转化</b><span>通信 · 网销 · 外呼 · 质检</span>
+        <b>获客转化</b>
       </div>
       <div class="pc-items">
         <a class="pc-item" href="document/products/zhihui-tongxin.html"><h5>智慧通信</h5><p>400 云接待与全渠道通信接入</p></a>
@@ -1169,7 +1176,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <div class="pcard s4">
       <div class="pc-head">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <b>客户运营</b><span>培育 · 企微协同</span>
+        <b>客户运营</b>
       </div>
       <div class="pc-items">
         <a class="pc-item" href="document/products/yunzhixuan.html"><h5>云智选</h5><p>人机协同用户培育，提升线索质量</p></a>
@@ -1181,7 +1188,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <div class="pcard s4">
       <div class="pc-head">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        <b>内容营销</b><span>AI 内容生产</span>
+        <b>内容营销</b>
       </div>
       <div class="pc-items">
         <a class="pc-item" href="document/products/aigc.html"><h5>AIGC</h5><p>视频剪辑、图文生成等创作能力</p></a>
@@ -1192,7 +1199,7 @@ footer{background:var(--navy);color:#aebcd4;padding:60px 0 30px}
     <div class="pcard s4">
       <div class="pc-head">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-        <b>数据智能</b><span>数据 · 决策</span>
+        <b>数据智能</b>
       </div>
       <div class="pc-items">
         <a class="pc-item" href="document/products/zhihui-shulian.html"><h5>智慧数联</h5><p>全链路数据联通与跨系统整合</p></a>
